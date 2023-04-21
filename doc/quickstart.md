@@ -101,16 +101,16 @@ Bonus 部分看了一下，比较好玩而且容易实现的：
 
 | 名称                  | 功能  | 负责人 |
 | ------------------- | --- | --- |
-| cpu_top             |     | kl    |
-| cpu_clk             |     | kl    |
-| instruction_fetch   |     | glh    |
-| instruction_memory  |     | glh    |
-| registers           |     | glh    |
-| control             |     | kl    |
-| alu                 |     | kl    |
-| data_memory         |     | glh    |
-| io (包括 开关，LED，数码管等) |     | ckr    |
-| uart                |     | ckr    |
+| cpu_top             |     | kl  |
+| cpu_clk             |     | kl  |
+| instruction_fetch   |     | glh |
+| instruction_memory  |     | glh |
+| registers           |     | glh |
+| control             |     | kl  |
+| alu                 |     | kl  |
+| data_memory         |     | glh |
+| io (包括 开关，LED，数码管等) |     | ckr |
+| uart                |     | ckr |
 
 ## 2 约定
 
@@ -144,6 +144,28 @@ Bonus 部分看了一下，比较好玩而且容易实现的：
 
 #### 2.1.2 I Type
 
+| Name                             | Mnemonic | OpC (ins[31:26]) | Note |
+| -------------------------------- | -------- | ---------------- | ---- |
+| Branch if equal                  | beq      | 000100           |      |
+| Branch if not equal              | bne      | 000101           |      |
+| Load word                        | lw       | 100011           |      |
+| Save word                        | sw       | 101011           |      |
+| Add immidiate                    | addi     | 001000           |      |
+| Add immidiate unisigned          | addiu    | 001001           |      |
+| Set less than immidiate          | slti     | 001010           |      |
+| Set less than immidiate unsigned | sltiu    | 001011           |      |
+| And immidiate                    | andi     | 001100           |      |
+| Or immidiate                     | ori      | 001101           |      |
+| Xor immidiate                    | xori     | 001110           |      |
+| Load upper immidiate             | lui      | 001111           |      |
+
 #### 2.1.3 J Type
 
+| Name          | Mnemonic | OpC (ins[31:26]) | Note |
+| ------------- | -------- | ---------------- | ---- |
+| Jump          | j        | 000010           |      |
+| Jump and link | jal      | 000011           |      |
+
 ### 2.2 I/O 内存映射
+
+### 2.3 模块接口约定
