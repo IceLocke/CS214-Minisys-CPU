@@ -105,6 +105,7 @@ Bonus 部分看了一下，比较好玩而且容易实现的：
 | cpu_clk             |     | kl  |
 | instruction_fetch   |     | glh |
 | instruction_memory  |     | glh |
+| vic                 |     | glh |
 | registers           |     | glh |
 | control             |     | kl  |
 | alu                 |     | kl  |
@@ -168,4 +169,132 @@ Bonus 部分看了一下，比较好玩而且容易实现的：
 
 ### 2.2 I/O 内存映射
 
-### 2.3 模块接口约定
+### 2.3 模块接口约定、实现功能
+
+#### 2.3.1 cpu_top
+
+CPU 顶层。需要连接各个部件以及外设输出。
+
+| 端口类型         | 端口名称         | 功能          | 备注    |
+| ------------ | ------------ | ----------- | ----- |
+| input        | clk          | 晶振信号输入      |       |
+| input        | rst          | 重置信号        |       |
+| input [3:0]  | state_switch | 测试场景状态输入    |       |
+| input [7:0]  | data_switch  | 测试场景数据输入    |       |
+| input [15:0] | keyboard     | 小键盘输入       |       |
+| input        | uart_enable  | UART通信模式输入  |       |
+| input        | uart_in      | UART信号输入    |       |
+| output       | led_sign     | 测试场景CPU状态输出 |       |
+| output [7:0] | led_data     | 测试场景数据LED输出 |       |
+| output [7:0] | seg_en       | 数码管使能       | 低电平触发 |
+| output [7:0] | seg_left     | 左侧数码管组数据    | 低电平触发 |
+| output [7:0] | seg_right    | 右侧数码管组数据    | 低电平触发 |
+
+（待补全）
+
+#### 2.3.2 cpu_clk
+
+CPU 时钟。通过封装一个 clock wizard 实现。
+
+| 端口类型  | 端口名称    | 功能     | 备注  |
+| ----- | ------- | ------ | --- |
+| input | clk_in  | 晶振信号输入 |     |
+| input | clk_out | CPU时钟  |     |
+
+#### 2.3.3 instruction_fetch
+
+IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中的指令**。这里需要注意的是，例如我们这里有三个时钟周期，分别记为0、1、2。在0的下降沿， instruction_fetch 应该能够输出在 0 的上升沿结束是 pc 对应的指令。在输出指令后，control 解析指令，返还给 instruction_fetch，更新 next_pc（组合逻辑），然后在时钟上升沿时阻塞赋值 pc 寄存器的值。
+
+| 端口类型          | 端口名称         | 功能                       | 备注  |
+| ------------- | ------------ | ------------------------ | --- |
+| input         | clk          | CPU 时钟                   |     |
+| input         | rst          |                          |     |
+| input         | branch_inst  | 从 control 输入，是否为 branch  |     |
+| input         | jump_inst    | 从 control 输入，是否为 jump    |     |
+| input         | vic_enable   | 从 vic 输入，当前是否有中断         |     |
+| input [31:0]  | handler_addr | 从 vic 输入，PC=handler_addr |     |
+| output [5:0]  | opcode       |                          |     |
+| output [4:0]  | rs           |                          |     |
+| output [4:0]  | rt           |                          |     |
+| output [4:0]  | rd           |                          |     |
+| output [4:0]  | shamt        |                          |     |
+| output [5:0]  | funct        |                          |     |
+| output [15:0] | immediate    |                          |     |
+| output [31:0] | pc           | 给 jal 使用                 |     |
+
+#### 2.3.4 instruction_memory
+
+运行模式下只读。
+
+| 端口类型          | 端口名称      | 功能           | 备注  |
+| ------------- | --------- | ------------ | --- |
+| input         | clk       |              |     |
+| input [31:0]  | addr      | 指令地址，直接连接 pc |     |
+| input [31:0]  | uart_en   | uart 模式开启    |     |
+| input [31:0]  | uart_data | uart 数据      |     |
+| input [31:0]  | uart_addr | uart 内存地址    |     |
+| output [31:0] | out       |              |     |
+
+#### 2.3.5 vic
+
+我还没想好
+
+#### 2.3.6 registers
+
+| 端口类型          | 端口名称     | 功能                | 备注  |
+| ------------- | -------- | ----------------- | --- |
+| input         | clk      |                   |     |
+| input         | reg_w_en | 是否是写              |     |
+| input [4:0]   | reg_r0   | 寄存器编号             |     |
+| input [4:0]   | reg_r1   | 寄存器编号             |     |
+| input [4:0]   | reg_w    | 寄存器编号             |     |
+| input [31:0]  | w_data   | 写入数据，永远都是写入 reg_w |     |
+| output [31:0] | r0_data  |                   |     |
+| output [31:0] | r1_data  |                   |     |
+
+#### 2.3.7 control
+
+| 端口类型          | 端口名称        | 功能        | 备注           |
+| ------------- | ----------- | --------- | ------------ |
+| input [5:0]   | opcode      |           |              |
+| input [4:0]   | rs          |           |              |
+| input [4:0]   | rt          |           |              |
+| input [4:0]   | rd          |           |              |
+| input [5:0]   | funct       |           |              |
+| input [15:0]  | immediate   |           |              |
+| input [31:0]  | pc          | jal 用     |              |
+| input [31:0]  | alu_out     |           |              |
+| output [5:0]  | alu_op      | ALU 的运算符号 | 可以直接使用 funct |
+| output        | branch_inst |           |              |
+| output        | jump_inst   |           |              |
+| output [31:0] | alu_in0     |           |              |
+| output [31:0] | alu_in1     |           |              |
+|               |             |           |              |
+|               |             |           |              |
+
+#### 2.3.8 alu
+
+| 端口类型          | 端口名称 | 功能  | 备注           |
+| ------------- | ---- | --- | ------------ |
+| input [31:0]  | in0  |     |              |
+| input [31:0]  | in1  |     |              |
+| input [5:0]   | op   | 运算符 | 可以直接使用 funct |
+| output [31:0] | out  |     |              |
+
+#### 2.3.9 data_memory
+
+封装一个 block_data 实现
+
+| 端口类型          | 端口名称       | 功能  | 备注  |
+| ------------- | ---------- | --- | --- |
+| input         | clk        |     |     |
+| input [31:0]  | addr       |     |     |
+| input [31:0]  | write_data |     |     |
+| input         | data_w_en  |     |     |
+| output [31:0] | out        |     |     |
+
+#### 2.3.10 dma
+
+需要实现一个 CPU/IO 内存总线控制器
+
+#### 2.3.11 uart
