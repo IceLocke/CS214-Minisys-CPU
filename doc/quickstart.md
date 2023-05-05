@@ -297,4 +297,12 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 
 需要实现一个 CPU/IO 内存总线控制器
 
+| 端口类型          | 端口名称       | 功能  | 备注  |
+| ------------- | ---------- | --- | --- |
+| input         | clk        |     |     |
+| input         | io_en      |     |     |
+| input [31:0]  | addr       |     |     |
+| input [31:0]  | write_data |     |     |
+| output [31:0] | out        |     |     |
+
 #### 2.3.11 uart
