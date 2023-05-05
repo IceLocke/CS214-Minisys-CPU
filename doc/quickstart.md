@@ -231,8 +231,8 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 | input         | clk       |              |     |
 | input [31:0]  | addr      | 指令地址，直接连接 pc |     |
 | input         | uart_en   | uart 模式开启    |     |
-| input [31:0]  | uart_data | uart 数据      |     |
 | input [31:0]  | uart_addr | uart 内存地址    |     |
+| input [31:0]  | uart_data | uart 数据      |     |
 | output [31:0] | out       |              |     |
 
 #### 2.3.5 vic
