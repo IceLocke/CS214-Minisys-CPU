@@ -318,7 +318,7 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 | ------------- | ---------- | --- | --- |
 | input         | clk        |     |     |
 | input [31:0]  | addr       |     |     |
-| input         | data_w_en  |     |     |
+| input         | write_en   |     |     |
 | input [31:0]  | write_data |     |     |
 | output [31:0] | out        |     |     |
 
@@ -331,6 +331,7 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 | input         | clk        |     |     |
 | input         | io_en      |     |     |
 | input [31:0]  | addr       |     |     |
+| input         | write_en   |     |     |
 | input [31:0]  | write_data |     |     |
 | output [31:0] | out        |     |     |
 
