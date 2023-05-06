@@ -331,4 +331,21 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 | input         | clk        |     |     |
 | input         | io_en      |     |     |
 
-#### 2.3.11 uart
+#### 2.3.10 io
+
+| 端口类型         | 端口名称         | 功能          | 备注    |
+| ------------ | ------------ | ----------- | ----- |
+| input        | clk          |             |       |
+| input        | rst          | 重置信号        |       |
+| input [3:0]  | state_switch | 测试场景状态输入    |       |
+| input [7:0]  | data_switch  | 测试场景数据输入    |       |
+| input [15:0] | keyboard     | 小键盘输入       |       |
+| input        | uart_enable  | UART通信模式输入  |       |
+| input        | uart_in      | UART信号输入    |       |
+| output       | led_sign     | 测试场景CPU状态输出 |       |
+| output [7:0] | led_data     | 测试场景数据LED输出 |       |
+| output [7:0] | seg_en       | 数码管使能       | 低电平触发 |
+| output [7:0] | seg_left     | 左侧数码管组数据    | 低电平触发 |
+| output [7:0] | seg_right    | 右侧数码管组数据    | 低电平触发 |
+
+#### 2.3.12 uart
