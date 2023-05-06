@@ -336,6 +336,9 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 | input [31:0]  | io_addr       |     |     |
 | input         | io_write_en   |     |     |
 | input [31:0]  | io_write_data |     |     |
+| output [31:0] | addr       |     |     |
+| output        | write_en   |     |     |
+| output [31:0] | write_data |     |     |
 | output        | out        |     |     |
 
 #### 2.3.10 io
