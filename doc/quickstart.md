@@ -352,6 +352,9 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 | input [15:0] | keyboard     | 小键盘输入       |       |
 | input        | uart_enable  | UART通信模式输入  |       |
 | input        | uart_in      | UART信号输入    |       |
+| output [31:0] | addr       |     |     |
+| output        | write_en   |     |     |
+| output [31:0] | write_data |     |     |
 | output       | led_sign     | 测试场景CPU状态输出 |       |
 | output [7:0] | led_data     | 测试场景数据LED输出 |       |
 | output [7:0] | seg_en       | 数码管使能       | 低电平触发 |
