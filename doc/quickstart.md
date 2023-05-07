@@ -188,7 +188,7 @@ Bonus 部分看了一下，比较好玩而且容易实现的：
 | key_*                 |      | 0x0E00                  |
 | key_#                 |      | 0x0F00                  |
 |                       |      |                         |
-| [3: 0] state_switch_0 |      | 0x1100                  |
+| [2: 0] state_switch   |      | 0x1100                  |
 | [7: 0] data_switch    |      | 0x1200                  |
 |                       |      |                         |
 | led_sign              |      | 0x1300                  |
