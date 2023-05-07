@@ -353,7 +353,6 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 | input        | uart_en      | UART通信模式输入  |       |
 | input        | uart_in      | UART信号输入    |       |
 | input        | io_en        |     |     |
-
 | output        | req         | 申请刷新io |     |     |
 | output [31:0] | addr        |     |     |
 | output        | write_en    |     |     |
