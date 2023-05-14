@@ -4,7 +4,7 @@
 
 | 答辩时间           | 代码   | 文档   | 得分系数 |
 | -------------- | ---- | ---- | ---- |
-| 5.22 (-12days) | 5.22 | 5.29 | 1.05 |
+| 5.22 (-8 days) | 5.22 | 5.29 | 1.05 |
 | 5.29 | 5.29 | 6.5  | 1    |
 
 [Project 要求](https://bb.sustech.edu.cn/bbcswebdav/pid-379028-dt-content-rid-13103060_1/courses/CS214-30000386-2023SP/Computer%20Orgnization%E5%A4%A7%E4%BD%9C%E4%B8%9A-cs214-%E5%88%9D%E7%A8%BF.pdf)
