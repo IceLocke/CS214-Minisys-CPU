@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Tue May 16 16:20:59 2023
+# Process ID: 19496
+# Current directory: C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent33488 C:\Users\IceLocke\CS214\CS214-Minisys-CPU\src\CS214-Minisys-CPU.xpr
+# Log file: C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/vivado.log
+# Journal file: C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.xpr
+update_compile_order -fileset sources_1
+close [ open C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v w ]
+add_files C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v
+update_compile_order -fileset sources_1
