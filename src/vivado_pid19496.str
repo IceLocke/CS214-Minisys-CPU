@@ -447,3 +447,4 @@ selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sourc
 selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, cpu_top (cpu_top.v)]", 7, false, false, false, false, false, true); // B (D, cj) - Double Click
 // WARNING: HSwingWorker (Update Runs Swing Worker) is taking too long to process. Increasing delay to 3000 ms.
 // HMemoryUtils.trashcanNow. Engine heap size: 669 MB. GUI used memory: 46 MB. Current time: 5/16/23 9:11:54 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 669 MB. GUI used memory: 45 MB. Current time: 5/17/23 4:34:24 PM CST
