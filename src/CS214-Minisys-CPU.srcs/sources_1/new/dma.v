@@ -37,37 +37,8 @@ module dma(
     output reg [31:0] out
     );
     
-    parameter CPU = 1'b0;
-    parameter IO  = 1'b1;
-    
-    reg state;
-    
-    always @(posedge clk, posedge rst)
-        if (rst) begin
-            addr <= cpu_addr;
-            write_en <= cpu_write_en;
-            write_data <= cpu_write_data;
-            state <= CPU;
-        end
-        else begin
-            case(state)
-                CPU: begin
-                    if (io_en) begin
-                        addr <= io_addr;
-                        write_en <= io_write_en;
-                        write_data <= io_write_data;
-                        state <= IO;
-                    end
-                end
-                IO: begin
-                    if (!io_en) begin
-                        addr <= cpu_addr;
-                        write_en <= cpu_write_en;
-                        write_data <= cpu_write_data;
-                        state <= CPU;
-                    end
-                end
-            endcase
-        end
+    assign addr = io_en ? io_addr : cpu_addr;
+    assign write_en = io_en ? cpu_write_en : cpu_write_data;
+    assign write_data = io_en ? io_write_data : cpu_write_data;
     
 endmodule
