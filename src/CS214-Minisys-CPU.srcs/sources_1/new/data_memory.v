@@ -34,7 +34,7 @@ module data_memory(
     output [31:0] out
     );
     
-    assign kick_off = uart_rst | (~uart_rst & uart_done);
+    assign kick_off = ~uart_rst | uart_done;
 
     RAM_64K dmem(
         .clka(kick_off ? ~clk : uart_clk),

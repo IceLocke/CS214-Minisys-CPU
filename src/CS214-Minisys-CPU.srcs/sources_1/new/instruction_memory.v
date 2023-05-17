@@ -22,6 +22,7 @@
 
 module instruction_memory(
     input clk,
+    input uart_clk,
     input uart_en,
     input uart_done,
     input [31:0] addr,
@@ -31,7 +32,7 @@ module instruction_memory(
     output [31:0] out
     );
     
-    assign kick_off = uart_rst | (~uart_rst & uart_done);
+    assign kick_off = ~uart_en | uart_done;
 
     RAM_16K imem(
         .clka(kick_off ? ~clk : uart_clk),
