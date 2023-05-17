@@ -233,7 +233,7 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 | output [4:0]  | shamt        |                          |     |
 | output [5:0]  | funct        |                          |     |
 | output [15:0] | immediate    |                          |     |
-| output [31:0] | pc           | 给 jal 使用                 |     |
+| output [31:0] | pc_reg           | 给 jal 使用                 |     |
 
 #### 2.3.4 instruction_memory
 
