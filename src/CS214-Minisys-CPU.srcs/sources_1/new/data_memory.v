@@ -34,6 +34,7 @@ module data_memory(
     output [31:0] out
     );
     
+    wire kick_off;
     assign kick_off = ~uart_en | uart_done;
 
     RAM_64K dmem(
