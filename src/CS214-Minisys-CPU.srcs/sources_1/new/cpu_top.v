@@ -122,8 +122,12 @@ module cpu_top(
         .clk(clk),
         .rst(rst),
         .read_register_1(rs),
-        .read_register_2(reg_dst ? rd : rt),
-        .write_register(rd),
+        .read_register_2(rt),
+        .write_register(
+            is_jal ? 5'b11111 : (
+                reg_dst ? rd : rt
+            )
+        ),
         .write_data(
             is_jal ? ra : (
                 mem_to_reg ? mem_read_output : alu_result
