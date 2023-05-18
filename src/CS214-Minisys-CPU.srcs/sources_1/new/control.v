@@ -24,13 +24,15 @@ module control(
     input [5:0]	opcode,
     input [5:0] funct,  // special case for jr
     output reg_dst,
-    output branch,
     output mem_read,
     output mem_to_reg,
     output [5:0] alu_op,
     output mem_write,
     output alu_src,
+    output is_j,
     output is_jr,
+    output is_jal,
+    output is_beq_bne,
     output reg_write,
     output alu_en,
     output is_R_type,
@@ -40,21 +42,23 @@ module control(
 );
     assign is_R_type = opcode == 6'b0;
     assign is_J_type = opcode == 6'b10 || opcode == 6'b11;
-    assign is_I_type = is_R_type == 0 && is_J_type == 0;
-    
+    assign is_I_type = !is_R_type && !is_J_type;
+    assign alu_op = opcode;
     assign reg_dst = is_R_type;
-    assign branch = is_J_type || opcode == 6'h4 || opcode == 6'h5;  // J type, beq, bne; NOT contain jr
     assign mem_read = opcode == 6'h23; // lw
     assign mem_to_reg = opcode == 6'h23;
-    assign alu_op = opcode; 
     assign mem_write = opcode == 6'h2b; // sw
     assign alu_src = !is_R_type;
+    assign is_j = is_J_type && opcode == 6'h2;
     assign is_jr = is_R_type && funct == 6'h8;
-    assign reg_write = (is_R_type && !is_jr) || (is_I_type && !branch && !mem_write);
-    assign extension_mode = (opcode == 6'h4  // beq
-                            || opcode == 6'h5  // bne
-                            || opcode == 6'h23  // lw
-                            || opcode == 6'h2b  // sw
-                            || opcode == 6'h8  // addi
-                            || opcode == 6'ha);  // slti
+    assign is_jal = is_J_type && opcode == 6'h3;
+    assign is_beq_bne = opcode == 6'h4 || opcode == 6'h5;  // beq, bne
+    assign reg_write = (is_R_type && !is_jr) 
+                    || (is_I_type && !is_beq_bne && !mem_write);
+    assign extension_mode = (is_beq_bne // bne, beq
+                         || opcode == 6'h23  // lw
+                         || opcode == 6'h2b  // sw
+                         || opcode == 6'h8  // addi
+                         || opcode == 6'ha);  // slti
+    assign alu_en = !is_J_type;
 endmodule
