@@ -28,10 +28,9 @@ module io(
     input [15:0] keyboard,
     input        uart_en,
     input        uart_in,
-    input        io_en,
     input [31:0] mem_out,
     
-    output reg        req,
+    output reg        io_en,
     output reg [31:0] addr,
     output reg        write_en,
     output reg [31:0] write_data,
@@ -41,7 +40,6 @@ module io(
     output reg [7:0]  seg_left,
     output reg [7:0]  seg_right,
     
-    output        io_en,
     output [1:0]  test_state,
     output [31:0] test_cnt
     );
@@ -67,7 +65,7 @@ module io(
             seg_left = 8'b1111_1111;
             seg_right = 8'b1111_1111;
             cnt <= 0;
-            req <= 0;
+            io_en <= 0;
             write_en <= 0;
             state <= IDLE;
         end
@@ -75,7 +73,6 @@ module io(
             case(state)
                 IDLE: begin
                     if (cnt == TIME) begin
-                        req <= 1;
                         state <= PEND;
                         addr <= BASE;
                         write_en <= 1;
@@ -97,7 +94,6 @@ module io(
                         TIME+5: seg_left <= mem_out[7:0];
                         TIME+6: begin
                             seg_right <= mem_out[7:0];
-                            req <= 0;
                             state <= DONE;
                         end
                     endcase
@@ -105,7 +101,8 @@ module io(
                     addr <= addr+4;
                 end
                 DONE:
-                    if (!io_en) begin
+                    begin
+                        io_en <= 0;
                         cnt <= 0;
                         state <= IDLE;
                     end 

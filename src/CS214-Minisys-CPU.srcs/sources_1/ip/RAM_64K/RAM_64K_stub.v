@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
 // Date        : Sun May  7 22:12:05 2023
 // Host        : ArtanisaxLEGION running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub {E:/Materials/Computer
-//               Orgnization/Project/CS214-Minisys-CPU/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/RAM_64K_stub.v}
+// Command     : write_verilog -force -mode synth_stub -rename_top RAM_64K -prefix
+//               RAM_64K_ RAM_64K_stub.v
 // Design      : RAM_64K
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tfgg484-1
