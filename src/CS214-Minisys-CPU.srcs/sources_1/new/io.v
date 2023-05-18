@@ -41,6 +41,7 @@ module io(
     output reg [7:0]  seg_left,
     output reg [7:0]  seg_right,
     
+    output        io_en,
     output [1:0]  test_state,
     output [31:0] test_cnt
     );
@@ -76,16 +77,12 @@ module io(
                     if (cnt == TIME) begin
                         req <= 1;
                         state <= PEND;
-                    end
-                    else cnt <= cnt+1;
-                end
-                PEND: begin
-                    if (io_en) begin
                         addr <= BASE;
                         write_en <= 1;
                         write_data <= state_switch;
                         state <= WORK;
                     end
+                    else cnt <= cnt+1;
                 end
                 WORK: begin
                     case(cnt)
