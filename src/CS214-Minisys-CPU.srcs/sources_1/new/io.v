@@ -47,15 +47,14 @@ module io(
     
     parameter TIME = 1000;
     parameter BASE = 0;
-    parameter IDLE = 2'b00;
-    parameter WORK = 2'b01;
-    parameter UART = 2'b10;
-    parameter DONE = 2'b11;
+    parameter IDLE = 1'b0;
+    parameter WORK = 1'b1;
     
     integer cnt;
-    reg [1:0] state;
+    reg state;
     
     wire [14:0] uart_addr_out;
+    assign uart_addr = uart_addr_out[13:0];
     uart uart_core(
         .upg_clk_i(uart_clk),
         .upg_rst_i(uart_rst),
@@ -63,7 +62,7 @@ module io(
         .upg_done_o(uart_done)
     );
     
-    always @(posedge clk, posedge uart_rst, posedge rst)
+    always @(posedge clk, posedge rst)
         if (rst) begin
             led_sign = 1'b0;
             led_data = 0;
@@ -78,22 +77,15 @@ module io(
         end
         else
             case(state)
-                IDLE: begin
-                    if (uart_rst) begin
-                        uart_en <= 1'b1;
-                        cnt <= 0;
-                        io_en <= 1'b0;
-                        state <= UART;
+                IDLE:
+                    if (cnt == TIME) begin
+                        state <= WORK;
+                        addr <= BASE;
+                        write_en <= 1'b1;
+                        write_data <= state_switch;
+                        state <= WORK;
                     end
-                    else if (cnt == TIME) begin
-                            state <= WORK;
-                            addr <= BASE;
-                            write_en <= 1'b1;
-                            write_data <= state_switch;
-                            state <= WORK;
-                        end
-                        else cnt <= cnt+1;
-                end
+                    else cnt <= cnt+1;
                 WORK: begin
                     case(cnt)
                         TIME: write_data <= data_switch;
@@ -115,10 +107,11 @@ module io(
                     cnt <= cnt+1;
                     addr <= addr+4;
                 end
-                UART:
-                    if (uart_done) begin
-                        uart_en <= 1'b0;
-                        state <= 0;
-                    end
+                default: state <= state;
             endcase
+    
+    always @(posedge uart_clk, posedge uart_rst)
+        if (uart_rst) uart_en <= 1'b1;
+        else if(uart_done) uart_en = 1'b0;
+        
 endmodule

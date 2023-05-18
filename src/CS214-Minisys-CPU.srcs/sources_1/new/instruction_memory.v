@@ -24,22 +24,18 @@ module instruction_memory(
     input clk,
     input uart_clk,
     input uart_en,
-    input uart_done,
     input [31:0] addr,
     input [13:0] uart_addr,
     input [31:0] uart_data,
     
     output [31:0] out
     );
-    
-    wire kick_off;
-    assign kick_off = ~uart_en | uart_done;
 
     RAM_16K imem(
-        .clka(kick_off ? ~clk : uart_clk),
-        .wea(kick_off ? 0 : 1),
-        .addra(kick_off ? addr[15:2] : uart_addr),
-        .dina(kick_off ? 0 : uart_data),
+        .clka(uart_en ? uart_clk : ~clk),
+        .wea(uart_en ? 1 : 0),
+        .addra(uart_en ? uart_addr : addr[15:2]),
+        .dina(uart_en ? uart_data : 0),
         .douta(out)
     );
     
