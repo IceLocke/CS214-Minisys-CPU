@@ -31,10 +31,9 @@ module dma(
     input         io_write_en,
     input  [31:0] io_write_data,
     
-    output reg [31:0] addr,
-    output reg        write_en,
-    output reg [31:0] write_data,
-    output reg [31:0] out
+    output [31:0] addr,
+    output        write_en,
+    output [31:0] write_data
     );
     
     assign addr = io_en ? io_addr : cpu_addr;
