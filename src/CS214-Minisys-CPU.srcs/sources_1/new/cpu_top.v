@@ -43,7 +43,7 @@ module cpu_top(
     );
     
     /* ISA part */
-    wire [31:0] alu_result;
+    wire [63:0] alu_result;
     wire [5:0] opcode;
     wire [4:0] rs;
     wire [4:0] rt;
@@ -79,6 +79,8 @@ module cpu_top(
     wire alu_exception;
     wire [31:0] mem_read_output;
     wire uart_done;
+    wire [1:0] reg_read_spe;
+    wire reg_write_spe;
     instruction_fetch if_instance(
         .clk(clk),
         .rst(rst),
@@ -116,13 +118,17 @@ module cpu_top(
         .is_R_type(is_R_type),
         .is_J_type(is_J_type),
         .is_I_type(is_I_type),
-        .extension_mode(extension_mode)
+        .extension_mode(extension_mode),
+        .reg_write_spe(reg_write_spe),
+        .reg_read_spe(reg_read_spe)
     );
     register register_instance(
         .clk(clk),
         .rst(rst),
         .read_register_1(rs),
         .read_register_2(rt),
+        .read_spe(reg_read_spe),
+        .write_spe(reg_write_spe),
         .write_register(
             is_jal ? 5'b11111 : (
                 reg_dst ? rd : rt

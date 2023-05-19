@@ -29,7 +29,7 @@ module alu(
     input [5:0] opcode,
     input [5:0] funct,
     input [4:0] shamt,
-    output reg [31:0] result,
+    output reg [6:0] result,
     output reg alu_exception
 );
     always @(*) begin
@@ -57,16 +57,22 @@ module alu(
             end
             if (is_R_type) begin
                 case (opcode)
-                    6'b00_0100: result = (num1 == num2) ? 1 : 0; // beq
-                    6'b00_0101: result = (num1 != num2) ? 1 : 0; // bne
-                    6'b00_1000: result = $signed(num1) + $signed(num2); // addi
-                    6'b00_1001: result = num1 + num2; // addiu
-                    6'b00_1010: result = ($signed(num1) < $signed(num2)) ? 1 : 0; // slti
-                    6'b00_1011: result = (num1 < num2) ? 1 : 0; // sltiu
-                    6'b00_1100: result = num1 & num2; // andi
-                    6'b00_1101: result = num1 | num2; // ori
-                    6'b00_1110: result = num1 ^ num2; // xori
-                    6'b00_1111: result = {num2, 16'b0}; // lui
+                    6'h4: result = (num1 == num2) ? 1 : 0; // beq
+                    6'h5: result = (num1 != num2) ? 1 : 0; // bne
+                    6'h8: result = $signed(num1) + $signed(num2); // addi
+                    6'h9: result = num1 + num2; // addiu
+                    6'ha: result = ($signed(num1) < $signed(num2)) ? 1 : 0; // slti
+                    6'hb: result = (num1 < num2) ? 1 : 0; // sltiu
+                    6'hc: result = num1 & num2; // andi
+                    6'hd: result = num1 | num2; // ori
+                    6'he: result = num1 ^ num2; // xori
+                    6'hf: result = {num2, 16'b0}; // lui
+                    6'h18: result = $signed(num1) * $signed(num2); // mult
+                    6'h19: result = num1 * num2; // multu
+                    6'h1a: result = {$signed(num1) / $signed(num2), $signed(num1) % $signed(num2)}; // div
+                    6'h1b: result = {num1 / num2, num1 % num2}; // divu
+                    6'h22: result = $signed(num1) - $signed(num2); // sub
+                    6'h23: result = num1 - num2; // subu
                     default: result = 0;
                 endcase
             end

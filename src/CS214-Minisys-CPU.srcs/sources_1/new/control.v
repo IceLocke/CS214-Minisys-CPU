@@ -38,15 +38,18 @@ module control(
     output is_R_type,
     output is_J_type,
     output is_I_type,
-    output extension_mode  // 1 = sign extension, 0 = 0-extension
+    output extension_mode,  // 1 = sign extension, 0 = 0-extension
+    output [1:0] reg_read_spe,
+    output reg_write_spe
 );
     assign is_R_type = opcode == 6'b0;
     assign is_J_type = opcode == 6'b10 || opcode == 6'b11;
     assign is_I_type = !is_R_type && !is_J_type;
+    
     assign alu_op = opcode;
     assign reg_dst = is_R_type;
     assign mem_read = opcode == 6'h23; // lw
-    assign mem_to_reg = opcode == 6'h23;
+    assign mem_to_reg = opcode == 6'h23; // lw
     assign mem_write = opcode == 6'h2b; // sw
     assign alu_src = !is_R_type;
     assign is_j = is_J_type && opcode == 6'h2;
@@ -61,4 +64,10 @@ module control(
                          || opcode == 6'h8  // addi
                          || opcode == 6'ha);  // slti
     assign alu_en = !is_J_type;
+    assign reg_read_spe = (is_R_type && funct == 6'h12) ? 2'b10 :  // mflo
+                    ((is_R_type && funct == 6'h10) ? 2'b11 : 2'b00); // mfhi
+    assign reg_write_spe = is_R_type && (funct == 6'h1a  // div
+                                    || funct == 6'h1b  // divu
+                                    || funct == 6'h18  // mult
+                                    || funct == 6'h19);  // multu
 endmodule
