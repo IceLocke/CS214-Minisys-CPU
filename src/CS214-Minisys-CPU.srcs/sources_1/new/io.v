@@ -56,8 +56,8 @@ module io(
     
     wire [14:0] uart_addr_out;
     assign uart_addr = uart_addr_out[13:0];
-    assign uart_i_en = ~uart_done & ~uart_addr_out[14];
-    assign uart_d_en = ~uart_done & uart_addr_out[14];
+    assign uart_i = ~uart_done & ~uart_addr_out[14];
+    assign uart_d = ~uart_done & uart_addr_out[14];
 
     uart uart_core(
         .upg_clk_i(uart_clk),
