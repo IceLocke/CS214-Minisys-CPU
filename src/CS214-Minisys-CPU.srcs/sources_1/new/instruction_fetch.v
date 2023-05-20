@@ -1,25 +1,3 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2023/05/16 16:22:14
-// Design Name: 
-// Module Name: instruction_fetch
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module instruction_fetch(
     input clk,
     input rst,
@@ -27,10 +5,13 @@ module instruction_fetch(
     input jr_inst,
     input jump_inst,
     input vic_enable,
+    input eret_inst,
+    input io_en,
     input uart_en,
     input [13:0] uart_addr,
     input [31:0] uart_data,
     input [31:0] handler_addr,
+    input [31:0] epc,
     input [31:0] reg_addr,
     output [5:0] opcode,
     output [4:0] rs,
@@ -42,7 +23,8 @@ module instruction_fetch(
     output [31:0] ra
     );
     
-    reg [31:0] inst;
+    wire [31:0] inst;
+    wire [31:0] imem_inst;
     reg [31:0] pc;
     reg [31:0] next_pc;
     wire [31:0] pc_plus4;
@@ -57,8 +39,10 @@ module instruction_fetch(
         .uart_en(uart_en),
         .uart_addr(uart_addr),
         .uart_data(uart_data),
-        .out(inst)
+        .out(imem_inst)
     );
+    
+    assign inst = io_en ? 32'h00000000 : imem_inst;
     
     assign opcode = inst[31:26];
     assign rs = inst[25:21];
@@ -70,13 +54,15 @@ module instruction_fetch(
     assign jump_addr = inst[25:0];
     
     always @(*) begin
-        case ({uart_en, vic_enable, jump_inst, branch_inst, jr_inst})
-            5'b1xxxx: next_pc <= next_pc;
-            5'b01xxx: next_pc <= handler_addr;
-            5'b001xx: next_pc <= jump_addr;
-            5'b0001x: next_pc <= immediate * 4 + pc_plus4;
-            5'b00001: next_pc <= reg_addr;
-            5'b00000: next_pc <= pc_plus4;
+        case ({uart_en, io_en, vic_enable, jump_inst, branch_inst, jr_inst, eret_inst})
+            7'b1xxxxxx: next_pc <= next_pc;
+            7'b01xxxxx: next_pc <= next_pc;
+            7'b001xxxx: next_pc <= handler_addr;
+            7'b0001xxx: next_pc <= jump_addr;
+            7'b00001xx: next_pc <= immediate * 4 + pc_plus4;
+            7'b000001x: next_pc <= reg_addr;
+            7'b0000001: next_pc <= epc;
+            7'b0000000: next_pc <= pc_plus4;
         endcase
     end
     

@@ -41,8 +41,8 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="AbstractCombinedPanel_ADD_ELEMENT" value="9" type="GuiHandlerData"/>
 <property name="AbstractCombinedPanel_REMOVE_SELECTED_ELEMENTS" value="2" type="GuiHandlerData"/>
 <property name="AddRepositoryInfoDialog_OK" value="1" type="GuiHandlerData"/>
-<property name="AddSrcWizard_SPECIFY_HDL_NETLIST_BLOCK_DESIGN" value="8" type="GuiHandlerData"/>
-<property name="AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES" value="4" type="GuiHandlerData"/>
+<property name="AddSrcWizard_SPECIFY_HDL_NETLIST_BLOCK_DESIGN" value="9" type="GuiHandlerData"/>
+<property name="AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES" value="5" type="GuiHandlerData"/>
 <property name="AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES" value="4" type="GuiHandlerData"/>
 <property name="BaseDialog_CANCEL" value="23" type="GuiHandlerData"/>
 <property name="BaseDialog_OK" value="75" type="GuiHandlerData"/>
@@ -63,9 +63,9 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="HCodeEditor_CLOSE" value="1" type="GuiHandlerData"/>
 <property name="HCodeEditor_SEARCH_TEXT_COMBO_BOX" value="1" type="GuiHandlerData"/>
 <property name="HJFileChooserRecentListPreview_RECENT_DIRECTORIES" value="1" type="GuiHandlerData"/>
-<property name="MainMenuMgr_FILE" value="4" type="GuiHandlerData"/>
+<property name="MainMenuMgr_FILE" value="6" type="GuiHandlerData"/>
 <property name="MainMenuMgr_OPEN_RECENT_FILE" value="3" type="GuiHandlerData"/>
-<property name="MainMenuMgr_OPEN_RECENT_PROJECT" value="4" type="GuiHandlerData"/>
+<property name="MainMenuMgr_OPEN_RECENT_PROJECT" value="5" type="GuiHandlerData"/>
 <property name="MainToolbarMgr_RUN" value="3" type="GuiHandlerData"/>
 <property name="MsgTreePanel_MESSAGE_VIEW_TREE" value="235" type="GuiHandlerData"/>
 <property name="MsgView_CRITICAL_WARNINGS" value="2" type="GuiHandlerData"/>
