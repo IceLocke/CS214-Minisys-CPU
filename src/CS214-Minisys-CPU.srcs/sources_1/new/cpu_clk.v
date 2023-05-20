@@ -28,7 +28,7 @@ module cpu_clk(
     output clk_10MHz
 );
     clk_wiz_0 cpu_wiz_clock(
-        .rst(rst),
+        .reset(rst),
         .clk_in1(clk_in),
         .clk_46MHz(clk_46MHz),
         .clk_23MHz(clk_23MHz),

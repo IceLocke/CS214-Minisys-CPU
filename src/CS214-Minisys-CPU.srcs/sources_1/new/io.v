@@ -53,73 +53,73 @@ module io(
     stabilizer sb0(
         .clk(kb_clk),
         .rst(rst),
-        .kb(kb[0]),
+        .button(kb[0]),
         .stable(stable[0])
     );
     stabilizer sb1(
         .clk(kb_clk),
         .rst(rst),
-        .kb(kb[1]),
+        .button(kb[1]),
         .stable(stable[1])
     );
     stabilizer sb2(
         .clk(kb_clk),
         .rst(rst),
-        .kb(kb[2]),
+        .button(kb[2]),
         .stable(stable[2])
     );
     stabilizer sb3(
         .clk(kb_clk),
         .rst(rst),
-        .kb(kb[3]),
+        .button(kb[3]),
         .stable(stable[3])
     );
     stabilizer sb4(
         .clk(kb_clk),
         .rst(rst),
-        .kb(kb[4]),
+        .button(kb[4]),
         .stable(stable[4])
     );
     stabilizer sb5(
         .clk(kb_clk),
         .rst(rst),
-        .kb(kb[5]),
+        .button(kb[5]),
         .stable(stable[5])
     );
     stabilizer sb6(
         .clk(kb_clk),
         .rst(rst),
-        .kb(kb[6]),
+        .button(kb[6]),
         .stable(stable[6])
     );
     stabilizer sb7(
         .clk(kb_clk),
         .rst(rst),
-        .kb(kb[7]),
+        .button(kb[7]),
         .stable(stable[7])
     );
     stabilizer sb8(
         .clk(kb_clk),
         .rst(rst),
-        .kb(kb[8]),
+        .button(kb[8]),
         .stable(stable[8])
     );
     stabilizer sb9(
         .clk(kb_clk),
         .rst(rst),
-        .kb(kb[9]),
+        .button(kb[9]),
         .stable(stable[9])
     );
     stabilizer sb10(
         .clk(kb_clk),
         .rst(rst),
-        .kb(pos),
+        .button(pos),
         .stable(stable[10])
     );
     stabilizer sb11(
         .clk(kb_clk),
         .rst(rst),
-        .kb(neg),
+        .button(neg),
         .stable(stable[11])
     );
 

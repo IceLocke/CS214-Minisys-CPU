@@ -28,7 +28,7 @@ module uart(
     output        uart_d,
     output [13:0] uart_addr,
     output [31:0] uart_data,
-    output reg    uart_done
+    output        uart_done
     );
     
     wire [14:0] uart_addr_out;

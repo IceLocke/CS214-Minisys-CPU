@@ -43,7 +43,7 @@ module vic(
     
     interrupt_encoder ie(
         .source(pending_interrupt),
-        .cause(interrupt)
+        .interrupt(cause)
     );
     
     // update need jump and next_pc

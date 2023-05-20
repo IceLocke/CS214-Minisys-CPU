@@ -2,12 +2,12 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sat May 20 16:53:28 2023
-# Process ID: 5968
-# Current directory: C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1
+# Start of session at: Sat May 20 20:48:12 2023
+# Process ID: 22556
+# Current directory: C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1
 # Command line: vivado.exe -log RAM_64K.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RAM_64K.tcl
-# Log file: C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1/RAM_64K.vds
-# Journal file: C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1\vivado.jou
+# Log file: C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1/RAM_64K.vds
+# Journal file: C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1\vivado.jou
 #-----------------------------------------------------------
 source RAM_64K.tcl -notrace
 Command: synth_design -top RAM_64K -part xc7a100tfgg484-1 -mode out_of_context
@@ -15,11 +15,11 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 37964 
+INFO: Helper process launched with PID 21856 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 365.004 ; gain = 100.723
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 403.535 ; gain = 99.926
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'RAM_64K' [c:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/synth/RAM_64K.vhd:69]
+INFO: [Synth 8-638] synthesizing module 'RAM_64K' [c:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/synth/RAM_64K.vhd:69]
 	Parameter C_FAMILY bound to: artix7 - type: string 
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
 	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
@@ -93,8 +93,8 @@ INFO: [Synth 8-638] synthesizing module 'RAM_64K' [c:/Users/IceLocke/CS214/CS214
 	Parameter C_COUNT_36K_BRAM bound to: 14 - type: string 
 	Parameter C_COUNT_18K_BRAM bound to: 1 - type: string 
 	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     13.776802 mW - type: string 
-INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_1' declared at 'c:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195313' bound to instance 'U0' of component 'blk_mem_gen_v8_4_1' [c:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/synth/RAM_64K.vhd:232]
-INFO: [Synth 8-256] done synthesizing module 'RAM_64K' (11#1) [c:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/synth/RAM_64K.vhd:69]
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_1' declared at 'c:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195313' bound to instance 'U0' of component 'blk_mem_gen_v8_4_1' [c:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/synth/RAM_64K.vhd:232]
+INFO: [Synth 8-256] done synthesizing module 'RAM_64K' (11#1) [c:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/synth/RAM_64K.vhd:69]
 WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port MUX_RST[0]
 WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port MEM_LAT_RST
 WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port MEM_REG_RST
@@ -197,7 +197,7 @@ WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected p
 WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[48]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:44 ; elapsed = 00:01:33 . Memory (MB): peak = 664.090 ; gain = 399.809
+Finished RTL Elaboration : Time (s): cpu = 00:01:02 ; elapsed = 00:01:17 . Memory (MB): peak = 699.051 ; gain = 395.441
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -207,7 +207,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:44 ; elapsed = 00:01:33 . Memory (MB): peak = 664.090 ; gain = 399.809
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:02 ; elapsed = 00:01:18 . Memory (MB): peak = 699.051 ; gain = 395.441
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 15 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -216,35 +216,35 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/RAM_64K_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [c:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/RAM_64K_ooc.xdc] for cell 'U0'
-Parsing XDC File [C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1/dont_touch.xdc]
+Parsing XDC File [c:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/RAM_64K_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/RAM_64K_ooc.xdc] for cell 'U0'
+Parsing XDC File [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 784.785 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 822.496 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:49 ; elapsed = 00:01:46 . Memory (MB): peak = 784.785 ; gain = 520.504
+Finished Constraint Validation : Time (s): cpu = 00:01:09 ; elapsed = 00:01:28 . Memory (MB): peak = 822.496 ; gain = 518.887
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:49 ; elapsed = 00:01:46 . Memory (MB): peak = 784.785 ; gain = 520.504
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:09 ; elapsed = 00:01:28 . Memory (MB): peak = 822.496 ; gain = 518.887
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for U0. (constraint file  C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for U0. (constraint file  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:49 ; elapsed = 00:01:46 . Memory (MB): peak = 784.785 ; gain = 520.504
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:09 ; elapsed = 00:01:28 . Memory (MB): peak = 822.496 ; gain = 518.887
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:49 ; elapsed = 00:01:46 . Memory (MB): peak = 784.785 ; gain = 520.504
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:10 ; elapsed = 00:01:28 . Memory (MB): peak = 822.496 ; gain = 518.887
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -300,7 +300,7 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:01:47 . Memory (MB): peak = 784.785 ; gain = 520.504
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:10 ; elapsed = 00:01:28 . Memory (MB): peak = 822.496 ; gain = 518.887
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -312,13 +312,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:53 ; elapsed = 00:01:55 . Memory (MB): peak = 784.785 ; gain = 520.504
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:15 ; elapsed = 00:01:35 . Memory (MB): peak = 822.496 ; gain = 518.887
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:01:55 . Memory (MB): peak = 784.785 ; gain = 520.504
+Finished Timing Optimization : Time (s): cpu = 00:01:15 ; elapsed = 00:01:35 . Memory (MB): peak = 822.496 ; gain = 518.887
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -330,7 +330,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:53 ; elapsed = 00:01:55 . Memory (MB): peak = 790.676 ; gain = 526.395
+Finished Technology Mapping : Time (s): cpu = 00:01:15 ; elapsed = 00:01:35 . Memory (MB): peak = 824.246 ; gain = 520.637
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -354,7 +354,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:53 ; elapsed = 00:01:55 . Memory (MB): peak = 790.676 ; gain = 526.395
+Finished IO Insertion : Time (s): cpu = 00:01:16 ; elapsed = 00:01:35 . Memory (MB): peak = 824.246 ; gain = 520.637
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -367,7 +367,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:53 ; elapsed = 00:01:55 . Memory (MB): peak = 790.676 ; gain = 526.395
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:16 ; elapsed = 00:01:35 . Memory (MB): peak = 824.246 ; gain = 520.637
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -379,25 +379,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:53 ; elapsed = 00:01:55 . Memory (MB): peak = 790.676 ; gain = 526.395
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:16 ; elapsed = 00:01:35 . Memory (MB): peak = 824.246 ; gain = 520.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:53 ; elapsed = 00:01:55 . Memory (MB): peak = 790.676 ; gain = 526.395
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:16 ; elapsed = 00:01:35 . Memory (MB): peak = 824.246 ; gain = 520.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:53 ; elapsed = 00:01:55 . Memory (MB): peak = 790.676 ; gain = 526.395
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:16 ; elapsed = 00:01:35 . Memory (MB): peak = 824.246 ; gain = 520.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:53 ; elapsed = 00:01:55 . Memory (MB): peak = 790.676 ; gain = 526.395
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:16 ; elapsed = 00:01:35 . Memory (MB): peak = 824.246 ; gain = 520.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -468,11 +468,11 @@ Report Instance Areas:
 |37    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized8  |     1|
 +------+---------------------------------------------+-----------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:53 ; elapsed = 00:01:55 . Memory (MB): peak = 790.676 ; gain = 526.395
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:16 ; elapsed = 00:01:35 . Memory (MB): peak = 824.246 ; gain = 520.637
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 200 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:01:49 . Memory (MB): peak = 790.676 ; gain = 405.699
-Synthesis Optimization Complete : Time (s): cpu = 00:00:54 ; elapsed = 00:01:56 . Memory (MB): peak = 790.676 ; gain = 526.395
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:01:30 . Memory (MB): peak = 824.246 ; gain = 397.191
+Synthesis Optimization Complete : Time (s): cpu = 00:01:16 ; elapsed = 00:01:35 . Memory (MB): peak = 824.246 ; gain = 520.637
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 15 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -484,11 +484,11 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 17 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:54 ; elapsed = 00:01:58 . Memory (MB): peak = 802.672 ; gain = 549.867
-INFO: [Common 17-1381] The checkpoint 'C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1/RAM_64K.dcp' has been generated.
-INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/RAM_64K.xci
+synth_design: Time (s): cpu = 00:01:17 ; elapsed = 00:01:37 . Memory (MB): peak = 835.102 ; gain = 543.020
+INFO: [Common 17-1381] The checkpoint 'C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1/RAM_64K.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/RAM_64K.xci
 INFO: [Coretcl 2-1174] Renamed 36 cell refs.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1/RAM_64K.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1/RAM_64K.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file RAM_64K_utilization_synth.rpt -pb RAM_64K_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 802.672 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat May 20 16:55:35 2023...
+report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.032 . Memory (MB): peak = 835.102 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat May 20 20:49:54 2023...
