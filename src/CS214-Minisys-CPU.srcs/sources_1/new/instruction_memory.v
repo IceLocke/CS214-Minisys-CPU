@@ -36,7 +36,7 @@ module instruction_memory(
     assign kick_off = ~uart_en | uart_done;
 
     RAM_16K imem(
-        .clka(kick_off ? ~clk : uart_clk),
+        .clka(kick_off ? clk : uart_clk),
         .wea(kick_off ? 0 : 1),
         .addra(kick_off ? addr[15:2] : uart_addr),
         .dina(kick_off ? 0 : uart_data),

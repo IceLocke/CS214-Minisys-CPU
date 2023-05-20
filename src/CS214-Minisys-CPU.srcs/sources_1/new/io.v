@@ -104,6 +104,7 @@ module io(
                             state <= DONE;
                         end
                     endcase
+                    
                     cnt <= cnt+1;
                     addr <= addr+4;
                 end
