@@ -55,4 +55,5 @@ module stabilizer(
                     else state <= IDLE;
                 default: state <= state;
             endcase
+    
 endmodule
