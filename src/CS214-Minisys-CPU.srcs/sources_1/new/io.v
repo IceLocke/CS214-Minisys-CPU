@@ -79,7 +79,7 @@ module io(
             state <= IDLE;
         end
         else
-            case(state)
+            case (state)
                 IDLE:
                     if (cnt == TIME) begin
                         state <= WORK;
@@ -90,7 +90,7 @@ module io(
                     end
                     else cnt <= cnt+1;
                 WORK: begin
-                    case(cnt)
+                    case (cnt)
                         TIME: write_data <= data_switch;
                         TIME+1: write_data <= keyboard;
                         TIME+2: begin
