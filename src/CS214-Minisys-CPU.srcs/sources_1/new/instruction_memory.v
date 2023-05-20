@@ -31,7 +31,7 @@ module instruction_memory(
     output [31:0] out
     );
 
-    RAM_16K imem(
+    RAM_64K imem(
         .clka(uart_en ? uart_clk : ~clk),
         .wea(uart_en ? 1 : 0),
         .addra(uart_en ? uart_addr : addr[15:2]),

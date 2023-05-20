@@ -30,15 +30,15 @@ module io(
     input [15:0] keyboard,
     input [31:0] mem_out,
     
+    output            uart_i_en,
+    output            uart_d_en,
+    output [13:0]     uart_addr,
+    output [31:0]     uart_data,
     output reg        io_en,
     output reg [31:0] addr,
     output reg        write_en,
     output reg [31:0] write_data,
-    output reg        uart_i_en,
-    output reg        uart_d_en,
     output reg        uart_done,
-    output [13:0]     uart_addr,
-    output [31:0]     uart_data,
     output reg        led_sign,
     output reg [7:0]  led_data,
     output reg [7:0]  seg_en,
@@ -56,8 +56,8 @@ module io(
     
     wire [14:0] uart_addr_out;
     assign uart_addr = uart_addr_out[13:0];
-    assign uart_i_en = ~uart_done & ~uart_addr_out[13];
-    assign uart_d_en = ~uart_done & uart_addr_out[13];
+    assign uart_i_en = ~uart_done & ~uart_addr_out[14];
+    assign uart_d_en = ~uart_done & uart_addr_out[14];
 
     uart uart_core(
         .upg_clk_i(uart_clk),
@@ -75,7 +75,6 @@ module io(
             seg_right = 8'b1111_1111;
             cnt <= 0;
             io_en <= 1'b0;
-            uart_en <= 1'b0;
             write_en <= 1'b0;
             state <= IDLE;
         end
