@@ -54,35 +54,35 @@ module seg(
         else
             case (en)
                 8'b0000_0001: begin
-                    digit <= data%10;
+                    digit <= data/10%10;
                     en <= 8'b0000_0010;
                 end
                 8'b0000_0010: begin
-                    digit <= data/10%10;
+                    digit <= data/100%10;
                     en <= 8'b0000_0100;
                 end
                 8'b0000_0100: begin
-                    digit <= data/100%10;
+                    digit <= data/1000%10;
                     en <= 8'b0000_1000;
                 end
                 8'b0000_1000: begin
-                    digit <= data/1000%10;
+                    digit <= data/10000%10;
                     en <= 8'b0001_0000;
                 end
                 8'b0001_0000: begin
-                    digit <= data/10000%10;
+                    digit <= data/100000%10;
                     en <= 8'b0010_0000;
                 end
                 8'b0010_0000: begin
-                    digit <= data/100000%10;
+                    digit <= data/1000000%10;
                     en <= 8'b0100_0000;
                 end
                 8'b0100_0000: begin
-                    digit <= data/1000000%10;
+                    digit <= data/10000000%10;
                     en <= 8'b1000_0000;
                 end
                 8'b1000_0000: begin
-                    digit <= data/10000000%10;
+                    digit <= data%10;
                     en <= 8'b0000_0001;
                 end
             endcase
