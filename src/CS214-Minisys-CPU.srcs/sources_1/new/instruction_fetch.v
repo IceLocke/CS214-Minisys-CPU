@@ -20,6 +20,7 @@ module instruction_fetch(
     output [4:0] shamt,
     output [5:0] funct,
     output [15:0] immediate,
+    output [31:0] instruction,
     output [31:0] ra
     );
     
@@ -43,6 +44,7 @@ module instruction_fetch(
     );
     
     assign inst = io_en ? 32'h00000000 : imem_inst;
+    assign instruction = inst;
     
     assign opcode = inst[31:26];
     assign rs = inst[25:21];
@@ -54,19 +56,20 @@ module instruction_fetch(
     assign jump_addr = inst[25:0];
     
     always @(*) begin
-        case ({uart_en, io_en, vic_enable, jump_inst, branch_inst, jr_inst, eret_inst})
-            7'b1xxxxxx: next_pc <= next_pc;
-            7'b01xxxxx: next_pc <= next_pc;
-            7'b001xxxx: next_pc <= handler_addr;
-            7'b0001xxx: next_pc <= jump_addr;
-            7'b00001xx: next_pc <= immediate * 4 + pc_plus4;
-            7'b000001x: next_pc <= reg_addr;
-            7'b0000001: next_pc <= epc;
-            7'b0000000: next_pc <= pc_plus4;
+        casez ({uart_en, io_en, vic_enable, jump_inst, branch_inst, jr_inst, eret_inst})
+            7'b1??????: next_pc = pc;
+            7'b01?????: next_pc = pc;
+            7'b001????: next_pc = handler_addr;
+            7'b0001???: next_pc = jump_addr;
+            7'b00001??: next_pc = immediate * 4 + pc_plus4;
+            7'b000001?: next_pc = reg_addr;
+            7'b0000001: next_pc = epc;
+            7'b0000000: next_pc = pc_plus4;
+            default: next_pc = pc_plus4;
         endcase
     end
     
-    always @(negedge clk or rst) begin
+    always @(negedge clk or posedge rst) begin
         if (!rst) begin
             pc <= next_pc;
         end

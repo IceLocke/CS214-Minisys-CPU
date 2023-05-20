@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sat May 20 16:53:28 2023
+# Process ID: 5968
+# Current directory: C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1
+# Command line: vivado.exe -log RAM_64K.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RAM_64K.tcl
+# Log file: C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1/RAM_64K.vds
+# Journal file: C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1\vivado.jou
+#-----------------------------------------------------------
+source RAM_64K.tcl -notrace

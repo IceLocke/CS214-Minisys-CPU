@@ -11,6 +11,7 @@ vmap blk_mem_gen_v8_4_1 questa_lib/msim/blk_mem_gen_v8_4_1
 
 vlog -work xil_defaultlib -64 -sv \
 "D:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"D:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
 vcom -work xpm -64 -93 \
 "D:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_VCOMP.vhd" \
@@ -20,7 +21,6 @@ vlog -work blk_mem_gen_v8_4_1 -64 \
 
 vlog -work xil_defaultlib -64 \
 "../../../../CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/sim/RAM_64K.v" \
-
 
 vlog -work xil_defaultlib \
 "glbl.v"
