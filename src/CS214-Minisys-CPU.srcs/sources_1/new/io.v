@@ -130,7 +130,7 @@ module io(
         .neg(stable[10]),
         .kb(stable[9:0]),
         .kb_done(kb_done),
-        .value(kb_value)
+        .out(kb_value)
     );
 
     integer cnt;

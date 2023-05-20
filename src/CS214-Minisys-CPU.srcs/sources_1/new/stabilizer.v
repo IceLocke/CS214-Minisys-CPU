@@ -33,7 +33,7 @@ module stabilizer(
     
     reg state;
     reg last;
-    reg [4:0] cnt;
+    integer cnt;
     
     always @(posedge clk, posedge rst)
         if (rst) begin
@@ -51,7 +51,7 @@ module stabilizer(
                         state <= PEND;
                     end
                 PEND: 
-                    if (cnt < 20) cnt <= cnt+1;
+                    if (cnt < 200000) cnt <= cnt+1;
                     else state <= IDLE;
                 default: state <= state;
             endcase

@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="uartbmpg_synth_1" LaunchPart="xc7a100tfgg484-1" LaunchTime="1684587337">
   <File Type="PA-TCL" Name="uartbmpg.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="uartbmpg_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="uartbmpg_reports.tcl"/>
   <File Type="RDS-RDS" Name="uartbmpg.vds"/>
   <File Type="RDS-UTIL" Name="uartbmpg_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="uartbmpg_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="uartbmpg.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="uartbmpg_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="uartbmpg_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/uartbmpg">
     <File Path="$PSRCDIR/sources_1/ip/uartbmpg_1/uartbmpg.xci">
       <FileInfo>
@@ -36,9 +33,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

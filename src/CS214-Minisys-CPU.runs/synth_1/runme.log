@@ -14,106 +14,93 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 24644 
-WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:22]
+INFO: Helper process launched with PID 33008 
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:22]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 418.121 ; gain = 113.754
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 355.965 ; gain = 113.773
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'cpu_top' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:23]
-INFO: [Synth 8-638] synthesizing module 'cpu_clk' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_clk.v:23]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-16440-LAPTOP-DeerInForest/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-16440-LAPTOP-DeerInForest/realtime/clk_wiz_0_stub.v:5]
-WARNING: [Synth 8-350] instance 'cpu_wiz_clock' of module 'clk_wiz_0' requires 7 connections, but only 5 given [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_clk.v:30]
-INFO: [Synth 8-256] done synthesizing module 'cpu_clk' (2#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_clk.v:23]
-INFO: [Synth 8-638] synthesizing module 'instruction_fetch' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v:1]
-INFO: [Synth 8-638] synthesizing module 'instruction_memory' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_memory.v:23]
-INFO: [Synth 8-638] synthesizing module 'RAM_64K' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-16440-LAPTOP-DeerInForest/realtime/RAM_64K_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'RAM_64K' (3#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-16440-LAPTOP-DeerInForest/realtime/RAM_64K_stub.v:6]
-WARNING: [Synth 8-689] width (32) of port connection 'wea' does not match port width (1) of module 'RAM_64K' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_memory.v:36]
-INFO: [Synth 8-256] done synthesizing module 'instruction_memory' (4#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_memory.v:23]
-WARNING: [Synth 8-350] instance 'im' of module 'instruction_memory' requires 7 connections, but only 6 given [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v:37]
-INFO: [Synth 8-226] default block is never used [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v:59]
-WARNING: [Synth 8-5788] Register pc_reg in module instruction_fetch is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v:74]
-WARNING: [Synth 8-3848] Net immediate in module/entity instruction_fetch does not have driver. [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v:22]
-INFO: [Synth 8-256] done synthesizing module 'instruction_fetch' (5#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v:1]
-WARNING: [Synth 8-350] instance 'if_instance' of module 'instruction_fetch' requires 23 connections, but only 22 given [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:99]
-INFO: [Synth 8-638] synthesizing module 'control' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/control.v:23]
-INFO: [Synth 8-256] done synthesizing module 'control' (6#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/control.v:23]
-INFO: [Synth 8-638] synthesizing module 'register' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/register.v:23]
+INFO: [Synth 8-638] synthesizing module 'cpu_top' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:23]
+INFO: [Synth 8-638] synthesizing module 'cpu_clk' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_clk.v:23]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-19140-ArtanisaxLEGION/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (1#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-19140-ArtanisaxLEGION/realtime/clk_wiz_0_stub.v:5]
+WARNING: [Synth 8-350] instance 'cpu_wiz_clock' of module 'clk_wiz_0' requires 7 connections, but only 5 given [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_clk.v:30]
+INFO: [Synth 8-256] done synthesizing module 'cpu_clk' (2#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_clk.v:23]
+INFO: [Synth 8-638] synthesizing module 'instruction_fetch' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v:1]
+INFO: [Synth 8-638] synthesizing module 'instruction_memory' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_memory.v:23]
+INFO: [Synth 8-638] synthesizing module 'RAM_64K' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-19140-ArtanisaxLEGION/realtime/RAM_64K_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'RAM_64K' (3#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-19140-ArtanisaxLEGION/realtime/RAM_64K_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'wea' does not match port width (1) of module 'RAM_64K' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_memory.v:36]
+INFO: [Synth 8-256] done synthesizing module 'instruction_memory' (4#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_memory.v:23]
+WARNING: [Synth 8-350] instance 'im' of module 'instruction_memory' requires 7 connections, but only 6 given [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v:37]
+INFO: [Synth 8-226] default block is never used [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v:59]
+WARNING: [Synth 8-5788] Register pc_reg in module instruction_fetch is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v:74]
+WARNING: [Synth 8-3848] Net immediate in module/entity instruction_fetch does not have driver. [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v:22]
+INFO: [Synth 8-256] done synthesizing module 'instruction_fetch' (5#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v:1]
+WARNING: [Synth 8-350] instance 'if_instance' of module 'instruction_fetch' requires 23 connections, but only 22 given [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:99]
+INFO: [Synth 8-638] synthesizing module 'control' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/control.v:23]
+INFO: [Synth 8-256] done synthesizing module 'control' (6#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/control.v:23]
+INFO: [Synth 8-638] synthesizing module 'register' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/register.v:23]
 	Parameter frame_pointer bound to: 0 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'register' (7#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/register.v:23]
-WARNING: [Synth 8-689] width (1) of port connection 'write_spe' does not match port width (2) of module 'register' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:152]
-INFO: [Synth 8-638] synthesizing module 'sign_extension' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/sign_extension.v:23]
-INFO: [Synth 8-256] done synthesizing module 'sign_extension' (8#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/sign_extension.v:23]
-INFO: [Synth 8-638] synthesizing module 'alu' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/alu.v:23]
-INFO: [Synth 8-256] done synthesizing module 'alu' (9#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/alu.v:23]
-WARNING: [Synth 8-689] width (64) of port connection 'result' does not match port width (7) of module 'alu' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:181]
-INFO: [Synth 8-638] synthesizing module 'dma' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/dma.v:23]
-INFO: [Synth 8-256] done synthesizing module 'dma' (10#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/dma.v:23]
-WARNING: [Synth 8-689] width (64) of port connection 'cpu_addr' does not match port width (32) of module 'dma' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:186]
-INFO: [Synth 8-638] synthesizing module 'data_memory' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/data_memory.v:23]
-WARNING: [Synth 8-689] width (32) of port connection 'wea' does not match port width (1) of module 'RAM_64K' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/data_memory.v:43]
-INFO: [Synth 8-256] done synthesizing module 'data_memory' (11#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/data_memory.v:23]
-INFO: [Synth 8-638] synthesizing module 'uart' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/uart.v:23]
-INFO: [Synth 8-638] synthesizing module 'uartbmpg' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-16440-LAPTOP-DeerInForest/realtime/uartbmpg_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'uartbmpg' (12#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-16440-LAPTOP-DeerInForest/realtime/uartbmpg_stub.v:6]
-WARNING: [Synth 8-350] instance 'uart_ip' of module 'uartbmpg' requires 9 connections, but only 4 given [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/uart.v:39]
-WARNING: [Synth 8-3848] Net uart_data in module/entity uart does not have driver. [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/uart.v:30]
-INFO: [Synth 8-256] done synthesizing module 'uart' (13#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/uart.v:23]
-INFO: [Synth 8-638] synthesizing module 'vic' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:24]
-INFO: [Synth 8-638] synthesizing module 'interrupt_encoder' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:22]
-WARNING: [Synth 8-153] case item 8'bxxxxxxx1 will never be executed [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:28]
-WARNING: [Synth 8-153] case item 8'bxxxxxx10 will never be executed [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:28]
-WARNING: [Synth 8-153] case item 8'bxxxxx100 will never be executed [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:28]
-WARNING: [Synth 8-153] case item 8'bxxxx1000 will never be executed [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:28]
-WARNING: [Synth 8-153] case item 8'bxxx10000 will never be executed [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:28]
-WARNING: [Synth 8-153] case item 8'bxx100000 will never be executed [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:28]
-WARNING: [Synth 8-153] case item 8'bx1000000 will never be executed [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:28]
-INFO: [Synth 8-256] done synthesizing module 'interrupt_encoder' (14#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:22]
+INFO: [Synth 8-256] done synthesizing module 'register' (7#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/register.v:23]
+WARNING: [Synth 8-689] width (1) of port connection 'write_spe' does not match port width (2) of module 'register' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:152]
+INFO: [Synth 8-638] synthesizing module 'sign_extension' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/sign_extension.v:23]
+INFO: [Synth 8-256] done synthesizing module 'sign_extension' (8#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/sign_extension.v:23]
+INFO: [Synth 8-638] synthesizing module 'alu' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/alu.v:23]
+INFO: [Synth 8-256] done synthesizing module 'alu' (9#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/alu.v:23]
+WARNING: [Synth 8-689] width (64) of port connection 'result' does not match port width (7) of module 'alu' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:181]
+INFO: [Synth 8-638] synthesizing module 'dma' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/dma.v:23]
+INFO: [Synth 8-256] done synthesizing module 'dma' (10#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/dma.v:23]
+WARNING: [Synth 8-689] width (64) of port connection 'cpu_addr' does not match port width (32) of module 'dma' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:186]
+INFO: [Synth 8-638] synthesizing module 'data_memory' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/data_memory.v:23]
+WARNING: [Synth 8-689] width (32) of port connection 'wea' does not match port width (1) of module 'RAM_64K' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/data_memory.v:43]
+INFO: [Synth 8-256] done synthesizing module 'data_memory' (11#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/data_memory.v:23]
+INFO: [Synth 8-638] synthesizing module 'uart' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/uart.v:23]
+INFO: [Synth 8-638] synthesizing module 'uartbmpg' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-19140-ArtanisaxLEGION/realtime/uartbmpg_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'uartbmpg' (12#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-19140-ArtanisaxLEGION/realtime/uartbmpg_stub.v:6]
+WARNING: [Synth 8-350] instance 'uart_ip' of module 'uartbmpg' requires 9 connections, but only 4 given [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/uart.v:39]
+WARNING: [Synth 8-3848] Net uart_data in module/entity uart does not have driver. [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/uart.v:30]
+INFO: [Synth 8-256] done synthesizing module 'uart' (13#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/uart.v:23]
+INFO: [Synth 8-638] synthesizing module 'vic' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:24]
+INFO: [Synth 8-638] synthesizing module 'interrupt_encoder' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:22]
+WARNING: [Synth 8-153] case item 8'bxxxxxxx1 will never be executed [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:28]
+WARNING: [Synth 8-153] case item 8'bxxxxxx10 will never be executed [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:28]
+WARNING: [Synth 8-153] case item 8'bxxxxx100 will never be executed [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:28]
+WARNING: [Synth 8-153] case item 8'bxxxx1000 will never be executed [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:28]
+WARNING: [Synth 8-153] case item 8'bxxx10000 will never be executed [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:28]
+WARNING: [Synth 8-153] case item 8'bxx100000 will never be executed [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:28]
+WARNING: [Synth 8-153] case item 8'bx1000000 will never be executed [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:28]
+INFO: [Synth 8-256] done synthesizing module 'interrupt_encoder' (14#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v:22]
 WARNING: [Synth 8-6014] Unused sequential element epc_all_reg was removed. 
-WARNING: [Synth 8-5788] Register epc_reg in module vic is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:79]
-WARNING: [Synth 8-3848] Net interrupt in module/entity vic does not have driver. [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:41]
-INFO: [Synth 8-256] done synthesizing module 'vic' (15#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:24]
-INFO: [Synth 8-638] synthesizing module 'io' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:23]
+WARNING: [Synth 8-5788] Register epc_reg in module vic is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:79]
+WARNING: [Synth 8-3848] Net interrupt in module/entity vic does not have driver. [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:41]
+INFO: [Synth 8-256] done synthesizing module 'vic' (15#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:24]
+INFO: [Synth 8-638] synthesizing module 'io' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:23]
 	Parameter TIME bound to: 1000 - type: integer 
 	Parameter BASE bound to: 0 - type: integer 
 	Parameter IDLE bound to: 1'b0 
 	Parameter WORK bound to: 1'b1 
-INFO: [Synth 8-638] synthesizing module 'stabilizer' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:23]
+INFO: [Synth 8-638] synthesizing module 'stabilizer' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:23]
 	Parameter IDLE bound to: 1'b0 
 	Parameter PEND bound to: 1'b1 
-INFO: [Synth 8-226] default block is never used [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:45]
-WARNING: [Synth 8-5788] Register cnt_reg in module stabilizer is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
-INFO: [Synth 8-256] done synthesizing module 'stabilizer' (16#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:23]
-INFO: [Synth 8-638] synthesizing module 'keyboard' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/keyboard.v:23]
-WARNING: [Synth 8-6014] Unused sequential element digit_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/keyboard.v:40]
-WARNING: [Synth 8-6014] Unused sequential element last_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/keyboard.v:41]
-INFO: [Synth 8-256] done synthesizing module 'keyboard' (17#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/keyboard.v:23]
-INFO: [Synth 8-226] default block is never used [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:150]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:161]
-WARNING: [Synth 8-5788] Register led_sign_reg in module io is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:141]
-WARNING: [Synth 8-5788] Register led_data_reg in module io is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:142]
-WARNING: [Synth 8-5788] Register seg_data_reg in module io is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:143]
-WARNING: [Synth 8-5788] Register addr_reg in module io is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:154]
-WARNING: [Synth 8-5788] Register write_data_reg in module io is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:156]
-INFO: [Synth 8-256] done synthesizing module 'io' (18#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:23]
-INFO: [Synth 8-638] synthesizing module 'seg' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/seg.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/seg.v:55]
-WARNING: [Synth 8-5788] Register digit_reg in module seg is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/seg.v:51]
-INFO: [Synth 8-256] done synthesizing module 'seg' (19#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/seg.v:23]
-INFO: [Synth 8-256] done synthesizing module 'cpu_top' (20#1) [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:23]
-WARNING: [Synth 8-3331] design keyboard has unconnected port pos
-WARNING: [Synth 8-3331] design keyboard has unconnected port neg
-WARNING: [Synth 8-3331] design keyboard has unconnected port kb[9]
-WARNING: [Synth 8-3331] design keyboard has unconnected port kb[8]
-WARNING: [Synth 8-3331] design keyboard has unconnected port kb[7]
-WARNING: [Synth 8-3331] design keyboard has unconnected port kb[6]
-WARNING: [Synth 8-3331] design keyboard has unconnected port kb[5]
-WARNING: [Synth 8-3331] design keyboard has unconnected port kb[4]
-WARNING: [Synth 8-3331] design keyboard has unconnected port kb[3]
-WARNING: [Synth 8-3331] design keyboard has unconnected port kb[2]
-WARNING: [Synth 8-3331] design keyboard has unconnected port kb[1]
-WARNING: [Synth 8-3331] design keyboard has unconnected port kb[0]
+INFO: [Synth 8-226] default block is never used [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:45]
+WARNING: [Synth 8-5788] Register cnt_reg in module stabilizer is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
+INFO: [Synth 8-256] done synthesizing module 'stabilizer' (16#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:23]
+INFO: [Synth 8-638] synthesizing module 'keyboard' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/keyboard.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/keyboard.v:52]
+INFO: [Synth 8-256] done synthesizing module 'keyboard' (17#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/keyboard.v:23]
+INFO: [Synth 8-226] default block is never used [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:150]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:161]
+WARNING: [Synth 8-5788] Register led_sign_reg in module io is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:141]
+WARNING: [Synth 8-5788] Register led_data_reg in module io is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:142]
+WARNING: [Synth 8-5788] Register seg_data_reg in module io is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:143]
+WARNING: [Synth 8-5788] Register addr_reg in module io is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:154]
+WARNING: [Synth 8-5788] Register write_data_reg in module io is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:156]
+INFO: [Synth 8-256] done synthesizing module 'io' (18#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:23]
+INFO: [Synth 8-638] synthesizing module 'seg' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/seg.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/seg.v:55]
+WARNING: [Synth 8-5788] Register digit_reg in module seg is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/seg.v:51]
+INFO: [Synth 8-256] done synthesizing module 'seg' (19#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/seg.v:23]
+INFO: [Synth 8-256] done synthesizing module 'cpu_top' (20#1) [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:23]
 WARNING: [Synth 8-3331] design uart has unconnected port uart_data[31]
 WARNING: [Synth 8-3331] design uart has unconnected port uart_data[30]
 WARNING: [Synth 8-3331] design uart has unconnected port uart_data[29]
@@ -200,7 +187,7 @@ WARNING: [Synth 8-3331] design instruction_fetch has unconnected port immediate[
 WARNING: [Synth 8-3331] design instruction_fetch has unconnected port immediate[1]
 WARNING: [Synth 8-3331] design instruction_fetch has unconnected port immediate[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 455.871 ; gain = 151.504
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 395.016 ; gain = 152.824
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -209,58 +196,58 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin im:uart_clk to constant 0 [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v:37]
-WARNING: [Synth 8-3295] tying undriven pin vic_instance:source[7] to constant 0 [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:216]
-WARNING: [Synth 8-3295] tying undriven pin vic_instance:source[6] to constant 0 [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:216]
-WARNING: [Synth 8-3295] tying undriven pin vic_instance:source[5] to constant 0 [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:216]
-WARNING: [Synth 8-3295] tying undriven pin vic_instance:source[4] to constant 0 [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:216]
-WARNING: [Synth 8-3295] tying undriven pin vic_instance:source[3] to constant 0 [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:216]
-WARNING: [Synth 8-3295] tying undriven pin vic_instance:source[2] to constant 0 [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:216]
-WARNING: [Synth 8-3295] tying undriven pin vic_instance:source[1] to constant 0 [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:216]
-WARNING: [Synth 8-3295] tying undriven pin vic_instance:source[0] to constant 0 [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:216]
+WARNING: [Synth 8-3295] tying undriven pin im:uart_clk to constant 0 [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v:37]
+WARNING: [Synth 8-3295] tying undriven pin vic_instance:source[7] to constant 0 [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:216]
+WARNING: [Synth 8-3295] tying undriven pin vic_instance:source[6] to constant 0 [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:216]
+WARNING: [Synth 8-3295] tying undriven pin vic_instance:source[5] to constant 0 [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:216]
+WARNING: [Synth 8-3295] tying undriven pin vic_instance:source[4] to constant 0 [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:216]
+WARNING: [Synth 8-3295] tying undriven pin vic_instance:source[3] to constant 0 [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:216]
+WARNING: [Synth 8-3295] tying undriven pin vic_instance:source[2] to constant 0 [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:216]
+WARNING: [Synth 8-3295] tying undriven pin vic_instance:source[1] to constant 0 [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:216]
+WARNING: [Synth 8-3295] tying undriven pin vic_instance:source[0] to constant 0 [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v:216]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 455.871 ; gain = 151.504
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 395.016 ; gain = 152.824
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tfgg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-16440-LAPTOP-DeerInForest/dcp3/RAM_64K_in_context.xdc] for cell 'if_instance/im/imem'
-Finished Parsing XDC File [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-16440-LAPTOP-DeerInForest/dcp3/RAM_64K_in_context.xdc] for cell 'if_instance/im/imem'
-Parsing XDC File [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-16440-LAPTOP-DeerInForest/dcp3/RAM_64K_in_context.xdc] for cell 'data_memory_instance/dmem'
-Finished Parsing XDC File [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-16440-LAPTOP-DeerInForest/dcp3/RAM_64K_in_context.xdc] for cell 'data_memory_instance/dmem'
-Parsing XDC File [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-16440-LAPTOP-DeerInForest/dcp4/clk_wiz_0_in_context.xdc] for cell 'cpu_clk_instance/cpu_wiz_clock'
-Finished Parsing XDC File [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-16440-LAPTOP-DeerInForest/dcp4/clk_wiz_0_in_context.xdc] for cell 'cpu_clk_instance/cpu_wiz_clock'
-Parsing XDC File [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-16440-LAPTOP-DeerInForest/dcp5/uartbmpg_in_context.xdc] for cell 'uart_instance/uart_ip'
-Finished Parsing XDC File [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-16440-LAPTOP-DeerInForest/dcp5/uartbmpg_in_context.xdc] for cell 'uart_instance/uart_ip'
+Parsing XDC File [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-19140-ArtanisaxLEGION/dcp3/RAM_64K_in_context.xdc] for cell 'if_instance/im/imem'
+Finished Parsing XDC File [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-19140-ArtanisaxLEGION/dcp3/RAM_64K_in_context.xdc] for cell 'if_instance/im/imem'
+Parsing XDC File [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-19140-ArtanisaxLEGION/dcp3/RAM_64K_in_context.xdc] for cell 'data_memory_instance/dmem'
+Finished Parsing XDC File [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-19140-ArtanisaxLEGION/dcp3/RAM_64K_in_context.xdc] for cell 'data_memory_instance/dmem'
+Parsing XDC File [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-19140-ArtanisaxLEGION/dcp4/clk_wiz_0_in_context.xdc] for cell 'cpu_clk_instance/cpu_wiz_clock'
+Finished Parsing XDC File [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-19140-ArtanisaxLEGION/dcp4/clk_wiz_0_in_context.xdc] for cell 'cpu_clk_instance/cpu_wiz_clock'
+Parsing XDC File [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-19140-ArtanisaxLEGION/dcp5/uartbmpg_in_context.xdc] for cell 'uart_instance/uart_ip'
+Finished Parsing XDC File [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-19140-ArtanisaxLEGION/dcp5/uartbmpg_in_context.xdc] for cell 'uart_instance/uart_ip'
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 818.633 ; gain = 0.262
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 758.047 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 818.633 ; gain = 514.266
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 758.047 ; gain = 515.855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 818.633 ; gain = 514.266
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 758.047 ; gain = 515.855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clk_in. (constraint file  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-16440-LAPTOP-DeerInForest/dcp4/clk_wiz_0_in_context.xdc, line 6).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_in. (constraint file  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-16440-LAPTOP-DeerInForest/dcp4/clk_wiz_0_in_context.xdc, line 7).
+Applied set_property IO_BUFFER_TYPE = NONE for clk_in. (constraint file  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-19140-ArtanisaxLEGION/dcp4/clk_wiz_0_in_context.xdc, line 6).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_in. (constraint file  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/.Xil/Vivado-19140-ArtanisaxLEGION/dcp4/clk_wiz_0_in_context.xdc, line 7).
 Applied set_property DONT_TOUCH = true for cpu_clk_instance/cpu_wiz_clock. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for data_memory_instance/dmem. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for if_instance/im/imem. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for uart_instance/uart_ip. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 818.633 ; gain = 514.266
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 758.047 ; gain = 515.855
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "registers_reg[31]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "registers_reg[30]" won't be mapped to RAM because it is too sparse
@@ -294,12 +281,13 @@ INFO: [Synth 8-5546] ROM "registers_reg[3]" won't be mapped to RAM because it is
 INFO: [Synth 8-5546] ROM "registers_reg[2]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "registers_reg[1]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "registers_reg[0]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/alu.v:68]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/alu.v:68]
 INFO: [Synth 8-5545] ROM "alu_exception" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "interrupt" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-4471] merging register 'stable_reg' into 'last_reg' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:41]
-WARNING: [Synth 8-6014] Unused sequential element stable_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:41]
-WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
+INFO: [Synth 8-4471] merging register 'stable_reg' into 'last_reg' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:41]
+WARNING: [Synth 8-6014] Unused sequential element stable_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:41]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
+WARNING: [Synth 8-6014] Unused sequential element digit_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/keyboard.v:40]
 INFO: [Synth 8-5545] ROM "led_sign" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "led_data" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "seg_data" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -308,12 +296,12 @@ INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) 
 INFO: [Synth 8-5545] ROM "io_en" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "write_en" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "write_data" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:144]
-WARNING: [Synth 8-6014] Unused sequential element addr_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:154]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:144]
+WARNING: [Synth 8-6014] Unused sequential element addr_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:154]
 INFO: [Synth 8-802] inferred FSM for state register 'en_reg' in module 'seg'
 INFO: [Synth 8-5546] ROM "digit" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-327] inferring latch for variable 'result_reg' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/alu.v:39]
-WARNING: [Synth 8-327] inferring latch for variable 'alu_exception_reg' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/alu.v:61]
+WARNING: [Synth 8-327] inferring latch for variable 'result_reg' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/alu.v:39]
+WARNING: [Synth 8-327] inferring latch for variable 'alu_exception_reg' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/alu.v:61]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -322,7 +310,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'alu_exception_reg' [C:/User
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'en_reg' using encoding 'one-hot' in module 'seg'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 818.633 ; gain = 514.266
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 758.047 ; gain = 515.855
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -335,7 +323,7 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 5     
+	   2 Input     32 Bit       Adders := 15    
 	   2 Input     16 Bit       Adders := 1     
 	   2 Input      7 Bit       Adders := 3     
 	   3 Input      7 Bit       Adders := 2     
@@ -344,12 +332,15 @@ Detailed RTL Component Info :
 	   2 Input      7 Bit         XORs := 1     
 +---Registers : 
 	               32 Bit    Registers := 4     
+	               10 Bit    Registers := 1     
 	                8 Bit    Registers := 2     
 	                5 Bit    Registers := 12    
 	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 29    
++---Multipliers : 
+	                 4x32  Multipliers := 1     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 17    
+	   2 Input     32 Bit        Muxes := 18    
 	   8 Input     32 Bit        Muxes := 1     
 	   7 Input     32 Bit        Muxes := 2     
 	   2 Input     14 Bit        Muxes := 2     
@@ -359,7 +350,8 @@ Detailed RTL Component Info :
 	   2 Input      5 Bit        Muxes := 17    
 	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 92    
+	   2 Input      1 Bit        Muxes := 93    
+	  11 Input      1 Bit        Muxes := 1     
 	   3 Input      1 Bit        Muxes := 1     
 	   7 Input      1 Bit        Muxes := 3     
 	   8 Input      1 Bit        Muxes := 3     
@@ -443,9 +435,18 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit        Muxes := 3     
 Module keyboard 
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 10    
 +---Registers : 
 	               32 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
++---Multipliers : 
+	                 4x32  Multipliers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	  11 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 Module io 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -486,26 +487,42 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "alu_exception" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element digit_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/keyboard.v:40]
 INFO: [Synth 8-5545] ROM "cnt0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "write_en" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-WARNING: [Synth 8-6014] Unused sequential element sb0/cnt_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
-WARNING: [Synth 8-6014] Unused sequential element sb1/cnt_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
-WARNING: [Synth 8-6014] Unused sequential element sb2/cnt_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
-WARNING: [Synth 8-6014] Unused sequential element sb3/cnt_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
-WARNING: [Synth 8-6014] Unused sequential element sb4/cnt_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
-WARNING: [Synth 8-6014] Unused sequential element sb5/cnt_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
-WARNING: [Synth 8-6014] Unused sequential element sb6/cnt_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
-WARNING: [Synth 8-6014] Unused sequential element sb7/cnt_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
-WARNING: [Synth 8-6014] Unused sequential element sb8/cnt_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
-WARNING: [Synth 8-6014] Unused sequential element sb9/cnt_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
-WARNING: [Synth 8-6014] Unused sequential element sb10/cnt_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
-WARNING: [Synth 8-6014] Unused sequential element sb11/cnt_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
-WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:144]
-WARNING: [Synth 8-6014] Unused sequential element addr_reg was removed.  [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:154]
+WARNING: [Synth 8-6014] Unused sequential element sb0/cnt_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
+WARNING: [Synth 8-6014] Unused sequential element sb1/cnt_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
+WARNING: [Synth 8-6014] Unused sequential element sb2/cnt_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
+WARNING: [Synth 8-6014] Unused sequential element sb3/cnt_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
+WARNING: [Synth 8-6014] Unused sequential element sb4/cnt_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
+WARNING: [Synth 8-6014] Unused sequential element sb5/cnt_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
+WARNING: [Synth 8-6014] Unused sequential element sb6/cnt_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
+WARNING: [Synth 8-6014] Unused sequential element sb7/cnt_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
+WARNING: [Synth 8-6014] Unused sequential element sb8/cnt_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
+WARNING: [Synth 8-6014] Unused sequential element sb9/cnt_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
+WARNING: [Synth 8-6014] Unused sequential element sb10/cnt_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
+WARNING: [Synth 8-6014] Unused sequential element sb11/cnt_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v:50]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:144]
+WARNING: [Synth 8-6014] Unused sequential element addr_reg was removed.  [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v:154]
 WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[31]
 WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[30]
 WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[29]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[28]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[27]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[26]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[25]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[24]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[23]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[22]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[21]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[20]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[19]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[18]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[17]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/keyboard_instance/\last_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/keyboard_instance/\last_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/keyboard_instance/\last_reg[2] )
 INFO: [Synth 8-3886] merging instance 'vic_instance/handler_addr_reg[1]' (FDE_1) to 'vic_instance/handler_addr_reg[15]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\vic_instance/pending_interrupt_reg[6] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\vic_instance/pending_interrupt_reg[0] )
@@ -515,6 +532,13 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\vic_inst
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\vic_instance/pending_interrupt_reg[2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\vic_instance/pending_interrupt_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\vic_instance/pending_interrupt_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/keyboard_instance/\last_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/keyboard_instance/\last_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/keyboard_instance/\last_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/keyboard_instance/\last_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/keyboard_instance/\last_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/keyboard_instance/\last_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/keyboard_instance/\last_reg[9] )
 INFO: [Synth 8-3886] merging instance 'vic_instance/handler_addr_reg[0]' (FDE_1) to 'vic_instance/handler_addr_reg[15]'
 INFO: [Synth 8-3886] merging instance 'vic_instance/handler_addr_reg[2]' (FDE_1) to 'vic_instance/handler_addr_reg[15]'
 INFO: [Synth 8-3886] merging instance 'vic_instance/handler_addr_reg[3]' (FDE_1) to 'vic_instance/handler_addr_reg[15]'
@@ -522,39 +546,6 @@ INFO: [Synth 8-3886] merging instance 'vic_instance/handler_addr_reg[4]' (FDE_1)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\vic_instance/handler_addr_reg[13] )
 INFO: [Synth 8-3886] merging instance 'vic_instance/handler_addr_reg[14]' (FDE_1) to 'vic_instance/handler_addr_reg[15]'
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\vic_instance/handler_addr_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/kb_done_reg )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[17] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[18] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[19] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[20] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[21] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[22] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[23] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[24] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[25] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[26] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[27] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[28] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[29] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[30] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\keyboard_instance/value_reg[31] )
 INFO: [Synth 8-3886] merging instance 'register_instance/hi_reg[31]' (FDCE_1) to 'register_instance/hi_reg[0]'
 INFO: [Synth 8-3886] merging instance 'register_instance/hi_reg[30]' (FDCE_1) to 'register_instance/hi_reg[0]'
 INFO: [Synth 8-3886] merging instance 'register_instance/hi_reg[29]' (FDCE_1) to 'register_instance/hi_reg[0]'
@@ -631,30 +622,6 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\vic_inst
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\vic_instance/epc_reg[13] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\vic_instance/epc_reg[14] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\vic_instance/epc_reg[15] )
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[8]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[9]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[10]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[11]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[12]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[13]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[14]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[15]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[16]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[17]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[18]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[19]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[20]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[21]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[22]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[23]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[24]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[25]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[26]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[27]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[28]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[29]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3886] merging instance 'io_instance/write_data_reg[30]' (FDE) to 'io_instance/write_data_reg[31]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\write_data_reg[31] )
 WARNING: [Synth 8-3332] Sequential element (register_instance/lo_reg[31]) is unused and will be removed from module cpu_top.
 WARNING: [Synth 8-3332] Sequential element (register_instance/lo_reg[30]) is unused and will be removed from module cpu_top.
 WARNING: [Synth 8-3332] Sequential element (register_instance/lo_reg[29]) is unused and will be removed from module cpu_top.
@@ -686,90 +653,90 @@ WARNING: [Synth 8-3332] Sequential element (register_instance/hi_reg[4]) is unus
 WARNING: [Synth 8-3332] Sequential element (alu_exception_reg) is unused and will be removed from module alu.
 WARNING: [Synth 8-3332] Sequential element (vic_instance/handler_addr_reg[11]) is unused and will be removed from module cpu_top.
 WARNING: [Synth 8-3332] Sequential element (vic_instance/interrupt_enable_reg) is unused and will be removed from module cpu_top.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'vic_instance/interrupt_enable_reg/Q' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:69]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:69]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:69]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'vic_instance/interrupt_enable_reg/Q' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:69]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:69]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:69]
 WARNING: [Synth 8-3332] Sequential element (vic_instance/interrupt_enable_reg__0) is unused and will be removed from module cpu_top.
 WARNING: [Synth 8-3332] Sequential element (vic_instance/current_interrupt_reg[3]) is unused and will be removed from module cpu_top.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'vic_instance/current_interrupt_reg[3]/Q' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'vic_instance/current_interrupt_reg[3]/Q' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
 WARNING: [Synth 8-3332] Sequential element (vic_instance/current_interrupt_reg[2]) is unused and will be removed from module cpu_top.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'vic_instance/current_interrupt_reg[2]/Q' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'vic_instance/current_interrupt_reg[2]/Q' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
 WARNING: [Synth 8-3332] Sequential element (vic_instance/current_interrupt_reg[1]) is unused and will be removed from module cpu_top.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'vic_instance/current_interrupt_reg[1]/Q' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'vic_instance/current_interrupt_reg[1]/Q' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
 WARNING: [Synth 8-3332] Sequential element (vic_instance/current_interrupt_reg[0]) is unused and will be removed from module cpu_top.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'vic_instance/current_interrupt_reg[0]/Q' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'vic_instance/current_interrupt_reg[0]/Q' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:71]
 WARNING: [Synth 8-3332] Sequential element (vic_instance/current_interrupt_reg[2]__0) is unused and will be removed from module cpu_top.
 WARNING: [Synth 8-3332] Sequential element (vic_instance/current_interrupt_reg[1]__0) is unused and will be removed from module cpu_top.
 WARNING: [Synth 8-3332] Sequential element (vic_instance/current_interrupt_reg[0]__0) is unused and will be removed from module cpu_top.
-WARNING: [Synth 8-3332] Sequential element (sb0/last_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb0/state_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb0/cnt_reg[4]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb0/cnt_reg[3]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb0/cnt_reg[2]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb0/cnt_reg[1]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb0/cnt_reg[0]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb1/last_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb1/state_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb1/cnt_reg[4]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb1/cnt_reg[3]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb1/cnt_reg[2]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb1/cnt_reg[1]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb1/cnt_reg[0]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb2/last_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb2/state_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb2/cnt_reg[4]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb2/cnt_reg[3]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb2/cnt_reg[2]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb2/cnt_reg[1]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb2/cnt_reg[0]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb3/last_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb3/state_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb3/cnt_reg[4]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb3/cnt_reg[3]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb3/cnt_reg[2]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb3/cnt_reg[1]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb3/cnt_reg[0]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb4/last_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb4/state_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb4/cnt_reg[4]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb4/cnt_reg[3]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb4/cnt_reg[2]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb4/cnt_reg[1]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb4/cnt_reg[0]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb5/last_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb5/state_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb5/cnt_reg[4]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb5/cnt_reg[3]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb5/cnt_reg[2]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb5/cnt_reg[1]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb5/cnt_reg[0]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb6/last_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb6/state_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb6/cnt_reg[4]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb6/cnt_reg[3]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb6/cnt_reg[2]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb6/cnt_reg[1]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb6/cnt_reg[0]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb7/last_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb7/state_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb7/cnt_reg[4]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb7/cnt_reg[3]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb7/cnt_reg[2]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb7/cnt_reg[1]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb7/cnt_reg[0]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb8/last_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb8/state_reg) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb8/cnt_reg[4]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb8/cnt_reg[3]) is unused and will be removed from module io.
-WARNING: [Synth 8-3332] Sequential element (sb8/cnt_reg[2]) is unused and will be removed from module io.
+WARNING: [Synth 8-3332] Sequential element (last_reg[9]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (last_reg[8]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (last_reg[7]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (last_reg[6]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (last_reg[5]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (last_reg[4]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (last_reg[3]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (last_reg[2]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (last_reg[1]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (last_reg[0]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (kb_done_reg) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[0]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[1]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[2]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[3]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[4]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[5]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[6]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[7]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[8]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[9]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[10]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[11]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[12]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[13]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[14]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[15]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[16]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[17]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[18]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[19]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[20]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[21]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[22]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[23]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[24]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[25]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[26]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[27]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[28]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[29]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[30]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (digit_reg[31]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[31]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[30]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[29]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[28]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[27]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[26]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[25]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[24]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[23]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[22]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[21]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[20]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[19]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[18]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[17]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[16]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[15]) is unused and will be removed from module keyboard.
+WARNING: [Synth 8-3332] Sequential element (value_reg[14]) is unused and will be removed from module keyboard.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_instance/pc_reg[1]_C )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_instance/pc_reg[16]_C )
@@ -791,9 +758,20 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_insta
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_instance/pc_reg[0]_C )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_instance/pc_reg[2]_C )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_instance/pc_reg[3]_C )
-INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_instance/pc_reg[4]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_instance/pc_reg[5]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_instance/pc_reg[6]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_instance/pc_reg[7]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_instance/pc_reg[8]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_instance/pc_reg[9]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_instance/pc_reg[10]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_instance/pc_reg[11]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_instance/pc_reg[12]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_instance/pc_reg[13]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_instance/pc_reg[14]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\if_instance/pc_reg[15]_C )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:25 . Memory (MB): peak = 818.633 ; gain = 514.266
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 758.047 ; gain = 515.855
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -810,13 +788,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'cpu_clk_instance/cpu_wiz_
 INFO: [Synth 8-5578] Moved timing constraint from pin 'cpu_clk_instance/cpu_wiz_clock/clk_46MHz' to pin 'cpu_clk_instance/cpu_wiz_clock/bbstub_clk_46MHz/O'
 INFO: [Synth 8-5819] Moved 4 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 832.750 ; gain = 528.383
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 770.465 ; gain = 528.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 840.977 ; gain = 536.609
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 778.941 ; gain = 536.750
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -827,9 +805,22 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5966] Removing register instance (\vic_instance/vic_enable_reg__0 ) from module (cpu_top) as it has self-loop and (\vic_instance/vic_enable_reg ) is actual driver [C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:58]
+INFO: [Synth 8-5966] Removing register instance (\vic_instance/vic_enable_reg__0 ) from module (cpu_top) as it has self-loop and (\vic_instance/vic_enable_reg ) is actual driver [E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v:58]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\register_instance/registers_reg[0][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\register_instance/registers_reg[0][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\register_instance/registers_reg[0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\register_instance/registers_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\register_instance/registers_reg[0][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\register_instance/registers_reg[0][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\register_instance/registers_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\register_instance/registers_reg[0][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\register_instance/registers_reg[0][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\register_instance/registers_reg[0][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\register_instance/registers_reg[0][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\register_instance/registers_reg[0][12] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:35 . Memory (MB): peak = 922.844 ; gain = 618.477
+Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 861.430 ; gain = 619.238
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -854,7 +845,7 @@ Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \uart_instance/uart_ip  has unconnected pin upg_rx_i
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:36 . Memory (MB): peak = 922.844 ; gain = 618.477
+Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 861.430 ; gain = 619.238
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -867,7 +858,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:36 . Memory (MB): peak = 922.844 ; gain = 618.477
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 861.430 ; gain = 619.238
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -879,25 +870,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 922.844 ; gain = 618.477
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 861.430 ; gain = 619.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:37 . Memory (MB): peak = 922.844 ; gain = 618.477
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 861.430 ; gain = 619.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 922.844 ; gain = 618.477
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 861.430 ; gain = 619.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 922.844 ; gain = 618.477
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 861.430 ; gain = 619.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -955,11 +946,11 @@ Report Instance Areas:
 |11    |  vic_instance         |vic                |     2|
 +------+-----------------------+-------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 922.844 ; gain = 618.477
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 861.430 ; gain = 619.238
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 16 critical warnings and 358 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:32 . Memory (MB): peak = 922.844 ; gain = 255.715
-Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 922.844 ; gain = 618.477
+Synthesis finished with 0 errors, 16 critical warnings and 425 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 861.430 ; gain = 256.207
+Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 861.430 ; gain = 619.238
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1134 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -971,10 +962,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LDC => LDCE: 36 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-284 Infos, 261 Warnings, 16 Critical Warnings and 0 Errors encountered.
+262 Infos, 261 Warnings, 16 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:42 . Memory (MB): peak = 922.844 ; gain = 629.980
-INFO: [Common 17-1381] The checkpoint 'C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/cpu_top.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 861.430 ; gain = 630.746
+INFO: [Common 17-1381] The checkpoint 'E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/synth_1/cpu_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file cpu_top_utilization_synth.rpt -pb cpu_top_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 922.844 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat May 20 21:10:50 2023...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 861.430 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat May 20 21:19:31 2023...

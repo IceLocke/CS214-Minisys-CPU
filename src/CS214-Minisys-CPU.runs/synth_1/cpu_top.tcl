@@ -16,53 +16,50 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param synth.incrementalSynthesisCache C:/Users/11432/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-9856-LAPTOP-DeerInForest/incrSyn
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a100tfgg484-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.cache/wt [current_project]
-set_property parent.project_path C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.xpr [current_project]
+set_property webtalk.parent_dir E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.cache/wt [current_project]
+set_property parent.project_path E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_repo_paths c:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/SEU_CSE_507_user_uart_bmpg_1.3 [current_project]
-set_property ip_output_repo c:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.cache/ip [current_project]
+set_property ip_repo_paths e:/GitHub/Artanisax/CS214-Minisys-CPU/src/SEU_CSE_507_user_uart_bmpg_1.3 [current_project]
+set_property ip_output_repo e:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/init.coe
-add_files C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/coe/prgmip32.coe
+add_files E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/init.coe
+add_files E:/GitHub/Artanisax/CS214-Minisys-CPU/src/coe/prgmip32.coe
 read_verilog -library xil_defaultlib {
-  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/alu.v
-  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/control.v
-  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_clk.v
-  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/data_memory.v
-  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/dma.v
-  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v
-  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_memory.v
-  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v
-  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v
-  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/keyboard.v
-  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/register.v
-  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/seg.v
-  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/sign_extension.v
-  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v
-  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/uart.v
-  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v
-  C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/alu.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/control.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_clk.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/data_memory.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/dma.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_fetch.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/instruction_memory.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/interrupt_encoder.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/io.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/keyboard.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/register.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/seg.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/sign_extension.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/stabilizer.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/uart.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/vic.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/new/cpu_top.v
 }
-read_ip -quiet C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/RAM_64K.xci
-set_property used_in_implementation false [get_files -all c:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/RAM_64K_ooc.xdc]
+read_ip -quiet E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/RAM_64K.xci
+set_property used_in_implementation false [get_files -all e:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/RAM_64K/RAM_64K_ooc.xdc]
 
-read_ip -quiet C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all c:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_ip -quiet E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all e:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all e:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all e:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
-read_ip -quiet c:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/uartbmpg_1/uartbmpg.xci
+read_ip -quiet E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.srcs/sources_1/ip/uartbmpg_1/uartbmpg.xci
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
