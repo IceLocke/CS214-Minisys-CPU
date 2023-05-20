@@ -41,7 +41,6 @@ module io(
     output reg        uart_done,
     output reg        led_sign,
     output reg [7:0]  led_data,
-    output reg [7:0]  seg_en,
     output reg [7:0]  seg_left,
     output reg [7:0]  seg_right
     );
@@ -70,7 +69,6 @@ module io(
         if (rst) begin
             led_sign = 1'b0;
             led_data = 0;
-            seg_en = 8'b1111_1111;
             seg_left = 8'b1111_1111;
             seg_right = 8'b1111_1111;
             cnt <= 0;
@@ -98,9 +96,8 @@ module io(
                             led_sign <= mem_out[0];
                         end
                         TIME+3: led_data <= mem_out[7:0];
-                        TIME+4: seg_en <= mem_out[7:0];
-                        TIME+5: seg_left <= mem_out[7:0];
-                        TIME+6: begin
+                        TIME+4: seg_left <= mem_out[7:0];
+                        TIME+5: begin
                             seg_right <= mem_out[7:0];
                             io_en <= 1'b0;
                             cnt <= 0;

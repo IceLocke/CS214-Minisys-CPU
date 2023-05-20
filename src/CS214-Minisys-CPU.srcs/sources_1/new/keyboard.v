@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: 
+// Engineer: ckr
 // 
 // Create Date: 2023/05/19 22:55:29
 // Design Name: 
@@ -49,15 +49,15 @@ module keyboard(
                 if (kb != 0) begin
                     casez (kb)
                         10'b00_0000_0001: value <= value*10;
-                        10'b00_0000_001z: value <= value*10+1;
-                        10'b00_0000_01zz: value <= value*10+2;
-                        10'b00_0000_1zzz: value <= value*10+3;
-                        10'b00_0001_zzzz: value <= value*10+4;
-                        10'b00_001z_zzzz: value <= value*10+5;
-                        10'b00_01zz_zzzz: value <= value*10+6;
-                        10'b00_1zzz_zzzz: value <= value*10+7;
-                        10'b01_zzzz_zzzz: value <= value*10+8;
-                        10'b1z_zzzz_zzzz: value <= value*10+9;
+                        10'b00_0000_0010: value <= value*10+1;
+                        10'b00_0000_0010: value <= value*10+2;
+                        10'b00_0000_1000: value <= value*10+3;
+                        10'b00_0001_0000: value <= value*10+4;
+                        10'b00_0010_0000: value <= value*10+5;
+                        10'b00_0100_0000: value <= value*10+6;
+                        10'b00_1000_0000: value <= value*10+7;
+                        10'b01_0000_0000: value <= value*10+8;
+                        10'b1?_????_????: value <= value*10+9;
                     endcase
                     digit <= digit+1;
                 end
