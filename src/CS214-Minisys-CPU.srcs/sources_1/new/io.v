@@ -25,93 +25,64 @@ module io(
     input        rst,
     input [2:0]  state_switch,
     input [7:0]	 data_switch,
-    input [15:0] keyboard,
-    input        uart_en,
-    input        uart_in,
-    input        io_en,
     input [31:0] mem_out,
     
-    output reg        req,
+    output reg        io_en,
     output reg [31:0] addr,
     output reg        write_en,
     output reg [31:0] write_data,
     output reg        led_sign,
     output reg [7:0]  led_data,
-    output reg [7:0]  seg_en,
-    output reg [7:0]  seg_left,
-    output reg [7:0]  seg_right,
-    
-    output [1:0]  test_state,
-    output [31:0] test_cnt
+    output reg [31:0] seg_data
     );
     
-    parameter TIME = 100;
+    parameter TIME = 1000;
     parameter BASE = 0;
-    parameter IDLE = 2'b00;
-    parameter PEND = 2'b01;
-    parameter WORK = 2'b10;
-    parameter DONE = 2'b11;
+    parameter IDLE = 1'b0;
+    parameter WORK = 1'b1;
     
     integer cnt;
-    reg [1:0] state;
-    
-    assign test_state = state;
-    assign test_cnt = cnt;
+    reg state;
     
     always @(posedge clk, posedge rst)
         if (rst) begin
-            led_sign = 0;
-            led_data = 0;
-            seg_en = 8'b1111_1111;
-            seg_left = 8'b1111_1111;
-            seg_right = 8'b1111_1111;
+            led_sign = 1'b0;
+            led_data = 8'b0000_0000;
+            seg_data = 8'b0000_0000;
             cnt <= 0;
-            req <= 0;
-            write_en <= 0;
+            io_en <= 1'b0;
+            write_en <= 1'b0;
             state <= IDLE;
         end
         else
-            case(state)
-                IDLE: begin
+            case (state)
+                IDLE:
                     if (cnt == TIME) begin
-                        req <= 1;
-                        state <= PEND;
-                    end
-                    else cnt <= cnt+1;
-                end
-                PEND: begin
-                    if (io_en) begin
+                        state <= WORK;
                         addr <= BASE;
-                        write_en <= 1;
+                        write_en <= 1'b1;
                         write_data <= state_switch;
                         state <= WORK;
                     end
-                end
+                    else cnt <= cnt+1;
                 WORK: begin
-                    case(cnt)
+                    case (cnt)
                         TIME: write_data <= data_switch;
-                        TIME+1: write_data <= keyboard;
-                        TIME+2: begin
-                            write_en <= 0;
+                        TIME+1: begin
+                            write_en <= 1'b0;
                             led_sign <= mem_out[0];
                         end
-                        TIME+3: led_data <= mem_out[7:0];
-                        TIME+4: seg_en <= mem_out[7:0];
-                        TIME+5: seg_left <= mem_out[7:0];
-                        TIME+6: begin
-                            seg_right <= mem_out[7:0];
-                            req <= 0;
-                            state <= DONE;
+                        TIME+2: led_data <= mem_out[7:0];
+                        TIME+3: begin
+                            seg_data <= mem_out;
+                            io_en <= 1'b0;
+                            state <= IDLE;
                         end
                     endcase
-                    
-                    cnt <= cnt+1;
+                    cnt <= (cnt == TIME+4 ? 0 : cnt+1);
                     addr <= addr+4;
                 end
-                DONE:
-                    if (!io_en) begin
-                        cnt <= 0;
-                        state <= IDLE;
-                    end 
+                default: state <= state;
             endcase
+        
 endmodule

@@ -24,8 +24,8 @@ module data_memory(
     input clk,
     input uart_clk,
     input write_en,
+    input read_en,
     input uart_en,
-    input uart_done,
     input [31:0] addr,
     input [31:0] write_data,
     input [13:0] uart_addr,
@@ -35,14 +35,16 @@ module data_memory(
     );
     
     wire kick_off;
-    assign kick_off = ~uart_en | uart_done;
 
+    wire [31:0] d_out;
+    assign out = read_en ? d_out : 32'b0;
+    
     RAM_64K dmem(
-        .clka(kick_off ? ~clk : uart_clk),
-        .wea(kick_off ? write_en : 1),
-        .addra(kick_off ? addr[15:2] : uart_addr),
-        .dina(kick_off ? write_data : uart_data),
-        .douta(out)
+        .clka(uart_en ? uart_clk : ~clk),
+        .wea(uart_en ? 1 : write_en),
+        .addra(uart_en ? uart_addr : addr[15:2]),
+        .dina(uart_en ? uart_data : write_data),
+        .douta(d_out)
     );
     
 endmodule

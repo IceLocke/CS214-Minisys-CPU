@@ -4,7 +4,7 @@
 
 | 答辩时间           | 代码   | 文档   | 得分系数 |
 | -------------- | ---- | ---- | ---- |
-| 5.22 (-5 days) | 5.22 | 5.29 | 1.05 |
+| 5.22 (-2 days) | 5.22 | 5.29 | 1.05 |
 | 5.29 | 5.29 | 6.5  | 1    |
 
 [Project 要求](https://bb.sustech.edu.cn/bbcswebdav/pid-379028-dt-content-rid-13103060_1/courses/CS214-30000386-2023SP/Computer%20Orgnization%E5%A4%A7%E4%BD%9C%E4%B8%9A-cs214-%E5%88%9D%E7%A8%BF.pdf)
@@ -99,19 +99,22 @@ Bonus 部分看了一下，比较好玩而且容易实现的：
 
 #### 1.1.4 模块列表
 
-| 名称                  | 功能  | 负责人 |
-| ------------------- | --- | --- |
-| cpu_top             |     | kl  |
-| cpu_clk             |     | kl  |
-| instruction_fetch   |     | glh |
-| instruction_memory  |     | glh |
-| vic                 |     | glh |
-| registers           |     | glh |
-| control             |     | kl  |
-| alu                 |     | kl  |
-| data_memory         |     | glh |
-| io (包括 开关，LED，数码管等) |     | ckr |
-| uart                |     | ckr |
+| 名称               | 功能 | 负责人 |
+| ------------------ | ---- | ------ |
+| cpu_top            |      | kl     |
+| cpu_clk            |      | kl     |
+| instruction_fetch  |      | glh    |
+| instruction_memory |      | ckr    |
+| vic                |      | glh    |
+| registers          |      | glh    |
+| control            |      | kl     |
+| alu                |      | kl     |
+| data_memory        |      | glh    |
+| io                 |      | ckr    |
+| dma                |      | ckr    |
+| uart               |      | ckr    |
+| seg                |      | ckr    |
+| keyboard           |      | ckr    |
 
 ## 2 约定
 
@@ -169,18 +172,15 @@ Bonus 部分看了一下，比较好玩而且容易实现的：
 
 ### 2.2 I/O 内存映射
 
-| 名称                  | 管脚 | 地址（偏移）（in Byte） |
-| --------------------- | ---- | ----------------------- |
-| [2: 0] state_switch   |      | 0x0000                  |
-| [7: 0] data_switch    |      | 0x0100                  |
-| keyboard              |      | 0x0200                  |
-|                       |      |                         |
-| led_sign              |      | 0x0300                  |
-| [7: 0] led_data       |      | 0x0400                  |
-|                       |      |                         |
-| [7: 0] seg_en         |      | 0x0500                  |
-| [7: 0] seg_left       |      | 0x0600                  |
-| [7: 0] seg_right      |      | 0x0700                  |
+| 名称                | 管脚 | 地址（偏移）（in Byte） |
+| ------------------- | ---- | ----------------------- |
+| [2: 0] state_switch |      | 0x0000                  |
+| [7: 0] data_switch  |      | 0x0100                  |
+|                     |      |                         |
+| led_sign            |      | 0x0300                  |
+| [7: 0] led_data     |      | 0x0400                  |
+|                     |      |                         |
+| [7: 0] seg_data     |      | 0x0500                  |
 
 ### 2.3 模块接口约定、实现功能
 
@@ -239,14 +239,13 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 
 运行模式下只读。
 
-| 端口类型          | 端口名称      | 功能           | 备注  |
-| ------------- | --------- | ------------ | --- |
-| input         | clk       |              |     |
-| input [31:0]  | addr      | 指令地址，直接连接 pc |     |
-| input         | uart_en   | uart 模式开启    |     |
-| input [31:0]  | uart_addr | uart 内存地址    |     |
-| input [31:0]  | uart_data | uart 数据      |     |
-| output [31:0] | out       |              |     |
+| 端口类型     | 端口名称   | 功能 | 备注 |
+| ------------ | ---------- | ---- | ---- |
+| input        | clk        |      |      |
+| input        | uart_clk   |      |      |
+| input        | uart_en    |      |      |
+| input [31:0] | addr       |      |      |
+| input [31:0] | write_data |      |      |
 
 #### 2.3.5 vic
 
@@ -298,13 +297,17 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 
 封装一个 block_data 实现
 
-| 端口类型          | 端口名称       | 功能  | 备注  |
-| ------------- | ---------- | --- | --- |
-| input         | clk        |     |     |
-| input [31:0]  | addr       |     |     |
-| input         | write_en   |     |     |
-| input [31:0]  | write_data |     |     |
-| output [31:0] | out        |     |     |
+| 端口类型      | 端口名称   | 功能 | 备注 |
+| ------------- | ---------- | ---- | ---- |
+| input         | clk        |      |      |
+| input         | uart_clk   |      |      |
+| input         | uart_en    |      |      |
+| input         | write_en   |      |      |
+| input [31:0]  | addr       |      |      |
+| input [31:0]  | write_data |      |      |
+| input [13:0]  | uart_addr  |      |      |
+| input [31:0]  | uart_data  |      |      |
+| output [31:0] | out        |      |      |
 
 #### 2.3.10 dma
 
@@ -312,9 +315,8 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 
 | 端口类型          | 端口名称       | 功能  | 备注  |
 | ------------- | ---------- | --- | --- |
-| input         | clk        |     |     |
-| input         | io_en      |     |     |
-| input [31:0]  | cpu_addr       |     |     |
+| input         | io_en          |     |     |
+| input [31:0] | cpu_addr | | |
 | input         | cpu_write_en   |     |     |
 | input [31:0]  | cpu_write_data |     |     |
 | input [31:0]  | io_addr       |     |     |
@@ -323,29 +325,59 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 | output [31:0] | addr       |     |     |
 | output        | write_en   |     |     |
 | output [31:0] | write_data |     |     |
-| output        | out        |     |     |
 
-#### 2.3.10 io
+#### 2.3.11 io
 
 | 端口类型         | 端口名称         | 功能          | 备注    |
 | ------------ | ------------ | ----------- | ----- |
 | input        | clk          |             |       |
 | input        | rst          | 重置信号        |       |
 | input [2:0]  | state_switch | 测试场景状态输入    |       |
-| input [7:0]  | data_switch  | 测试场景数据输入    |       |
-| input [15:0] | keyboard     | 小键盘输入       |       |
-| input        | uart_en      | UART通信模式输入  |       |
-| input        | uart_in      | UART信号输入    |       |
-| input        | io_en        |     |     |
-| input        | mem_out      |     |     |
-| output        | req         | 申请刷新io |     |     |
+| input [7:0]  | data_switch  | 测试场景数据输入    |      |
+| input        | mem_out      |     |      |
+|               |              |                     |     |
+| output        | io_en        |                     | |
 | output [31:0] | addr        |     |     |
 | output        | write_en    |     |     |
 | output [31:0] | write_data  |     |     |
 | output       | led_sign     | 测试场景CPU状态输出 |       |
-| output [7:0] | led_data     | 测试场景数据LED输出 |       |
-| output [7:0] | seg_en       | 数码管使能       | 低电平触发 |
-| output [7:0] | seg_left     | 左侧数码管组数据    | 低电平触发 |
-| output [7:0] | seg_right    | 右侧数码管组数据    | 低电平触发 |
+| output [7:0] | led_data     | 测试场景数据LED输出 |      |
+| output [31:0] | seg_data |  |      |
 
-#### 2.3.12 uart
+#### 2.3.12 seg
+
+| 端口类型     | 端口名称 | 功能 | 备注 |
+| ------------ | -------- | ---- | ---- |
+| input        | clk      |      |      |
+| input        | rst      |      |      |
+| input [31:0] | data     |      |      |
+|              |          |      |      |
+| output [7:0] | en       |      |      |
+| output [7:0] | out      |      |      |
+
+#### 2.3.13 uart
+
+| 端口类型      | 端口名称  | 功能 | 备注 |
+| ------------- | --------- | ---- | ---- |
+| input         | uart_clk  |      |      |
+| input         | uart_rst  |      |      |
+|               |           |      |      |
+| output        | uart_i    |      |      |
+| output        | uart_d    |      |      |
+| output [13:0] | uart_addr |      |      |
+| output [31:0] | uart_data |      |      |
+| output        | uart_done |      |      |
+
+#### 2.3.13 keyboard
+
+| 端口类型      | 端口名称 | 功能 | 备注 |
+| ------------- | -------- | ---- | ---- |
+| input         | kb_clk   |      |      |
+| input         | rst      |      |      |
+| input         | kb_en    |      |      |
+| input         | pos      |      |      |
+| input         | neg      |      |      |
+| input [9:0]   | kb       |      |      |
+|               |          |      |      |
+| output        | kb_done  |      |      |
+| output [31:0] | value    |      |      |
