@@ -34,7 +34,8 @@ module io(
     output reg [31:0] addr,
     output reg        write_en,
     output reg [31:0] write_data,
-    output reg        uart_en,
+    output reg        uart_i_en,
+    output reg        uart_d_en,
     output reg        uart_done,
     output [13:0]     uart_addr,
     output [31:0]     uart_data,
@@ -55,6 +56,9 @@ module io(
     
     wire [14:0] uart_addr_out;
     assign uart_addr = uart_addr_out[13:0];
+    assign uart_i_en = ~uart_done & ~uart_addr_out[13];
+    assign uart_d_en = ~uart_done & uart_addr_out[13];
+
     uart uart_core(
         .upg_clk_i(uart_clk),
         .upg_rst_i(uart_rst),
@@ -109,9 +113,5 @@ module io(
                 end
                 default: state <= state;
             endcase
-    
-    always @(posedge uart_clk, posedge uart_rst)
-        if (uart_rst) uart_en <= 1'b1;
-        else if(uart_done) uart_en = 1'b0;
         
 endmodule
