@@ -28,16 +28,31 @@ module stabilizer(
         output reg stable
     );
     
+    parameter IDLE = 1'b0;
+    parameter PEND = 1'b1;
+    
+    reg state;
     reg last;
     reg [4:0] cnt;
-    
-    
     
     always @(posedge clk, posedge rst)
         if (rst) begin
             last <= 1'b0;
             stable <= 1'b0;
-            
+            state <= IDLE;
         end
-        
+        else
+            case (state)
+                IDLE:
+                    if (button != last) begin
+                        stable <= button;
+                        last <= button;
+                        cnt <= 0;
+                        state <= PEND;
+                    end
+                PEND: 
+                    if (cnt < 20) cnt <= cnt+1;
+                    else state <= IDLE;
+                default: state <= state;
+            endcase
 endmodule
