@@ -25,12 +25,13 @@ module cpu_top(
     input           rst,
     input [2:0]     state_switch,
     input [7:0]     data_switch,
-    input [15:0]    keyboard,
+    input [9:0]     kb,
+    input           pos,
+    input           neg,
     output          led_sign,
     output [7:0]    led_data,
     output [7:0]    seg_en,
-    output [7:0]    seg_left,
-    output [7:0]    seg_right
+    output [7:0]    seg_out
 );
     
     /* clock part */
@@ -88,6 +89,13 @@ module cpu_top(
     wire reg_write_spe;
     wire io_en;
     wire [31:0] epc;
+    wire [31:0] io_addr;
+    wire io_write_en;
+    wire [31:0] io_write_data;
+    wire [31:0] addr;
+    wire write_en;
+    wire [31:0] write_data;
+    wire [31:0] seg_data;
     instruction_fetch if_instance(
         .clk(clk_23MHz),
         .rst(rst),
@@ -173,14 +181,25 @@ module cpu_top(
         .result(alu_result),
         .alu_exception(alu_exception)
     );
+    dma dma_instance(
+        .io_en(io_en),
+        .cpu_addr(alu_result),
+        .cpu_write_en(mem_write),
+        .cpu_write_data(reg_read_data_2),
+        .io_addr(io_addr),
+        .io_write_en(io_write_en),
+        .io_write_data(io_write_data),
+        .addr(addr),
+        .write_en(write_en),
+        .write_data(write_data)
+    );
     data_memory data_memory_instance(
         .clk(clk_23MHz),
         .uart_clk(clk_10MHz),
-        .write_en(mem_write),
-        .read_en(mem_read),
+        .write_en(write_en),
         .uart_en(uart_d),
-        .addr(alu_result),
-        .write_data(reg_read_data_2),
+        .addr(addr),
+        .write_data(write_data),
         .uart_addr(uart_addr),
         .uart_data(uart_data),
         .out(mem_read_output)
@@ -206,16 +225,29 @@ module cpu_top(
         .epc(epc),
         .cause()
     );
-    dma dma_instance(
+    io io_instance(
+        .clk(clk_23MHz),
+        .rst(rst),
+        .kb_clk(clk_10MHz),
+        .pos(pos),
+        .neg(neg),
+        .state_switch(state_switch),
+        .data_switch(data_switch),
+        .kb(kb),
+        .mem_out(mem_read_output),
         .io_en(io_en),
-        .cpu_addr(alu_result),
-        .cpu_write_en(mem_write),
-        .cpu_write_data(reg_read_data_2),
-        .io_addr(),
-        .io_write_en(),
-        .io_write_data(),
-        .addr(),
-        .write_en(),
-        .write_data()
+        .addr(io_addr),
+        .write_en(io_write_en),
+        .write_data(io_write_data),
+        .led_sign(led_sign),
+        .led_data(led_data),
+        .seg_data(seg_data)
+    );
+    seg seg_instance(
+        .clk(clk_10MHz),
+        .rst(rst),
+        .data(seg_data),
+        .en(seg_en),
+        .out(seg_out)
     );
 endmodule

@@ -24,7 +24,6 @@ module data_memory(
     input clk,
     input uart_clk,
     input write_en,
-    input read_en,
     input uart_en,
     input [31:0] addr,
     input [31:0] write_data,
@@ -37,7 +36,7 @@ module data_memory(
     wire kick_off;
 
     wire [31:0] d_out;
-    assign out = read_en ? d_out : 32'b0;
+    assign out = d_out;
     
     RAM_64K dmem(
         .clka(uart_en ? uart_clk : ~clk),
