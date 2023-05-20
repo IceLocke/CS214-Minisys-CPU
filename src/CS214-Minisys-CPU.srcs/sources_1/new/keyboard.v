@@ -48,10 +48,10 @@ module keyboard(
             if (pos || neg || digit == 8) begin  // only allow 8 unsigned digits
                 if (neg)
                     value <= -value;
-                kb_done <= 1'b1;
+                kb_done <= 1'b0;
             end
             else
-                if (kb != 0) begin
+                if (~kb_done) begin
                     casez (kb)
                         10'b00_0000_0001: value <= value*10;
                         10'b00_0000_001z: value <= value*10+1;

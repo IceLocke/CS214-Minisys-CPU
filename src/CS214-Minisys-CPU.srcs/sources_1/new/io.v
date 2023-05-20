@@ -23,8 +23,12 @@
 module io(
     input        clk,
     input        rst,
+    input        kb_clk,
+    input        pos,
+    input        neg,
     input [2:0]  state_switch,
     input [7:0]	 data_switch,
+    input [9:0]  kb,
     input [31:0] mem_out,
     
     output reg        io_en,
@@ -41,6 +45,20 @@ module io(
     parameter IDLE = 1'b0;
     parameter WORK = 1'b1;
     
+
+    wire kb_done;
+    wire [31:0] kb_value;
+
+    keyboard keyboard_instance(
+        .kb_clk(kb_clk),
+        .rst(rst),
+        .pos(pos),
+        .neg(neg),
+        .kb(kb),
+        .kb_done(kb_done),
+        .value(kb_value)
+    );
+
     integer cnt;
     reg state;
     
@@ -68,12 +86,14 @@ module io(
                 WORK: begin
                     case (cnt)
                         TIME: write_data <= data_switch;
-                        TIME+1: begin
+                        TIME+1: write_data <= kb_done;
+                        TIME+2: write_data <= kb_value;
+                        TIME+3: begin
                             write_en <= 1'b0;
                             led_sign <= mem_out[0];
                         end
-                        TIME+2: led_data <= mem_out[7:0];
-                        TIME+3: begin
+                        TIME+4: led_data <= mem_out[7:0];
+                        TIME+5: begin
                             seg_data <= mem_out;
                             io_en <= 1'b0;
                             state <= IDLE;
