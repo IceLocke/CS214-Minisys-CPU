@@ -236,14 +236,13 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 
 运行模式下只读。
 
-| 端口类型          | 端口名称      | 功能           | 备注  |
-| ------------- | --------- | ------------ | --- |
-| input         | clk       |              |     |
-| input [31:0]  | addr      | 指令地址，直接连接 pc |     |
-| input         | uart_en   | uart 模式开启    |     |
-| input [31:0]  | uart_addr | uart 内存地址    |     |
-| input [31:0]  | uart_data | uart 数据      |     |
-| output [31:0] | out       |              |     |
+| 端口类型     | 端口名称   | 功能 | 备注 |
+| ------------ | ---------- | ---- | ---- |
+| input        | clk        |      |      |
+| input        | uart_clk   |      |      |
+| input        | uart_en    |      |      |
+| input [31:0] | addr       |      |      |
+| input [31:0] | write_data |      |      |
 
 #### 2.3.5 vic
 
@@ -295,13 +294,17 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 
 封装一个 block_data 实现
 
-| 端口类型          | 端口名称       | 功能  | 备注  |
-| ------------- | ---------- | --- | --- |
-| input         | clk        |     |     |
-| input [31:0]  | addr       |     |     |
-| input         | write_en   |     |     |
-| input [31:0]  | write_data |     |     |
-| output [31:0] | out        |     |     |
+| 端口类型      | 端口名称   | 功能 | 备注 |
+| ------------- | ---------- | ---- | ---- |
+| input         | clk        |      |      |
+| input         | uart_clk   |      |      |
+| input         | uart_en    |      |      |
+| input         | write_en   |      |      |
+| input [31:0]  | addr       |      |      |
+| input [31:0]  | write_data |      |      |
+| input [13:0]  | uart_addr  |      |      |
+| input [31:0]  | uart_data  |      |      |
+| output [31:0] | out        |      |      |
 
 #### 2.3.10 dma
 
@@ -322,7 +325,7 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 | output [31:0] | write_data |     |     |
 | output        | out        |     |     |
 
-#### 2.3.10 io
+#### 2.3.11 io
 
 | 端口类型         | 端口名称         | 功能          | 备注    |
 | ------------ | ------------ | ----------- | ----- |
@@ -345,4 +348,8 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 | output [7:0] | seg_left     | 左侧数码管组数据    | 低电平触发 |
 | output [7:0] | seg_right    | 右侧数码管组数据    | 低电平触发 |
 
-#### 2.3.12 uart
+#### 2.3.12 seg
+
+| 端口类型 | 端口名称 | 功能 | 备注 |
+| -------- | -------- | ---- | ---- |
+|          |          |      |      |
