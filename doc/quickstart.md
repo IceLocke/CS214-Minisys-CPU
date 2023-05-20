@@ -312,9 +312,8 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 
 | 端口类型          | 端口名称       | 功能  | 备注  |
 | ------------- | ---------- | --- | --- |
-| input         | clk        |     |     |
-| input         | io_en      |     |     |
-| input [31:0]  | cpu_addr       |     |     |
+| input         | io_en          |     |     |
+| input [31:0] | cpu_addr | | |
 | input         | cpu_write_en   |     |     |
 | input [31:0]  | cpu_write_data |     |     |
 | input [31:0]  | io_addr       |     |     |
@@ -323,7 +322,6 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 | output [31:0] | addr       |     |     |
 | output        | write_en   |     |     |
 | output [31:0] | write_data |     |     |
-| output        | out        |     |     |
 
 #### 2.3.11 io
 
@@ -332,24 +330,37 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 | input        | clk          |             |       |
 | input        | rst          | 重置信号        |       |
 | input [2:0]  | state_switch | 测试场景状态输入    |       |
-| input [7:0]  | data_switch  | 测试场景数据输入    |       |
-| input [15:0] | keyboard     | 小键盘输入       |       |
-| input        | uart_en      | UART通信模式输入  |       |
-| input        | uart_in      | UART信号输入    |       |
-| input        | io_en        |     |     |
-| input        | mem_out      |     |     |
-| output        | req         | 申请刷新io |     |     |
+| input [7:0]  | data_switch  | 测试场景数据输入    |      |
+| input        | mem_out      |     |      |
+|               |              |                     |     |
+| output        | io_en        |                     | |
 | output [31:0] | addr        |     |     |
 | output        | write_en    |     |     |
 | output [31:0] | write_data  |     |     |
 | output       | led_sign     | 测试场景CPU状态输出 |       |
-| output [7:0] | led_data     | 测试场景数据LED输出 |       |
-| output [7:0] | seg_en       | 数码管使能       | 低电平触发 |
-| output [7:0] | seg_left     | 左侧数码管组数据    | 低电平触发 |
-| output [7:0] | seg_right    | 右侧数码管组数据    | 低电平触发 |
+| output [7:0] | led_data     | 测试场景数据LED输出 |      |
+| output [31:0] | seg_data |  |      |
 
 #### 2.3.12 seg
 
-| 端口类型 | 端口名称 | 功能 | 备注 |
-| -------- | -------- | ---- | ---- |
-|          |          |      |      |
+| 端口类型     | 端口名称 | 功能 | 备注 |
+| ------------ | -------- | ---- | ---- |
+| input        | clk      |      |      |
+| input        | rst      |      |      |
+| input [31:0] | data     |      |      |
+|              |          |      |      |
+| output [7:0] | en       |      |      |
+| output [7:0] | out      |      |      |
+
+#### 2.3.13 uart
+
+| 端口类型      | 端口名称  | 功能 | 备注 |
+| ------------- | --------- | ---- | ---- |
+| input         | uart_clk  |      |      |
+| input         | uart_rst  |      |      |
+|               |           |      |      |
+| output        | uart_i    |      |      |
+| output        | uart_d    |      |      |
+| output [13:0] | uart_addr |      |      |
+| output [31:0] | uart_data |      |      |
+| output        | uart_done |      |      |

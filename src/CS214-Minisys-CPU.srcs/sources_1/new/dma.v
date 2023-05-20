@@ -21,8 +21,6 @@
 
 
 module dma(
-    input         clk,
-    input         rst,
     input         io_en,
     input  [31:0] cpu_addr,
     input         cpu_write_en,

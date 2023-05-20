@@ -25,7 +25,6 @@ module io(
     input        rst,
     input [2:0]  state_switch,
     input [7:0]	 data_switch,
-    input [15:0] keyboard,
     input [31:0] mem_out,
     
     output reg        io_en,
