@@ -29,6 +29,9 @@ module seg(
     output reg [7:0] out
     );
     
+    parameter TIME = 10000;
+    
+    integer cnt;
     reg [3:0] digit;
     
     always @*
@@ -50,41 +53,44 @@ module seg(
         if (rst) begin
             digit <= data%10;
             en <= 8'b1111_1110;
+            cnt <= 0;
         end
-        else
-            case (en)
-                8'b1111_1110: begin
-                    digit <= data/10%10;
-                    en <= 8'b0000_0010;
-                end
-                8'b1111_1101: begin
-                    digit <= data/100%10;
-                    en <= 8'b0000_0100;
-                end
-                8'b1111_1011: begin
-                    digit <= data/1000%10;
-                    en <= 8'b0000_1000;
-                end
-                8'b1111_0111: begin
-                    digit <= data/10000%10;
-                    en <= 8'b0001_0000;
-                end
-                8'b1110_1111: begin
-                    digit <= data/100000%10;
-                    en <= 8'b0010_0000;
-                end
-                8'b1101_1111: begin
-                    digit <= data/1000000%10;
-                    en <= 8'b0100_0000;
-                end
-                8'b1011_1111: begin
-                    digit <= data/10000000%10;
-                    en <= 8'b1000_0000;
-                end
-                8'b0111_1111: begin
-                    digit <= data%10;
-                    en <= 8'b0000_0001;
-                end
-            endcase
-                
+        else if (cnt == TIME) begin
+                case (en)
+                    8'b1111_1110: begin
+                        digit <= data/10%10;
+                        en <= 8'b0000_0010;
+                    end
+                    8'b1111_1101: begin
+                        digit <= data/100%10;
+                        en <= 8'b0000_0100;
+                    end
+                    8'b1111_1011: begin
+                        digit <= data/1000%10;
+                        en <= 8'b0000_1000;
+                    end
+                    8'b1111_0111: begin
+                        digit <= data/10000%10;
+                        en <= 8'b0001_0000;
+                    end
+                    8'b1110_1111: begin
+                        digit <= data/100000%10;
+                        en <= 8'b0010_0000;
+                    end
+                    8'b1101_1111: begin
+                        digit <= data/1000000%10;
+                        en <= 8'b0100_0000;
+                    end
+                    8'b1011_1111: begin
+                        digit <= data/10000000%10;
+                        en <= 8'b1000_0000;
+                    end
+                    8'b0111_1111: begin
+                        digit <= data%10;
+                        en <= 8'b0000_0001;
+                    end
+                endcase
+            cnt <= 0;
+        end
+        else cnt <= cnt+1;
 endmodule
