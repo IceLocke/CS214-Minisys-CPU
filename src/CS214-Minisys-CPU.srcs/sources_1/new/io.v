@@ -88,20 +88,18 @@ module io(
                 WORK: begin
                     case (cnt)
                         TIME: write_data <= data_switch;
-                        TIME+1: write_data <= keyboard;
-                        TIME+2: begin
+                        TIME+1: begin
                             write_en <= 1'b0;
                             led_sign <= mem_out[0];
                         end
-                        TIME+3: led_data <= mem_out[7:0];
-                        TIME+4: begin
+                        TIME+2: led_data <= mem_out[7:0];
+                        TIME+3: begin
                             seg_data <= mem_out;
                             io_en <= 1'b0;
-                            cnt <= 0;
                             state <= IDLE;
                         end
                     endcase
-                    cnt <= cnt+1;
+                    cnt <= (cnt == TIME+4 ? 0 : cnt+1);
                     addr <= addr+4;
                 end
                 default: state <= state;
