@@ -30,8 +30,8 @@ module io(
     input [15:0] keyboard,
     input [31:0] mem_out,
     
-    output            uart_i_en,
-    output            uart_d_en,
+    output            uart_i,
+    output            uart_d,
     output [13:0]     uart_addr,
     output [31:0]     uart_data,
     output reg        io_en,
