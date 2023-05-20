@@ -22,6 +22,7 @@
 
 module keyboard(
     input       kb_clk,
+    input       rst,
     input       kb_en,
     input       pos,
     input       neg,
@@ -33,8 +34,12 @@ module keyboard(
     
     integer digit;
 
-    always @(posedge kb_clk, posedge kb_en)
-        if (kb_en & kb_done) begin
+    always @(posedge kb_clk, posedge kb_en, negedge rst)
+        if (rst) begin
+            value <= 0;
+            kb_done <= 1'b1;
+        end
+        else if (kb_en & kb_done) begin
             value <= 0;
             digit <= 0;
             kb_done <= 1'b0;

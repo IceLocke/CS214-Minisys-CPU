@@ -114,6 +114,7 @@ Bonus 部分看了一下，比较好玩而且容易实现的：
 | dma                |      | ckr    |
 | uart               |      | ckr    |
 | seg                |      | ckr    |
+| keyboard           |      | ckr    |
 
 ## 2 约定
 
@@ -366,3 +367,17 @@ IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中
 | output [13:0] | uart_addr |      |      |
 | output [31:0] | uart_data |      |      |
 | output        | uart_done |      |      |
+
+#### 2.3.13 keyboard
+
+| 端口类型      | 端口名称 | 功能 | 备注 |
+| ------------- | -------- | ---- | ---- |
+| input         | kb_clk   |      |      |
+| input         | rst      |      |      |
+| input         | kb_en    |      |      |
+| input         | pos      |      |      |
+| input         | neg      |      |      |
+| input [9:0]   | kb       |      |      |
+|               |          |      |      |
+| output        | kb_done  |      |      |
+| output [31:0] | value    |      |      |
