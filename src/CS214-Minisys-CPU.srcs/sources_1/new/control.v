@@ -22,7 +22,7 @@
 
 module control(
     input [5:0]	opcode,
-    input [5:0] funct,  // special case for jr
+    input [5:0] funct,
     output reg_dst,
     output mem_read,
     output mem_to_reg,
@@ -32,17 +32,21 @@ module control(
     output is_j,
     output is_jr,
     output is_jal,
+    output is_eret,
     output is_beq_bne,
     output reg_write,
     output alu_en,
     output is_R_type,
     output is_J_type,
     output is_I_type,
-    output extension_mode  // 1 = sign extension, 0 = 0-extension
+    output extension_mode,  // 1 = sign extension, 0 = 0-extension
+    output [1:0] reg_read_spe,
+    output reg_write_spe
 );
+    assign is_eret = opcode == 6'h10;
     assign is_R_type = opcode == 6'b0;
-    assign is_J_type = opcode == 6'b10 || opcode == 6'b11;
-    assign is_I_type = !is_R_type && !is_J_type;
+    assign is_J_type = opcode == 6'h2 || opcode == 6'h3;
+    assign is_I_type = !is_R_type && !is_J_type && !is_eret;
     assign alu_op = opcode;
     assign reg_dst = is_R_type;
     assign mem_read = opcode == 6'h23; // lw
@@ -60,5 +64,11 @@ module control(
                          || opcode == 6'h2b  // sw
                          || opcode == 6'h8  // addi
                          || opcode == 6'ha);  // slti
-    assign alu_en = !is_J_type;
+    assign alu_en = !is_J_type && !is_eret;
+    assign reg_read_spe = (is_R_type && funct == 6'h12) ? 2'b10 :  // mflo
+                    ((is_R_type && funct == 6'h10) ? 2'b11 : 2'b00); // mfhi
+    assign reg_write_spe = is_R_type && (funct == 6'h1a  // div
+                                    || funct == 6'h1b  // divu
+                                    || funct == 6'h18  // mult
+                                    || funct == 6'h19);  // multu
 endmodule

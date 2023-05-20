@@ -21,11 +21,17 @@
 
 
 module cpu_clk(
+    input rst,
     input clk_in,
-    output clk_out
+    output clk_46MHz,
+    output clk_23MHz,
+    output clk_10MHz
 );
     clk_wiz_0 cpu_wiz_clock(
-        .clk_out1(clk_out),
-        .clk_in1(clk_in)
+        .rst(rst),
+        .clk_in1(clk_in),
+        .clk_46MHz(clk_46MHz),
+        .clk_23MHz(clk_23MHz),
+        .clk_10MHz(clk_10MHz)
     );
 endmodule

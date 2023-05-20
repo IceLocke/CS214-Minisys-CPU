@@ -26,8 +26,6 @@ module cpu_top(
     input [2:0]     state_switch,
     input [7:0]     data_switch,
     input [15:0]    keyboard,
-    input           uart_enable,
-    input           uart_in,
     output          led_sign,
     output [7:0]    led_data,
     output [7:0]    seg_en,
@@ -36,14 +34,19 @@ module cpu_top(
 );
     
     /* clock part */
-    wire clk;
+    wire clk_46MHz;
+    wire clk_23MHz;
+    wire clk_10MHz;
     cpu_clk cpu_clk_instance(
+        .rst(rst),
         .clk_in(clk_in),
-        .clk_out(clk)
+        .clk_46MHz(clk_46MHz),
+        .clk_23MHz(clk_23MHz),
+        .clk_10MHz(clk_10MHz)
     );
     
     /* ISA part */
-    wire [31:0] alu_result;
+    wire [63:0] alu_result;
     wire [5:0] opcode;
     wire [4:0] rs;
     wire [4:0] rt;
@@ -61,6 +64,7 @@ module cpu_top(
     wire is_j;
     wire is_jr;
     wire is_jal;
+    wire is_eret;
     wire is_beq_bne;
     wire reg_write;
     wire alu_en;
@@ -69,7 +73,8 @@ module cpu_top(
     wire is_I_type;
     wire extension_mode;
     wire vic_enable;
-    wire uart_en;
+    wire uart_i;
+    wire uart_d;
     wire [13:0] uart_addr;
     wire [31:0] uart_data;
     wire [31:0] handler_addr;
@@ -79,16 +84,25 @@ module cpu_top(
     wire alu_exception;
     wire [31:0] mem_read_output;
     wire uart_done;
+    wire [1:0] reg_read_spe;
+    wire reg_write_spe;
+    wire io_en;
+    wire [31:0] epc;
     instruction_fetch if_instance(
-        .clk(clk),
+        .clk(clk_23MHz),
         .rst(rst),
         .branch_inst(alu_result[0] && is_beq_bne),
+        .jr_inst(is_jr),
         .jump_inst(is_j || is_jal),
         .vic_enable(vic_enable),
-        .uart_en(uart_en),
+        .eret_inst(is_eret),
+        .io_en(io_en),
+        .uart_en(uart_i),
         .uart_addr(uart_addr),
         .uart_data(uart_data),
         .handler_addr(handler_addr),
+        .epc(epc),
+        .reg_addr(reg_read_data_1),
         .opcode(opcode),
         .rs(rs),
         .rt(rt),
@@ -110,20 +124,29 @@ module cpu_top(
         .is_j(is_j),
         .is_jr(is_jr),
         .is_jal(is_jal),
+        .is_eret(is_eret),
         .is_beq_bne(is_beq_bne),
         .reg_write(reg_write),
         .alu_en(alu_en),
         .is_R_type(is_R_type),
         .is_J_type(is_J_type),
         .is_I_type(is_I_type),
-        .extension_mode(extension_mode)
+        .extension_mode(extension_mode),
+        .reg_write_spe(reg_write_spe),
+        .reg_read_spe(reg_read_spe)
     );
     register register_instance(
-        .clk(clk),
+        .clk(clk_23MHz),
         .rst(rst),
         .read_register_1(rs),
-        .read_register_2(reg_dst ? rd : rt),
-        .write_register(rd),
+        .read_register_2(rt),
+        .read_spe(reg_read_spe),
+        .write_spe(reg_write_spe),
+        .write_register(
+            is_jal ? 5'b11111 : (
+                reg_dst ? rd : rt
+            )
+        ),
         .write_data(
             is_jal ? ra : (
                 mem_to_reg ? mem_read_output : alu_result
@@ -151,16 +174,48 @@ module cpu_top(
         .alu_exception(alu_exception)
     );
     data_memory data_memory_instance(
-        .clk(clk),
-        .uart_clk(clk),
+        .clk(clk_23MHz),
+        .uart_clk(clk_10MHz),
         .write_en(mem_write),
         .read_en(mem_read),
-        .uart_en(uart_en),
-        .uart_done(uart_done),
+        .uart_en(uart_d),
         .addr(alu_result),
         .write_data(reg_read_data_2),
         .uart_addr(uart_addr),
         .uart_data(uart_data),
         .out(mem_read_output)
+    );
+    uart uart_instance(
+        .uart_clk(clk_10MHz),
+        .uart_rst(rst),
+        .uart_i(uart_i),
+        .uart_d(uart_d),
+        .uart_addr(uart_addr),
+        .uart_data(uart_data),
+        .uart_done(uart_done)
+    );
+    vic vic_instance(
+        .clk(clk_23MHz),
+        .vic_clk(clk_46MHz),
+        .rst(rst),
+        .is_eret(is_eret),
+        .source(),
+        .ret_addr(ra),
+        .vic_enable(vic_enable),
+        .handler_addr(handler_addr),
+        .epc(epc),
+        .cause()
+    );
+    dma dma_instance(
+        .io_en(io_en),
+        .cpu_addr(alu_result),
+        .cpu_write_en(mem_write),
+        .cpu_write_data(reg_read_data_2),
+        .io_addr(),
+        .io_write_en(),
+        .io_write_data(),
+        .addr(),
+        .write_en(),
+        .write_data()
     );
 endmodule
