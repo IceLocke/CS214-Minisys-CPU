@@ -23,8 +23,12 @@
 module io(
     input        clk,
     input        rst,
+    input        kb_clk,
+    input        pos,
+    input        neg,
     input [2:0]  state_switch,
     input [7:0]	 data_switch,
+    input [9:0]  kb,
     input [31:0] mem_out,
     
     output reg        io_en,
@@ -41,6 +45,94 @@ module io(
     parameter IDLE = 1'b0;
     parameter WORK = 1'b1;
     
+
+    wire kb_done;
+    wire [31:0] kb_value;
+    wire [11:0] stable;
+
+    stabilizer sb0(
+        .clk(kb_clk),
+        .rst(rst),
+        .kb(kb[0]),
+        .stable(stable[0])
+    );
+    stabilizer sb1(
+        .clk(kb_clk),
+        .rst(rst),
+        .kb(kb[1]),
+        .stable(stable[1])
+    );
+    stabilizer sb2(
+        .clk(kb_clk),
+        .rst(rst),
+        .kb(kb[2]),
+        .stable(stable[2])
+    );
+    stabilizer sb3(
+        .clk(kb_clk),
+        .rst(rst),
+        .kb(kb[3]),
+        .stable(stable[3])
+    );
+    stabilizer sb4(
+        .clk(kb_clk),
+        .rst(rst),
+        .kb(kb[4]),
+        .stable(stable[4])
+    );
+    stabilizer sb5(
+        .clk(kb_clk),
+        .rst(rst),
+        .kb(kb[5]),
+        .stable(stable[5])
+    );
+    stabilizer sb6(
+        .clk(kb_clk),
+        .rst(rst),
+        .kb(kb[6]),
+        .stable(stable[6])
+    );
+    stabilizer sb7(
+        .clk(kb_clk),
+        .rst(rst),
+        .kb(kb[7]),
+        .stable(stable[7])
+    );
+    stabilizer sb8(
+        .clk(kb_clk),
+        .rst(rst),
+        .kb(kb[8]),
+        .stable(stable[8])
+    );
+    stabilizer sb9(
+        .clk(kb_clk),
+        .rst(rst),
+        .kb(kb[9]),
+        .stable(stable[9])
+    );
+    stabilizer sb10(
+        .clk(kb_clk),
+        .rst(rst),
+        .kb(pos),
+        .stable(stable[10])
+    );
+    stabilizer sb11(
+        .clk(kb_clk),
+        .rst(rst),
+        .kb(neg),
+        .stable(stable[11])
+    );
+
+    keyboard keyboard_instance(
+        .clk(clk),
+        .rst(rst),
+        .pos(stable[11]),
+        .neg(stable[10]),
+        .kb(stable[9:0]),
+        .kb_done(kb_done),
+        .value(kb_value)
+    );
+
     integer cnt;
     reg state;
     
@@ -68,12 +160,14 @@ module io(
                 WORK: begin
                     case (cnt)
                         TIME: write_data <= data_switch;
-                        TIME+1: begin
+                        TIME+1: write_data <= kb_done;
+                        TIME+2: write_data <= kb_value;
+                        TIME+3: begin
                             write_en <= 1'b0;
                             led_sign <= mem_out[0];
                         end
-                        TIME+2: led_data <= mem_out[7:0];
-                        TIME+3: begin
+                        TIME+4: led_data <= mem_out[7:0];
+                        TIME+5: begin
                             seg_data <= mem_out;
                             io_en <= 1'b0;
                             state <= IDLE;
