@@ -23,7 +23,8 @@
 module keyboard(
     input       kb_clk,
     input       kb_en,
-    input       eoi,
+    input       pos,
+    input       neg,
     input [9:0] kb,
     
     output reg        kb_done,
@@ -39,8 +40,11 @@ module keyboard(
             kb_done <= 1'b0;
         end
         else if (~kb_done)
-            if (eoi || digit == 8)  // only allow 8 unsigned digits
+            if (pos || neg || digit == 8) begin  // only allow 8 unsigned digits
+                if (neg)
+                    value <= -value;
                 kb_done <= 1'b1;
+            end
             else
                 if (kb != 0) begin
                     case(kb)
