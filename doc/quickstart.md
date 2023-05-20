@@ -99,19 +99,21 @@ Bonus 部分看了一下，比较好玩而且容易实现的：
 
 #### 1.1.4 模块列表
 
-| 名称                  | 功能  | 负责人 |
-| ------------------- | --- | --- |
-| cpu_top             |     | kl  |
-| cpu_clk             |     | kl  |
-| instruction_fetch   |     | glh |
-| instruction_memory  |     | glh |
-| vic                 |     | glh |
-| registers           |     | glh |
-| control             |     | kl  |
-| alu                 |     | kl  |
-| data_memory         |     | glh |
-| io (包括 开关，LED，数码管等) |     | ckr |
-| uart                |     | ckr |
+| 名称               | 功能 | 负责人 |
+| ------------------ | ---- | ------ |
+| cpu_top            |      | kl     |
+| cpu_clk            |      | kl     |
+| instruction_fetch  |      | glh    |
+| instruction_memory |      | ckr    |
+| vic                |      | glh    |
+| registers          |      | glh    |
+| control            |      | kl     |
+| alu                |      | kl     |
+| data_memory        |      | glh    |
+| io                 |      | ckr    |
+| dma                |      | ckr    |
+| uart               |      | ckr    |
+| seg                |      | ckr    |
 
 ## 2 约定
 
