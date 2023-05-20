@@ -21,7 +21,7 @@
 
 
 module keyboard(
-    input       kb_clk,
+    input       clk,
     input       rst,
     input       kb_en,
     input       pos,
@@ -33,10 +33,12 @@ module keyboard(
     );
     
     integer digit;
+    reg [9:0] last;
 
-    always @(posedge kb_clk, posedge kb_en, negedge rst)
+    always @(posedge clk, posedge kb_en, negedge rst)
         if (rst) begin
             value <= 0;
+            last <= 10'b00_0000_0000;
             kb_done <= 1'b1;
         end
         else if (kb_en & kb_done) begin
@@ -51,7 +53,7 @@ module keyboard(
                 kb_done <= 1'b0;
             end
             else
-                if (~kb_done) begin
+                if (~kb_done && kb != last) begin
                     casez (kb)
                         10'b00_0000_0001: value <= value*10;
                         10'b00_0000_001z: value <= value*10+1;

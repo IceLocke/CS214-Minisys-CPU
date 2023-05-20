@@ -48,13 +48,21 @@ module io(
 
     wire kb_done;
     wire [31:0] kb_value;
+    wire [11:0] stable;
+
+    stabilizer sb(
+        .clk(kb_clk),
+        .rst(rst),
+        .kb({pos, neg, kb}),
+        .stable(stable)
+    );
 
     keyboard keyboard_instance(
-        .kb_clk(kb_clk),
+        .clk(clk),
         .rst(rst),
-        .pos(pos),
-        .neg(neg),
-        .kb(kb),
+        .pos(stable[11]),
+        .neg(stable[10]),
+        .kb(stable[9:0]),
         .kb_done(kb_done),
         .value(kb_value)
     );
