@@ -36,10 +36,13 @@ module cpu_top(
 );
     
     /* clock part */
-    wire clk;
+    wire clk_23MHz;
+    wire clk_10MHz;
     cpu_clk cpu_clk_instance(
+        .rst(rst),
         .clk_in(clk_in),
-        .clk_out(clk)
+        .clk_23MHz(clk_23MHz),
+        .clk_10MHz(clk_10MHz)
     );
     
     /* ISA part */
@@ -82,7 +85,7 @@ module cpu_top(
     wire [1:0] reg_read_spe;
     wire reg_write_spe;
     instruction_fetch if_instance(
-        .clk(clk),
+        .clk(clk_23MHz),
         .rst(rst),
         .branch_inst(alu_result[0] && is_beq_bne),
         .jump_inst(is_j || is_jal),
@@ -123,7 +126,7 @@ module cpu_top(
         .reg_read_spe(reg_read_spe)
     );
     register register_instance(
-        .clk(clk),
+        .clk(clk_23MHz),
         .rst(rst),
         .read_register_1(rs),
         .read_register_2(rt),
@@ -161,8 +164,8 @@ module cpu_top(
         .alu_exception(alu_exception)
     );
     data_memory data_memory_instance(
-        .clk(clk),
-        .uart_clk(clk),
+        .clk(clk_23MHz),
+        .uart_clk(clk_10MHz),
         .write_en(mem_write),
         .read_en(mem_read),
         .uart_en(uart_en),

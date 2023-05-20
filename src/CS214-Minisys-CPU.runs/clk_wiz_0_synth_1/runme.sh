@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/suste/Desktop/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/clk_wiz_0_synth_1'
+HD_PWD='C:/Users/11432/Desktop/CS214tool/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/clk_wiz_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
