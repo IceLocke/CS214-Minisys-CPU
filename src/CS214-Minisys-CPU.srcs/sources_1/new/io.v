@@ -23,22 +23,15 @@
 module io(
     input        clk,
     input        rst,
-    input        uart_clk,
-    input        uart_rst,
     input [2:0]  state_switch,
     input [7:0]	 data_switch,
     input [15:0] keyboard,
     input [31:0] mem_out,
     
-    output            uart_i,
-    output            uart_d,
-    output [13:0]     uart_addr,
-    output [31:0]     uart_data,
     output reg        io_en,
     output reg [31:0] addr,
     output reg        write_en,
     output reg [31:0] write_data,
-    output reg        uart_done,
     output reg        led_sign,
     output reg [7:0]  led_data,
     output reg [31:0] seg_data
@@ -51,18 +44,6 @@ module io(
     
     integer cnt;
     reg state;
-    
-    wire [14:0] uart_addr_out;
-    assign uart_addr = uart_addr_out[13:0];
-    assign uart_i = ~uart_done & ~uart_addr_out[14];
-    assign uart_d = ~uart_done & uart_addr_out[14];
-
-    uart uart_core(
-        .upg_clk_i(uart_clk),
-        .upg_rst_i(uart_rst),
-        .upg_adr_o(uart_addr_out),
-        .upg_done_o(uart_done)
-    );
     
     always @(posedge clk, posedge rst)
         if (rst) begin
