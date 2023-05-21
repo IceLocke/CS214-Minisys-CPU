@@ -47,7 +47,7 @@ module vic(
     
     interrupt_encoder ie(
         .source(pending_interrupt),
-        .cause(interrupt)
+        .interrupt(cause)
     );
     
     always @(*) begin
