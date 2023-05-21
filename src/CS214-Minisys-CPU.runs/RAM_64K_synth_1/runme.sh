@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/IceLocke/CS214/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1'
+HD_PWD='E:/GitHub/Artanisax/CS214-Minisys-CPU/src/CS214-Minisys-CPU.runs/RAM_64K_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -21,37 +21,36 @@
 
 
 module keyboard(
-    input       kb_clk,
+    input       clk,
     input       rst,
-    input       kb_en,
     input       pos,
     input       neg,
     input [9:0] kb,
     
     output reg        kb_done,
-    output reg [31:0] value
+    output reg [31:0] out
     );
     
-    integer digit;
-
-    always @(posedge kb_clk, posedge kb_en, negedge rst)
+    reg [3:0] digit;
+    reg [9:0] last;
+    reg [31:0] value;
+    
+    always @(posedge clk, posedge rst)
         if (rst) begin
             value <= 0;
-            kb_done <= 1'b1;
-        end
-        else if (kb_en & kb_done) begin
-            value <= 0;
+            out <= 0;
             digit <= 0;
+            last <= 10'b00_0000_0000;
             kb_done <= 1'b0;
         end
         else if (~kb_done)
             if (pos || neg || digit == 8) begin  // only allow 8 unsigned digits
-                if (neg)
-                    value <= -value;
+                out <= (neg ? -value : value);
+                value <= 0; 
                 kb_done <= 1'b1;
             end
             else
-                if (kb != 0) begin
+                if (kb != last && kb != 0) begin
                     casez (kb)
                         10'b00_0000_0001: value <= value*10;
                         10'b00_0000_001z: value <= value*10+1;
