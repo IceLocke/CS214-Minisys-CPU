@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: 
+// Engineer: kl
 // 
 // Create Date: 2023/05/10 23:02:00
 // Design Name: 
@@ -44,7 +44,8 @@ module register(
                 registers[i] <= (i == 29 ? frame_pointer : 32'b0);
             end
         end else if(reg_write) begin
-            registers[write_register] = write_data;
+            if (write_register != 5'b0)
+                registers[write_register] = write_data;
         end
     end
     

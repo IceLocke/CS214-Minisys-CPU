@@ -28,13 +28,12 @@ module IO_Test();
     reg [15:0] keyboard;
     reg        uart_en;
     reg        uart_in;
-    reg        io_en;
     
     wire [31:0] addr;
     wire        write_en;
     wire [31:0] write_data;
     wire [31:0] mem_out;
-    wire        req;
+    wire        io_en;
     wire        led_sign;
     wire [7:0]  led_data;
     wire [7:0]  seg_en;
@@ -50,11 +49,8 @@ module IO_Test();
         .state_switch(state_switch),
         .data_switch(data_switch),
         .keyboard(keyboard),
-        .uart_en(uart_en),
-        .uart_in(uart_in),
         .io_en(io_en),
         .mem_out(mem_out),
-        .req(req),
         .addr(addr),
         .write_en(write_en),
         .write_data(write_data),
@@ -72,8 +68,10 @@ module IO_Test();
         .addr(addr),
         .write_en(write_en),
         .write_data(write_data),
-        .out(mem_out)
-    ); 
+        .out(mem_out),
+        .uart_en(0),
+        .uart_done(1)
+    );
     
     always #5 clk = !clk;
     
@@ -86,18 +84,14 @@ module IO_Test();
             keyboard = 3;
             uart_en = 0;
             uart_in = 0;
-            io_en = 0;
         end
         
         #100 begin 
             rst = 0;
-            io_en = 1;
         end
         
-        #1500 io_en = 0;
         
         #2000 begin
-            io_en = 1;
             state_switch = 10;
             data_switch = 11;
             keyboard = 12;
