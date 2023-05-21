@@ -20,6 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 parameter HANDLER_BASE = 16'hcfff;
+parameter IDLE = 2'b00;
+parameter WAIT = 2'b01;
+parameter DEAL = 2'b10;
 
 module vic(
     input clk,
@@ -28,13 +31,14 @@ module vic(
     input is_eret,
     input [7:0] source,
     input [31:0] ret_addr,
-    output reg vic_enable,
+    output vic_enable,
     output reg [31:0] handler_addr,
     output reg [31:0] epc,
     output [3:0] cause
     );
     
-    reg interrupt_enable;
+    reg [1:0] state;
+    reg [1:0] next_state;
     reg [7:0] pending_interrupt;
     reg [3:0] current_interrupt;
     reg [31:0] epc_all [7:0];
@@ -46,39 +50,55 @@ module vic(
         .cause(interrupt)
     );
     
-    // update need jump and next_pc
-    always @(negedge vic_clk) begin
-        if (interrupt_enable && current_interrupt) begin
-            if (clk) begin
-                if (is_eret) begin
-                    interrupt_enable <= 0;
-                end
-                else begin
-                    if (current_interrupt) begin
-                        vic_enable <= 1;
-                        handler_addr <= (current_interrupt << 2) + HANDLER_BASE;
-                        current_interrupt <= 0;
-                    end
+    always @(*) begin
+        case (state)
+            IDLE: begin
+                if (source) begin
+                    next_state = WAIT;
                 end
             end
-        end
+            WAIT: begin
+                next_state = DEAL;
+            end
+            DEAL: begin
+                if (is_eret) begin
+                    next_state = IDLE;
+                end
+                else begin
+                    next_state = DEAL;
+                end
+            end
+            default: next_state = IDLE;
+        endcase
     end
     
     always @(posedge clk or posedge rst) begin
         if (rst) begin
-            interrupt_enable <= 0;
-            pending_interrupt <= 8'h00;
-            current_interrupt <= 8'h00;
+            pending_interrupt <= 0;
+        end
+        else pending_interrupt <= pending_interrupt | source;
+    end
+    
+    assign vic_enable = (state == WAIT);
+    
+    always @(negedge vic_clk or posedge rst) begin
+        if (rst) begin
+            state <= IDLE;
+            current_interrupt <= 0;
+            handler_addr <= HANDLER_BASE;
         end
         else begin
-            pending_interrupt = pending_interrupt | source;
-            vic_enable <= 0;
-            if (pending_interrupt && !interrupt_enable) begin
-                interrupt_enable <= 1;
-                epc_all[interrupt - 1] <= ret_addr;
-                epc <= ret_addr;
-                current_interrupt <= interrupt;
-            end
+            state <= next_state;
+            case (state)
+                WAIT: begin
+                    current_interrupt <= interrupt;
+                    epc_all[interrupt] <= ret_addr;
+                    handler_addr <= HANDLER_BASE + 4 * interrupt;
+                end
+                DEAL: begin
+                    epc <= epc_all[current_interrupt];
+                end
+            endcase
         end
     end
     
