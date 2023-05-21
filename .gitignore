@@ -1,1 +1,5 @@
-src\CS214-Minisys-CPU.xpr
+*
+
+!doc\
+!src\CS214-Minisys-CPU.srcs\
+!src\coe\
