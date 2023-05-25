@@ -182,9 +182,9 @@ BASE = 0x4000
 | switch_req          |      | 0x04                  |
 | kb_done             |      | 0x05                  |
 | switch_done         |      | 0x06                  |
-| [31:0] kd_value     |      | 0x07                  |
-| [2: 0] state_switch |      | 0x08                  |
-| [7: 0] data_switch  |      | 0x09                  |
+| [31:0] kb_value     |      | 0x07                  |
+| [7: 0] data_switch  |      | 0x08                  |
+| [2: 0] state_switch |      | 0x09                  |
 
 ### 2.3 模块接口约定、实现功能
 
