@@ -175,13 +175,14 @@ BASE = 0x4000
 
 | 名称                | 管脚 | 地址（偏移）（in Word） |
 | ------------------- | ---- | ----------------------- |
-| [2: 0] state_switch |      | 0x00                  |
-| [7: 0] data_switch  |      | 0x01                  |
-| kb_done             |      | 0x02                  |
-| [31:0] kd_value     |      | 0x03                  |
-| led_sign            |      | 0x04                  |
-| [7: 0] led_data     |      | 0x05                  |
-| [7: 0] seg_data     |      | 0x06                  |
+| kb_req              |      | 0x00                  |
+| led_sign            |      | 0x01                  |
+| [7: 0] led_data     |      | 0x02                  |
+| [7: 0] seg_data     |      | 0x03                  |
+| [2: 0] state_switch |      | 0x04                  |
+| [7: 0] data_switch  |      | 0x05                  |
+| kb_done             |      | 0x06                  |
+| [31:0] kd_value     |      | 0x07                  |
 
 ### 2.3 模块接口约定、实现功能
 
