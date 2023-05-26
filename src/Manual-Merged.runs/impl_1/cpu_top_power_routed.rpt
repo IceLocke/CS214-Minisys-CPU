@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date             : Fri May 26 11:22:46 2023
+| Date             : Fri May 26 22:02:41 2023
 | Host             : ArtanisaxLEGION running 64-bit major release  (build 9200)
 | Command          : report_power -file cpu_top_power_routed.rpt -pb cpu_top_power_summary_routed.pb -rpx cpu_top_power_routed.rpx
 | Design           : cpu_top
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.003 |        7 |       --- |             --- |
-| Slice Logic             |     0.004 |    11883 |       --- |             --- |
-|   LUT as Logic          |     0.004 |     6867 |     63400 |           10.83 |
-|   CARRY4                |    <0.001 |      957 |     15850 |            6.04 |
-|   F7/F8 Muxes           |    <0.001 |      463 |     63400 |            0.73 |
-|   Register              |    <0.001 |     2473 |    126800 |            1.95 |
+| Slice Logic             |     0.004 |    12056 |       --- |             --- |
+|   LUT as Logic          |     0.004 |     6942 |     63400 |           10.95 |
+|   CARRY4                |    <0.001 |      969 |     15850 |            6.11 |
+|   F7/F8 Muxes           |    <0.001 |      485 |     63400 |            0.76 |
+|   Register              |    <0.001 |     2507 |    126800 |            1.98 |
 |   BUFG                  |    <0.001 |        1 |        32 |            3.13 |
 |   LUT as Shift Register |    <0.001 |       10 |     19000 |            0.05 |
-|   Others                |     0.000 |      165 |       --- |             --- |
-| Signals                 |     0.008 |     9139 |       --- |             --- |
+|   Others                |     0.000 |      167 |       --- |             --- |
+| Signals                 |     0.007 |     9211 |       --- |             --- |
 | Block RAM               |     0.005 |       29 |       135 |           21.48 |
 | MMCM                    |     0.101 |        1 |         6 |           16.67 |
 | I/O                     |     0.013 |       51 |       285 |           17.89 |
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.035 |       0.020 |      0.016 |
+| Vccint    |       1.000 |     0.035 |       0.019 |      0.016 |
 | Vccaux    |       1.800 |     0.074 |       0.056 |      0.018 |
 | Vcco33    |       3.300 |     0.008 |       0.004 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -191,13 +191,13 @@ Table of Contents
 |                 prim_noinit.ram                                                   |    <0.001 |
 |               ramloop[9].ram.r                                                    |    <0.001 |
 |                 prim_noinit.ram                                                   |    <0.001 |
-|   if_instance                                                                     |     0.011 |
+|   if_instance                                                                     |     0.010 |
 |     im                                                                            |     0.010 |
-|       imem                                                                        |     0.004 |
-|         U0                                                                        |     0.004 |
-|           inst_blk_mem_gen                                                        |     0.004 |
-|             gnbram.gnativebmg.native_blk_mem_gen                                  |     0.004 |
-|               valid.cstr                                                          |     0.004 |
+|       imem                                                                        |     0.003 |
+|         U0                                                                        |     0.003 |
+|           inst_blk_mem_gen                                                        |     0.003 |
+|             gnbram.gnativebmg.native_blk_mem_gen                                  |     0.003 |
+|               valid.cstr                                                          |     0.003 |
 |                 bindec_a.bindec_inst_a                                            |    <0.001 |
 |                 has_mux_a.A                                                       |    <0.001 |
 |                 ramloop[0].ram.r                                                  |    <0.001 |
@@ -248,6 +248,7 @@ Table of Contents
 |     sb7                                                                           |    <0.001 |
 |     sb8                                                                           |    <0.001 |
 |     sb9                                                                           |    <0.001 |
+|     sb_ack                                                                        |    <0.001 |
 |   register_instance                                                               |     0.001 |
 |   seg_instance                                                                    |    <0.001 |
 |   sys_clock_instance                                                              |    <0.001 |
@@ -277,7 +278,7 @@ Table of Contents
 |                     I_SRL_FIFO_RBU_F                                              |    <0.001 |
 |                       CNTR_INCR_DECR_ADDN_F_I                                     |    <0.001 |
 |                       DYNSHREG_F_I                                                |    <0.001 |
-|   vic_instance                                                                    |     0.001 |
+|   vic_instance                                                                    |    <0.001 |
 +-----------------------------------------------------------------------------------+-----------+
 
 

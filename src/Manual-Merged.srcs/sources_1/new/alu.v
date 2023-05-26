@@ -43,6 +43,7 @@ module alu(
                     6'h4: result = num2 << num1[4:0]; // sllv
                     6'h6: result = num2 >> num1[4:0]; // srlv
                     6'h7: result = $signed(num2) >>> num1[4:0]; // srav
+                    6'h8: result = 0; // jr
 //                    6'h18: result = $signed(num1) * $signed(num2); // mult
 //                    6'h19: result = num1 * num2; // multu
 //                    6'h1a: begin

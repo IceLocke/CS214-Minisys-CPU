@@ -44,7 +44,7 @@ module io(
     // MMIO refresher
     parameter IDLE = 1'b0;
     parameter WORK = 1'b1;
-    parameter TIME = 1000;//20;
+    parameter TIME = 1000;
     parameter BASE = 32'h4000;
 
     integer cnt;
@@ -56,7 +56,7 @@ module io(
     parameter DONE = 2'b11;
 
     wire [15:0] kb_t, kb;
-    reg kb_done, kb_req;
+    reg kb_done, kb_req, kb_down;
     reg [1:0] kb_state;
     reg [15:0] last;
     reg [31:0] buffer;
@@ -76,6 +76,7 @@ module io(
             kb_value <= 0;
             kb_done <= 1'b0;
             last <= 16'b0;
+            kb_down <= 1'b0;
             kb_state <= WAIT;
         end
         else if (cnt == 0) begin
@@ -86,10 +87,14 @@ module io(
                     end
                 end
                 INPT: begin
-                    if (kb[1] || kb[3] || buffer >= 10000000) begin
+                    if (kb_done & ~kb[1] & ~kb[3]) begin
+                        kb_done <= 1'b1;
+                        kb_down <= 1'b0;
+                        kb_state <= DONE;
+                    end
+                    else if (kb[1] | kb[3]) begin
                         kb_value <= (kb[1] ? -buffer : buffer);
                         kb_done <= 1'b1;
-                        kb_state <= DONE;
                     end
                     else begin
                         if (kb != last) begin
@@ -131,9 +136,10 @@ module io(
         end
     end
 
-    reg sw_done, sw_req;
+    wire ack_s;
+    reg sw_done, sw_req, ack_down;
     reg [1:0] sw_state;
-    reg [8:0] sw_value;
+    reg [7:0] sw_value;
     reg [2:0] state_value;
 
     always @(posedge clk, posedge rst) begin
@@ -142,6 +148,7 @@ module io(
             sw_value <= 0;
             sw_done <= 1'b0;
             sw_state <= WAIT;
+            ack_down <= 1'b0;
         end
         else if (cnt == 0) begin
             case (sw_state)
@@ -150,11 +157,15 @@ module io(
                         sw_state <= WORK;
                 end
                 WORK: begin
-                    if (ack) begin
+                    if (ack_down & ~ack_s) begin
+                        sw_done <= 1'b1;
+                        ack_down <= 1'b0;
+                        sw_state <= DONE;
+                    end
+                    else if (ack_s) begin
                         state_value <= state_switch;
                         sw_value <= data_switch;
-                        sw_done <= 1'b1;
-                        sw_state <= DONE;
+                        ack_down <= 1'b1;
                     end
                 end
                 DONE: begin
@@ -353,6 +364,12 @@ module io(
         .rst(rst),
         .button(kb_t[15]),
         .stable(kb[15])
+    );
+    stabilizer sb_ack(
+        .clk(kb_clk),
+        .rst(rst),
+        .button(ack),
+        .stable(ack_s)
     );
 
 endmodule

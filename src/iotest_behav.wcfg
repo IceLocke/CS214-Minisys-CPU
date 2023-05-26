@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="975250000fs"></ZoomStartTime>
-      <ZoomEndTime time="2323250001fs"></ZoomEndTime>
-      <Cursor1Time time="2000000000fs"></Cursor1Time>
+      <ZoomStartTime time="6528154046fs"></ZoomStartTime>
+      <ZoomEndTime time="6717921776fs"></ZoomEndTime>
+      <Cursor1Time time="6559782000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="126"></ValueColumnWidth>
+      <ValueColumnWidth column_width="102"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="8" />
+   <WVObjectSize size="19" />
    <wvobject fp_name="/uarttest/top/cpu_clk_instance/clk_23MHz" type="logic">
       <obj_property name="ElementShortName">clk_23MHz</obj_property>
       <obj_property name="ObjectShortName">clk_23MHz</obj_property>
@@ -28,29 +28,79 @@
       <obj_property name="ElementShortName">rst</obj_property>
       <obj_property name="ObjectShortName">rst</obj_property>
    </wvobject>
-   <wvobject fp_name="/uarttest/uart_en" type="logic">
-      <obj_property name="ElementShortName">uart_en</obj_property>
-      <obj_property name="ObjectShortName">uart_en</obj_property>
+   <wvobject fp_name="/uarttest/top/sys_clock_instance/sys_clk" type="logic">
+      <obj_property name="ElementShortName">sys_clk</obj_property>
+      <obj_property name="ObjectShortName">sys_clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/uarttest/ack" type="logic">
-      <obj_property name="ElementShortName">ack</obj_property>
-      <obj_property name="ObjectShortName">ack</obj_property>
+   <wvobject fp_name="/uarttest/top/if_instance/pc" type="array">
+      <obj_property name="ElementShortName">pc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/uarttest/uart_i" type="logic">
-      <obj_property name="ElementShortName">uart_i</obj_property>
-      <obj_property name="ObjectShortName">uart_i</obj_property>
+   <wvobject fp_name="/uarttest/top/if_instance/next_pc" type="array">
+      <obj_property name="ElementShortName">next_pc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">next_pc[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/uarttest/top/uart_en" type="logic">
-      <obj_property name="ElementShortName">uart_en</obj_property>
-      <obj_property name="ObjectShortName">uart_en</obj_property>
+   <wvobject fp_name="/uarttest/top/vic_instance/source" type="array">
+      <obj_property name="ElementShortName">source[7:0]</obj_property>
+      <obj_property name="ObjectShortName">source[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/uarttest/top/if_instance/uart_en" type="logic">
-      <obj_property name="ElementShortName">uart_en</obj_property>
-      <obj_property name="ObjectShortName">uart_en</obj_property>
+   <wvobject fp_name="/uarttest/top/if_instance/vic_enable" type="logic">
+      <obj_property name="ElementShortName">vic_enable</obj_property>
+      <obj_property name="ObjectShortName">vic_enable</obj_property>
    </wvobject>
-   <wvobject fp_name="/uarttest/top/if_instance/im/imem/wea" type="array">
-      <obj_property name="ElementShortName">wea[0:0]</obj_property>
-      <obj_property name="ObjectShortName">wea[0:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
+   <wvobject fp_name="/uarttest/top/if_instance/inst" type="array">
+      <obj_property name="ElementShortName">inst[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inst[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/top/vic_instance/pending_interrupt" type="array">
+      <obj_property name="ElementShortName">pending_interrupt[7:0]</obj_property>
+      <obj_property name="ObjectShortName">pending_interrupt[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/top/if_instance/ra" type="array">
+      <obj_property name="ElementShortName">ra[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ra[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/top/vic_instance/current_interrupt" type="array">
+      <obj_property name="ElementShortName">current_interrupt[3:0]</obj_property>
+      <obj_property name="ObjectShortName">current_interrupt[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/top/if_instance/eret_inst" type="logic">
+      <obj_property name="ElementShortName">eret_inst</obj_property>
+      <obj_property name="ObjectShortName">eret_inst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/top/io_instance/io_en" type="logic">
+      <obj_property name="ElementShortName">io_en</obj_property>
+      <obj_property name="ObjectShortName">io_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/top/io_instance/cnt" type="array">
+      <obj_property name="ElementShortName">cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/top/io_instance/addr" type="array">
+      <obj_property name="ElementShortName">addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/top/io_instance/mem_out" type="array">
+      <obj_property name="ElementShortName">mem_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/top/io_instance/led_sign" type="logic">
+      <obj_property name="ElementShortName">led_sign</obj_property>
+      <obj_property name="ObjectShortName">led_sign</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/top/vic_instance/epc_all" type="array">
+      <obj_property name="ElementShortName">epc_all[7:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">epc_all[7:0][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/top/vic_instance/epc" type="array">
+      <obj_property name="ElementShortName">epc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">epc[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
 </wave_config>

@@ -23,7 +23,7 @@
 module uarttest();
     reg clk = 0;
     reg rst = 0;
-    reg uart_en = 1;
+    reg uart_en = 0;
     reg ack;
     reg [7:0] data = 2333;
     reg uart_i = 1;
@@ -34,8 +34,7 @@ module uarttest();
         .rst(rst),
         .data_switch(data),
         .ack(ack),
-        .uart_en(uart_en),
-        .uart_i(uart_i)
+        .uart_en(uart_en)
     );
     
     always #1 clk = ~clk;

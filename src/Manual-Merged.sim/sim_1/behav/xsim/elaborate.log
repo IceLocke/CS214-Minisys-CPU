@@ -1,8 +1,47 @@
 Vivado Simulator 2017.4
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 435caaf5355f43e5a74237a80a686e44 --incr --debug typical --relax --mt 2 -L blk_mem_gen_v8_4_1 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot uarttest_behav xil_defaultlib.uarttest xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 435caaf5355f43e5a74237a80a686e44 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_1 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot uarttest_behav xil_defaultlib.uarttest xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2017.4/nightly/2017_12_15_2086221/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_4/simulation/blk_mem_gen_v8_4.v:2420]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=46.0,...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.cpu_wiz_clk_clk_wiz
+Compiling module xil_defaultlib.cpu_wiz_clk
+Compiling module xil_defaultlib.cpu_clk
+Compiling module blk_mem_gen_v8_4_1.blk_mem_gen_v8_4_1_output_stage(...
+Compiling module blk_mem_gen_v8_4_1.blk_mem_gen_v8_4_1_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_1.blk_mem_gen_v8_4_1_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_1.blk_mem_gen_v8_4_1(C_FAMILY="art...
+Compiling module xil_defaultlib.RAM_i_64K
+Compiling module xil_defaultlib.instruction_memory
+Compiling module xil_defaultlib.instruction_fetch
+Compiling module xil_defaultlib.control
+Compiling module xil_defaultlib.register
+Compiling module xil_defaultlib.sign_extension
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.dma
+Compiling module blk_mem_gen_v8_4_1.blk_mem_gen_v8_4_1_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_1.blk_mem_gen_v8_4_1(C_FAMILY="art...
+Compiling module xil_defaultlib.RAM_d_64K
+Compiling module xil_defaultlib.data_memory
+Compiling module xil_defaultlib.uart_bmpg
+Compiling module xil_defaultlib.upg
+Compiling module xil_defaultlib.uart_bmpg_0
+Compiling module xil_defaultlib.uart
+Compiling module xil_defaultlib.interrupt_encoder
+Compiling module xil_defaultlib.vic
+Compiling module xil_defaultlib.keyboard
+Compiling module xil_defaultlib.stabilizer
+Compiling module xil_defaultlib.io
+Compiling module xil_defaultlib.seg
+Compiling module xil_defaultlib.sys_clock
+Compiling module xil_defaultlib.cpu_top
+Compiling module xil_defaultlib.uarttest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot uarttest_behav

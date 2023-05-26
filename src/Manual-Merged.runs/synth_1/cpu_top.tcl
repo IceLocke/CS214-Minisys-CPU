@@ -16,6 +16,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tfgg484-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -30,6 +31,8 @@ set_property target_language Verilog [current_project]
 set_property ip_repo_paths c:/Users/lenovo/Desktop/Manual-Merged/SEU_CSE_507_user_uart_bmpg_1.3 [current_project]
 set_property ip_output_repo c:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
+add_files C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/RAM_i_64K/coe/prgmip32.coe
+add_files c:/Users/lenovo/Desktop/assemble/prgmip32.coe
 read_verilog -library xil_defaultlib {
   C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/alu.v
   C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/control.v
@@ -50,15 +53,15 @@ read_verilog -library xil_defaultlib {
   C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/vic.v
   C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/cpu_top.v
 }
-read_ip -quiet c:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/uart_bmpg_0/uart_bmpg_0.xci
+read_ip -quiet C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/uart_bmpg_0/uart_bmpg_0.xci
 
-read_ip -quiet c:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/RAM_d_64K/RAM_d_64K.xci
+read_ip -quiet C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/RAM_d_64K/RAM_d_64K.xci
 set_property used_in_implementation false [get_files -all c:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/RAM_d_64K/RAM_d_64K_ooc.xdc]
 
-read_ip -quiet c:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/RAM_i_64K/RAM_i_64K.xci
+read_ip -quiet C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/RAM_i_64K/RAM_i_64K.xci
 set_property used_in_implementation false [get_files -all c:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/RAM_i_64K/RAM_i_64K_ooc.xdc]
 
-read_ip -quiet c:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/cpu_wiz_clk/cpu_wiz_clk.xci
+read_ip -quiet C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/cpu_wiz_clk/cpu_wiz_clk.xci
 set_property used_in_implementation false [get_files -all c:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/cpu_wiz_clk/cpu_wiz_clk_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/cpu_wiz_clk/cpu_wiz_clk.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/cpu_wiz_clk/cpu_wiz_clk_ooc.xdc]
