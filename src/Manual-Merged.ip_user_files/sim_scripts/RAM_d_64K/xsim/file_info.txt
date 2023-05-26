@@ -1,0 +1,2 @@
+RAM_d_64K.v,verilog,xil_defaultlib,../../../../Manual-Merged.srcs/sources_1/ip/RAM_d_64K/sim/RAM_d_64K.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

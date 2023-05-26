@@ -1,0 +1,1079 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri May 26 11:09:06 2023
+# Process ID: 37408
+# Current directory: C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1
+# Command line: vivado.exe -log cpu_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_top.tcl
+# Log file: C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/cpu_top.vds
+# Journal file: C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source cpu_top.tcl -notrace
+Command: synth_design -top cpu_top -part xc7a100tfgg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 39964 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 343.461 ; gain = 103.086
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'cpu_top' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/cpu_top.v:23]
+INFO: [Synth 8-638] synthesizing module 'cpu_clk' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/cpu_clk.v:23]
+INFO: [Synth 8-638] synthesizing module 'cpu_wiz_clk' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/realtime/cpu_wiz_clk_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'cpu_wiz_clk' (1#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/realtime/cpu_wiz_clk_stub.v:5]
+WARNING: [Synth 8-350] instance 'cpu_wiz_clock' of module 'cpu_wiz_clk' requires 6 connections, but only 5 given [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/cpu_clk.v:30]
+INFO: [Synth 8-256] done synthesizing module 'cpu_clk' (2#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/cpu_clk.v:23]
+INFO: [Synth 8-638] synthesizing module 'instruction_fetch' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/instruction_fetch.v:1]
+INFO: [Synth 8-638] synthesizing module 'instruction_memory' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/instruction_memory.v:23]
+INFO: [Synth 8-638] synthesizing module 'RAM_i_64K' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/realtime/RAM_i_64K_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'RAM_i_64K' (3#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/realtime/RAM_i_64K_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'instruction_memory' (4#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/instruction_memory.v:23]
+INFO: [Synth 8-226] default block is never used [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/instruction_fetch.v:65]
+INFO: [Synth 8-256] done synthesizing module 'instruction_fetch' (5#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/instruction_fetch.v:1]
+WARNING: [Synth 8-350] instance 'if_instance' of module 'instruction_fetch' requires 25 connections, but only 24 given [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/cpu_top.v:110]
+INFO: [Synth 8-638] synthesizing module 'control' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/control.v:23]
+INFO: [Synth 8-256] done synthesizing module 'control' (6#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/control.v:23]
+INFO: [Synth 8-638] synthesizing module 'register' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/register.v:23]
+	Parameter stack_pointer bound to: 12284 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'register' (7#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/register.v:23]
+INFO: [Synth 8-638] synthesizing module 'sign_extension' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/sign_extension.v:23]
+INFO: [Synth 8-256] done synthesizing module 'sign_extension' (8#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/sign_extension.v:23]
+INFO: [Synth 8-638] synthesizing module 'alu' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/alu.v:23]
+INFO: [Synth 8-256] done synthesizing module 'alu' (9#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/alu.v:23]
+INFO: [Synth 8-638] synthesizing module 'dma' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/dma.v:23]
+INFO: [Synth 8-256] done synthesizing module 'dma' (10#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/dma.v:23]
+INFO: [Synth 8-638] synthesizing module 'data_memory' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/data_memory.v:23]
+INFO: [Synth 8-638] synthesizing module 'RAM_d_64K' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/realtime/RAM_d_64K_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'RAM_d_64K' (11#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/realtime/RAM_d_64K_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'data_memory' (12#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/data_memory.v:23]
+INFO: [Synth 8-638] synthesizing module 'uart' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/uart.v:23]
+INFO: [Synth 8-638] synthesizing module 'uart_bmpg_0' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/realtime/uart_bmpg_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'uart_bmpg_0' (13#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/realtime/uart_bmpg_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'uart_ip' of module 'uart_bmpg_0' requires 9 connections, but only 8 given [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/uart.v:45]
+INFO: [Synth 8-256] done synthesizing module 'uart' (14#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/uart.v:23]
+INFO: [Synth 8-638] synthesizing module 'vic' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/vic.v:23]
+	Parameter HANDLER_BASE bound to: 16'b0100000000000000 
+	Parameter IDLE bound to: 2'b00 
+	Parameter WAIT bound to: 2'b01 
+	Parameter PEND bound to: 2'b10 
+	Parameter DEAL bound to: 2'b11 
+INFO: [Synth 8-638] synthesizing module 'interrupt_encoder' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/interrupt_encoder.v:22]
+INFO: [Synth 8-256] done synthesizing module 'interrupt_encoder' (15#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/interrupt_encoder.v:22]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/vic.v:100]
+WARNING: [Synth 8-5788] Register epc_all_reg in module vic is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'epc_all_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "epc_all_reg" dissolved into registers
+INFO: [Synth 8-256] done synthesizing module 'vic' (16#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/vic.v:23]
+WARNING: [Synth 8-350] instance 'vic_instance' of module 'vic' requires 10 connections, but only 9 given [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/cpu_top.v:235]
+INFO: [Synth 8-638] synthesizing module 'io' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/io.v:23]
+	Parameter IDLE bound to: 1'b0 
+	Parameter WORK bound to: 1'b1 
+	Parameter TIME bound to: 1000 - type: integer 
+	Parameter BASE bound to: 16384 - type: integer 
+	Parameter WAIT bound to: 2'b00 
+	Parameter INPT bound to: 2'b01 
+	Parameter DONE bound to: 2'b11 
+INFO: [Synth 8-638] synthesizing module 'keyboard' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/keyboard.v:23]
+INFO: [Synth 8-256] done synthesizing module 'keyboard' (17#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/keyboard.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/io.v:96]
+INFO: [Synth 8-638] synthesizing module 'stabilizer' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:23]
+	Parameter IDLE bound to: 1'b0 
+	Parameter WORK bound to: 1'b1 
+	Parameter TIME bound to: 100000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'stabilizer' (18#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:23]
+WARNING: [Synth 8-5788] Register led_sign_reg in module io is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/io.v:174]
+WARNING: [Synth 8-5788] Register led_data_reg in module io is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/io.v:175]
+WARNING: [Synth 8-5788] Register seg_data_reg in module io is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/io.v:176]
+WARNING: [Synth 8-5788] Register addr_reg in module io is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/io.v:189]
+WARNING: [Synth 8-5788] Register write_data_reg in module io is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/io.v:216]
+INFO: [Synth 8-256] done synthesizing module 'io' (19#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/io.v:23]
+WARNING: [Synth 8-350] instance 'io_instance' of module 'io' requires 17 connections, but only 16 given [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/cpu_top.v:246]
+INFO: [Synth 8-638] synthesizing module 'seg' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/seg.v:23]
+	Parameter TIME bound to: 10000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'seg' (20#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/seg.v:23]
+INFO: [Synth 8-638] synthesizing module 'sys_clock' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/sys_clock.v:23]
+	Parameter UPPER_BOUND bound to: 15'b101100111011000 
+INFO: [Synth 8-256] done synthesizing module 'sys_clock' (21#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/sys_clock.v:23]
+INFO: [Synth 8-256] done synthesizing module 'cpu_top' (22#1) [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/cpu_top.v:23]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[31]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[30]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[29]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[28]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[27]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[26]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[25]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[24]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[23]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[22]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[21]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[20]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[19]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[18]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[17]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[16]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[15]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[14]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[13]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[12]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[11]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[10]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[9]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[8]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[7]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[6]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[5]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[4]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[3]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[2]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[1]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[0]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[31]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[30]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[29]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[28]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[27]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[26]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[25]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[24]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[23]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[22]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[21]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[20]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[19]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[18]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[17]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[16]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[1]
+WARNING: [Synth 8-3331] design data_memory has unconnected port addr[0]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[31]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[30]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[29]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[28]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[27]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[26]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[25]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[24]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[23]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[22]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[21]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[20]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[19]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[18]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[17]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[16]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[1]
+WARNING: [Synth 8-3331] design instruction_memory has unconnected port addr[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 397.188 ; gain = 156.812
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 397.188 ; gain = 156.812
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tfgg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/dcp4/uart_bmpg_0_in_context.xdc] for cell 'uart_instance/uart_ip'
+Finished Parsing XDC File [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/dcp4/uart_bmpg_0_in_context.xdc] for cell 'uart_instance/uart_ip'
+Parsing XDC File [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/dcp5/RAM_d_64K_in_context.xdc] for cell 'data_memory_instance/dmem'
+Finished Parsing XDC File [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/dcp5/RAM_d_64K_in_context.xdc] for cell 'data_memory_instance/dmem'
+Parsing XDC File [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/dcp6/RAM_d_64K_in_context.xdc] for cell 'if_instance/im/imem'
+Finished Parsing XDC File [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/dcp6/RAM_d_64K_in_context.xdc] for cell 'if_instance/im/imem'
+Parsing XDC File [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/dcp7/cpu_wiz_clk_in_context.xdc] for cell 'cpu_clk_instance/cpu_wiz_clock'
+Finished Parsing XDC File [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/dcp7/cpu_wiz_clk_in_context.xdc] for cell 'cpu_clk_instance/cpu_wiz_clock'
+Parsing XDC File [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/constrs_1/new/constraints.xdc]
+Finished Parsing XDC File [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/constrs_1/new/constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/constrs_1/new/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/cpu_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/cpu_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 766.812 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 766.812 ; gain = 526.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 766.812 ; gain = 526.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk_in. (constraint file  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/dcp7/cpu_wiz_clk_in_context.xdc, line 5).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_in. (constraint file  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/.Xil/Vivado-37408-ArtanisaxLEGION/dcp7/cpu_wiz_clk_in_context.xdc, line 6).
+Applied set_property DONT_TOUCH = true for cpu_clk_instance/cpu_wiz_clock. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for data_memory_instance/dmem. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for if_instance/im/imem. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for uart_instance/uart_ip. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 766.812 ; gain = 526.438
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "registers_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "alu_exception" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "alu_exception" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'row_reg' in module 'keyboard'
+INFO: [Synth 8-5544] ROM "kb" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "row" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:43]
+INFO: [Synth 8-4471] merging register 'io_en_reg' into 'state_reg' [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/io.v:180]
+WARNING: [Synth 8-6014] Unused sequential element io_en_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/io.v:180]
+INFO: [Synth 8-5546] ROM "buffer" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "led_sign" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "led_data" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "seg_data" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "kb_req" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "sw_req" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "io_en" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "write_en" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "addr" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "write_data" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/io.v:179]
+INFO: [Synth 8-802] inferred FSM for state register 'en_reg' in module 'seg'
+INFO: [Synth 8-5545] ROM "clk_cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "seg_clk" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "en" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE2 |                               00 |                             1110
+                  iSTATE |                               01 |                             0111
+                 iSTATE0 |                               10 |                             1011
+                 iSTATE1 |                               11 |                             1101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'row_reg' using encoding 'sequential' in module 'keyboard'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              000 |                         11111110
+                 iSTATE0 |                              001 |                         11111101
+                 iSTATE1 |                              010 |                         11111011
+                 iSTATE2 |                              011 |                         11110111
+                 iSTATE3 |                              100 |                         11101111
+                 iSTATE4 |                              101 |                         11011111
+                 iSTATE5 |                              110 |                         10111111
+                 iSTATE6 |                              111 |                         01111111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'en_reg' using encoding 'sequential' in module 'seg'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 766.812 ; gain = 526.438
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 1     
+	   3 Input     64 Bit       Adders := 2     
+	   2 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 17    
+	   2 Input     15 Bit       Adders := 1     
++---XORs : 
+	   2 Input     64 Bit         XORs := 1     
+	   2 Input      8 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 40    
+	               16 Bit    Registers := 3     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 57    
++---Multipliers : 
+	                 4x32  Multipliers := 1     
++---Muxes : 
+	  13 Input     64 Bit        Muxes := 1     
+	   2 Input     64 Bit        Muxes := 6     
+	   2 Input     32 Bit        Muxes := 15    
+	  13 Input     32 Bit        Muxes := 1     
+	  11 Input     32 Bit        Muxes := 1     
+	  12 Input     32 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 3     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	   9 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+	   8 Input      4 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   5 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 122   
+	  13 Input      1 Bit        Muxes := 8     
+	  18 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 13    
+	  14 Input      1 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 1     
+	  11 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module cpu_top 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 3     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+Module instruction_memory 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module instruction_fetch 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+Module control 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+Module register 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 34    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 32    
+Module alu 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 1     
+	   3 Input     64 Bit       Adders := 2     
+	   2 Input     33 Bit       Adders := 1     
++---XORs : 
+	   2 Input     64 Bit         XORs := 1     
++---Muxes : 
+	  13 Input     64 Bit        Muxes := 1     
+	   2 Input     64 Bit        Muxes := 3     
+	  13 Input      1 Bit        Muxes := 1     
+	  18 Input      1 Bit        Muxes := 1     
+Module dma 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module data_memory 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module interrupt_encoder 
+Detailed RTL Component Info : 
++---Muxes : 
+	   9 Input      4 Bit        Muxes := 1     
+Module vic 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 9     
+	   4 Input      1 Bit        Muxes := 3     
+Module keyboard 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     16 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+Module stabilizer 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module io 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 11    
++---Registers : 
+	               32 Bit    Registers := 5     
+	               16 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 7     
++---Multipliers : 
+	                 4x32  Multipliers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	  13 Input     32 Bit        Muxes := 1     
+	  11 Input     32 Bit        Muxes := 1     
+	  12 Input     32 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 11    
+	  13 Input      1 Bit        Muxes := 7     
+	  14 Input      1 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 1     
+	  11 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 10    
+Module seg 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module sys_clock 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     15 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:43]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:43]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:43]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:43]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:43]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:43]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:43]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:43]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:43]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:43]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:43]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:43]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:43]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:43]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:43]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v:43]
+INFO: [Synth 8-5545] ROM "io_en" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "buffer" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/io.v:179]
+INFO: [Synth 8-5545] ROM "clk_cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "seg_clk" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[31]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[30]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[29]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[28]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[27]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[26]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[25]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[24]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[23]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[22]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[21]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[20]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[19]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[18]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[17]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[16]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[15]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[14]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[13]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[12]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[11]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[10]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[9]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[8]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[7]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[6]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[5]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[4]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[3]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[2]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[1]
+WARNING: [Synth 8-3331] design io has unconnected port uart_data[0]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (sys_clock_instance/\count_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\sw_value_reg[8] )
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[31]' (FDE) to 'io_instance/addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[30]' (FDE) to 'io_instance/addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[29]' (FDE) to 'io_instance/addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[28]' (FDE) to 'io_instance/addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[27]' (FDE) to 'io_instance/addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[26]' (FDE) to 'io_instance/addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[25]' (FDE) to 'io_instance/addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[24]' (FDE) to 'io_instance/addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[23]' (FDE) to 'io_instance/addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[22]' (FDE) to 'io_instance/addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[21]' (FDE) to 'io_instance/addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[20]' (FDE) to 'io_instance/addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[19]' (FDE) to 'io_instance/addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[18]' (FDE) to 'io_instance/addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[17]' (FDE) to 'io_instance/addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[16]' (FDE) to 'io_instance/addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[6]' (FDE) to 'io_instance/addr_reg[15]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[1]' (FDE) to 'io_instance/addr_reg[15]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[0]' (FDE) to 'io_instance/addr_reg[15]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[7]' (FDE) to 'io_instance/addr_reg[15]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[8]' (FDE) to 'io_instance/addr_reg[15]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[9]' (FDE) to 'io_instance/addr_reg[15]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[10]' (FDE) to 'io_instance/addr_reg[15]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[11]' (FDE) to 'io_instance/addr_reg[15]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[12]' (FDE) to 'io_instance/addr_reg[15]'
+INFO: [Synth 8-3886] merging instance 'io_instance/addr_reg[13]' (FDE) to 'io_instance/addr_reg[15]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (io_instance/\addr_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (io_instance/\addr_reg[15] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][30]' (FDE_1) to 'vic_instance/epc_all_reg[4][30]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][30]' (FDE_1) to 'vic_instance/epc_all_reg[2][30]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][30]' (FDE_1) to 'vic_instance/epc_all_reg[0][30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][30] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][22]' (FDE_1) to 'vic_instance/epc_all_reg[4][22]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][22]' (FDE_1) to 'vic_instance/epc_all_reg[2][22]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][22]' (FDE_1) to 'vic_instance/epc_all_reg[0][22]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][22] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][26]' (FDE_1) to 'vic_instance/epc_all_reg[4][26]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][26]' (FDE_1) to 'vic_instance/epc_all_reg[2][26]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][26]' (FDE_1) to 'vic_instance/epc_all_reg[0][26]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][26] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][18]' (FDE_1) to 'vic_instance/epc_all_reg[4][18]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][18]' (FDE_1) to 'vic_instance/epc_all_reg[2][18]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][18]' (FDE_1) to 'vic_instance/epc_all_reg[0][18]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][18] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][28]' (FDE_1) to 'vic_instance/epc_all_reg[4][28]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][28]' (FDE_1) to 'vic_instance/epc_all_reg[2][28]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][28]' (FDE_1) to 'vic_instance/epc_all_reg[0][28]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][28] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][20]' (FDE_1) to 'vic_instance/epc_all_reg[4][20]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][20]' (FDE_1) to 'vic_instance/epc_all_reg[2][20]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][20]' (FDE_1) to 'vic_instance/epc_all_reg[0][20]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][20] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][24]' (FDE_1) to 'vic_instance/epc_all_reg[4][24]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][24]' (FDE_1) to 'vic_instance/epc_all_reg[2][24]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][24]' (FDE_1) to 'vic_instance/epc_all_reg[0][24]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][24] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][16]' (FDE_1) to 'vic_instance/epc_all_reg[4][16]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][16]' (FDE_1) to 'vic_instance/epc_all_reg[2][16]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][16]' (FDE_1) to 'vic_instance/epc_all_reg[0][16]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][16] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][29]' (FDE_1) to 'vic_instance/epc_all_reg[4][29]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][29]' (FDE_1) to 'vic_instance/epc_all_reg[2][29]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][29]' (FDE_1) to 'vic_instance/epc_all_reg[0][29]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][29] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][21]' (FDE_1) to 'vic_instance/epc_all_reg[4][21]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][21]' (FDE_1) to 'vic_instance/epc_all_reg[2][21]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][21]' (FDE_1) to 'vic_instance/epc_all_reg[0][21]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][21] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][25]' (FDE_1) to 'vic_instance/epc_all_reg[4][25]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][25]' (FDE_1) to 'vic_instance/epc_all_reg[2][25]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][25]' (FDE_1) to 'vic_instance/epc_all_reg[0][25]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][25] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][17]' (FDE_1) to 'vic_instance/epc_all_reg[4][17]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][17]' (FDE_1) to 'vic_instance/epc_all_reg[2][17]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][17]' (FDE_1) to 'vic_instance/epc_all_reg[0][17]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][17] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][27]' (FDE_1) to 'vic_instance/epc_all_reg[4][27]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][27]' (FDE_1) to 'vic_instance/epc_all_reg[2][27]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][27]' (FDE_1) to 'vic_instance/epc_all_reg[0][27]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][27] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][19]' (FDE_1) to 'vic_instance/epc_all_reg[4][19]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][19]' (FDE_1) to 'vic_instance/epc_all_reg[2][19]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][19]' (FDE_1) to 'vic_instance/epc_all_reg[0][19]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][19] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][23]' (FDE_1) to 'vic_instance/epc_all_reg[4][23]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][23]' (FDE_1) to 'vic_instance/epc_all_reg[2][23]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][23]' (FDE_1) to 'vic_instance/epc_all_reg[0][23]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][23] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][31]' (FDE_1) to 'vic_instance/epc_all_reg[4][31]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][31]' (FDE_1) to 'vic_instance/epc_all_reg[2][31]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][31]' (FDE_1) to 'vic_instance/epc_all_reg[0][31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][31] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][0]' (FDE_1) to 'vic_instance/epc_all_reg[4][0]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][0]' (FDE_1) to 'vic_instance/epc_all_reg[2][0]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][0]' (FDE_1) to 'vic_instance/epc_all_reg[0][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][0] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][1]' (FDE_1) to 'vic_instance/epc_all_reg[4][1]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][1]' (FDE_1) to 'vic_instance/epc_all_reg[2][1]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][1]' (FDE_1) to 'vic_instance/epc_all_reg[0][1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][1] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][2]' (FDE_1) to 'vic_instance/epc_all_reg[4][2]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][2]' (FDE_1) to 'vic_instance/epc_all_reg[2][2]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][2]' (FDE_1) to 'vic_instance/epc_all_reg[0][2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][2] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][3]' (FDE_1) to 'vic_instance/epc_all_reg[4][3]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][3]' (FDE_1) to 'vic_instance/epc_all_reg[2][3]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][3]' (FDE_1) to 'vic_instance/epc_all_reg[0][3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][3] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][4]' (FDE_1) to 'vic_instance/epc_all_reg[4][4]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][4]' (FDE_1) to 'vic_instance/epc_all_reg[2][4]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][4]' (FDE_1) to 'vic_instance/epc_all_reg[0][4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][4] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][5]' (FDE_1) to 'vic_instance/epc_all_reg[4][5]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][5]' (FDE_1) to 'vic_instance/epc_all_reg[2][5]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][5]' (FDE_1) to 'vic_instance/epc_all_reg[0][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][5] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][6]' (FDE_1) to 'vic_instance/epc_all_reg[4][6]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][6]' (FDE_1) to 'vic_instance/epc_all_reg[2][6]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][6]' (FDE_1) to 'vic_instance/epc_all_reg[0][6]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][6] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][7]' (FDE_1) to 'vic_instance/epc_all_reg[4][7]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][7]' (FDE_1) to 'vic_instance/epc_all_reg[2][7]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[2][7]' (FDE_1) to 'vic_instance/epc_all_reg[0][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][7] )
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[6][8]' (FDE_1) to 'vic_instance/epc_all_reg[4][8]'
+INFO: [Synth 8-3886] merging instance 'vic_instance/epc_all_reg[4][8]' (FDE_1) to 'vic_instance/epc_all_reg[2][8]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[0][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\current_interrupt_reg[0] )
+WARNING: [Synth 8-3332] Sequential element (current_interrupt_reg[0]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (pending_interrupt_reg[7]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (pending_interrupt_reg[6]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (pending_interrupt_reg[5]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (pending_interrupt_reg[4]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (pending_interrupt_reg[2]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (pending_interrupt_reg[0]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][30]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][22]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][26]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][18]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][28]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][20]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][24]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][16]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][29]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][21]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][25]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][17]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][27]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][19]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][23]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][31]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][0]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][1]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][2]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][3]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][4]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][5]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][6]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][7]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][8]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][9]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][10]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][11]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][12]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][13]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][14]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[0][15]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (addr_reg[15]) is unused and will be removed from module io.
+WARNING: [Synth 8-3332] Sequential element (addr_reg[14]) is unused and will be removed from module io.
+WARNING: [Synth 8-3332] Sequential element (sw_value_reg[8]) is unused and will be removed from module io.
+WARNING: [Synth 8-3332] Sequential element (count_reg[15]) is unused and will be removed from module sys_clock.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vic_instance/\epc_all_reg[5][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (register_instance/\registers_reg[0][14] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][31]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][30]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][29]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][28]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][27]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][26]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][25]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][24]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][23]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][22]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][21]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][20]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][19]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][18]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][17]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][16]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][15]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][14]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][13]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][12]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][11]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][10]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][9]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][8]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][7]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][6]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][5]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][4]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][3]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][2]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][1]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (registers_reg[0][0]) is unused and will be removed from module register.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][31]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][30]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][29]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][28]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][27]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][26]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][25]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][24]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][23]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][22]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][21]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][20]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][19]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][18]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][17]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][16]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][15]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][14]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][13]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][12]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][11]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][10]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][9]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][8]) is unused and will be removed from module vic.
+WARNING: [Synth 8-3332] Sequential element (epc_all_reg[5][7]) is unused and will be removed from module vic.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:35 ; elapsed = 00:01:36 . Memory (MB): peak = 773.781 ; gain = 533.406
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'cpu_clk_instance/cpu_wiz_clock/clk_10MHz' to pin 'cpu_clk_instance/cpu_wiz_clock/bbstub_clk_10MHz/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'cpu_clk_instance/cpu_wiz_clock/clk_23MHz' to pin 'cpu_clk_instance/cpu_wiz_clock/bbstub_clk_23MHz/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'cpu_clk_instance/cpu_wiz_clock/clk_46MHz' to pin 'cpu_clk_instance/cpu_wiz_clock/bbstub_clk_46MHz/O'
+INFO: [Synth 8-5819] Moved 3 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:42 ; elapsed = 00:01:44 . Memory (MB): peak = 874.633 ; gain = 634.258
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:54 ; elapsed = 00:01:56 . Memory (MB): peak = 960.766 ; gain = 720.391
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:06 ; elapsed = 00:02:08 . Memory (MB): peak = 1172.754 ; gain = 932.379
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:07 ; elapsed = 00:02:09 . Memory (MB): peak = 1172.754 ; gain = 932.379
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:07 ; elapsed = 00:02:09 . Memory (MB): peak = 1172.754 ; gain = 932.379
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:08 ; elapsed = 00:02:10 . Memory (MB): peak = 1172.754 ; gain = 932.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:08 ; elapsed = 00:02:10 . Memory (MB): peak = 1172.754 ; gain = 932.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:08 ; elapsed = 00:02:10 . Memory (MB): peak = 1172.754 ; gain = 932.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:08 ; elapsed = 00:02:10 . Memory (MB): peak = 1172.754 ; gain = 932.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |cpu_wiz_clk   |         1|
+|2     |RAM_d_64K     |         1|
+|3     |RAM_i_64K     |         1|
+|4     |uart_bmpg_0   |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |RAM_d_64K   |     1|
+|2     |RAM_i_64K   |     1|
+|3     |cpu_wiz_clk |     1|
+|4     |uart_bmpg_0 |     1|
+|5     |CARRY4      |   937|
+|6     |LUT1        |   170|
+|7     |LUT2        |  1615|
+|8     |LUT3        |   973|
+|9     |LUT4        |  1050|
+|10    |LUT5        |   958|
+|11    |LUT6        |  2639|
+|12    |MUXF7       |   335|
+|13    |MUXF8       |   128|
+|14    |FDCE        |  1965|
+|15    |FDPE        |    11|
+|16    |FDRE        |   132|
+|17    |IBUF        |    20|
+|18    |OBUF        |    30|
++------+------------+------+
+
+Report Instance Areas: 
++------+-----------------------+-------------------+------+
+|      |Instance               |Module             |Cells |
++------+-----------------------+-------------------+------+
+|1     |top                    |                   | 11082|
+|2     |  cpu_clk_instance     |cpu_clk            |     6|
+|3     |  data_memory_instance |data_memory        |    32|
+|4     |  if_instance          |instruction_fetch  |  1822|
+|5     |    im                 |instruction_memory |  1709|
+|6     |  io_instance          |io                 |  4298|
+|7     |    keyboard_instance  |keyboard           |    32|
+|8     |    sb0                |stabilizer         |   102|
+|9     |    sb1                |stabilizer_0       |   133|
+|10    |    sb10               |stabilizer_1       |   102|
+|11    |    sb11               |stabilizer_2       |   111|
+|12    |    sb12               |stabilizer_3       |   105|
+|13    |    sb13               |stabilizer_4       |   136|
+|14    |    sb14               |stabilizer_5       |   103|
+|15    |    sb15               |stabilizer_6       |   104|
+|16    |    sb2                |stabilizer_7       |   104|
+|17    |    sb3                |stabilizer_8       |   109|
+|18    |    sb4                |stabilizer_9       |   103|
+|19    |    sb5                |stabilizer_10      |   103|
+|20    |    sb6                |stabilizer_11      |   103|
+|21    |    sb7                |stabilizer_12      |   133|
+|22    |    sb8                |stabilizer_13      |   102|
+|23    |    sb9                |stabilizer_14      |   192|
+|24    |  register_instance    |register           |  1952|
+|25    |  seg_instance         |seg                |  2207|
+|26    |  sys_clock_instance   |sys_clock          |    38|
+|27    |  uart_instance        |uart               |   147|
+|28    |  vic_instance         |vic                |   204|
++------+-----------------------+-------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:08 ; elapsed = 00:02:10 . Memory (MB): peak = 1172.754 ; gain = 932.379
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 177 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:57 ; elapsed = 00:02:03 . Memory (MB): peak = 1172.754 ; gain = 562.754
+Synthesis Optimization Complete : Time (s): cpu = 00:02:08 ; elapsed = 00:02:10 . Memory (MB): peak = 1172.754 ; gain = 932.379
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 1420 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+325 Infos, 232 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:13 ; elapsed = 00:02:16 . Memory (MB): peak = 1172.754 ; gain = 943.527
+INFO: [Common 17-1381] The checkpoint 'C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/cpu_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file cpu_top_utilization_synth.rpt -pb cpu_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.069 . Memory (MB): peak = 1172.754 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri May 26 11:11:27 2023...

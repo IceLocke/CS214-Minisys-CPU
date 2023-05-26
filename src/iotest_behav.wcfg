@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="uarttest_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="uarttest" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="975250000fs"></ZoomStartTime>
+      <ZoomEndTime time="2323250001fs"></ZoomEndTime>
+      <Cursor1Time time="2000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="126"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/uarttest/top/cpu_clk_instance/clk_23MHz" type="logic">
+      <obj_property name="ElementShortName">clk_23MHz</obj_property>
+      <obj_property name="ObjectShortName">clk_23MHz</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/uart_en" type="logic">
+      <obj_property name="ElementShortName">uart_en</obj_property>
+      <obj_property name="ObjectShortName">uart_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/ack" type="logic">
+      <obj_property name="ElementShortName">ack</obj_property>
+      <obj_property name="ObjectShortName">ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/uart_i" type="logic">
+      <obj_property name="ElementShortName">uart_i</obj_property>
+      <obj_property name="ObjectShortName">uart_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/top/uart_en" type="logic">
+      <obj_property name="ElementShortName">uart_en</obj_property>
+      <obj_property name="ObjectShortName">uart_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/top/if_instance/uart_en" type="logic">
+      <obj_property name="ElementShortName">uart_en</obj_property>
+      <obj_property name="ObjectShortName">uart_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uarttest/top/if_instance/im/imem/wea" type="array">
+      <obj_property name="ElementShortName">wea[0:0]</obj_property>
+      <obj_property name="ObjectShortName">wea[0:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+</wave_config>

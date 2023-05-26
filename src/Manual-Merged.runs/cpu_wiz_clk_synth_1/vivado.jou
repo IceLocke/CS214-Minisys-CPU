@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri May 26 11:01:10 2023
+# Process ID: 27552
+# Current directory: C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/cpu_wiz_clk_synth_1
+# Command line: vivado.exe -log cpu_wiz_clk.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_wiz_clk.tcl
+# Log file: C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/cpu_wiz_clk_synth_1/cpu_wiz_clk.vds
+# Journal file: C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/cpu_wiz_clk_synth_1\vivado.jou
+#-----------------------------------------------------------
+source cpu_wiz_clk.tcl -notrace
