@@ -220,7 +220,7 @@ CPU 时钟。通过封装一个 clock wizard 实现。
 
 #### 2.3.3 instruction_fetch
 
-IF 模块。在**时钟下降沿根据 PC 寄存器读取 instruction memory 中的指令**。这里需要注意的是，例如我们这里有三个时钟周期，分别记为0、1、2。在0的下降沿， instruction_fetch 应该能够输出在 0 的上升沿结束是 pc 对应的指令。在输出指令后，control 解析指令，返还给 instruction_fetch，更新 next_pc（组合逻辑），然后在时钟上升沿时阻塞赋值 pc 寄存器的值。
+IF 模块。在**时钟上升降沿根据 PC 寄存器读取 instruction memory 中的指令**。这里需要注意的是，例如我们这里有三个时钟周期，分别记为0、1、2。在0的下降沿， instruction_fetch 应该能够输出在 0 的上升沿结束是 pc 对应的指令。在输出指令后，control 解析指令，返还给 instruction_fetch，更新 next_pc（组合逻辑），然后在时钟下降沿时赋给 pc 寄存器的值。
 
 | 端口类型          | 端口名称         | 功能                       | 备注  |
 | ------------- | ------------ | ------------------------ | --- |
