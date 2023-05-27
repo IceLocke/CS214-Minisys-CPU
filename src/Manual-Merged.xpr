@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="35" Path="C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.xpr">
+<Project Version="7" Minor="35" Path="E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="435caaf5355f43e5a74237a80a686e44"/>
@@ -209,7 +209,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../assemble/prgmip32.coe">
+      <File Path="C:/Users/lenovo/Desktop/assemble/prgmip32.coe">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>

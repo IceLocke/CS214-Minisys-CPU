@@ -16,55 +16,55 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a100tfgg484-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.cache/wt [current_project]
-set_property parent.project_path C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.xpr [current_project]
+set_property webtalk.parent_dir E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.cache/wt [current_project]
+set_property parent.project_path E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_repo_paths c:/Users/lenovo/Desktop/Manual-Merged/SEU_CSE_507_user_uart_bmpg_1.3 [current_project]
-set_property ip_output_repo c:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.cache/ip [current_project]
+set_property ip_repo_paths e:/GitHub/Artanisax/CS214-Minisys-CPU/src/SEU_CSE_507_user_uart_bmpg_1.3 [current_project]
+set_property ip_output_repo e:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/RAM_i_64K/coe/prgmip32.coe
-add_files c:/Users/lenovo/Desktop/assemble/prgmip32.coe
+add_files E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/ip/RAM_i_64K/coe/prgmip32.coe
+add_files C:/Users/lenovo/Desktop/assemble/prgmip32.coe
 read_verilog -library xil_defaultlib {
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/alu.v
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/control.v
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/cpu_clk.v
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/data_memory.v
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/dma.v
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/instruction_fetch.v
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/instruction_memory.v
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/interrupt_encoder.v
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/io.v
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/keyboard.v
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/register.v
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/seg.v
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/sign_extension.v
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/stabilizer.v
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/sys_clock.v
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/uart.v
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/vic.v
-  C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/new/cpu_top.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/alu.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/control.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/cpu_clk.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/data_memory.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/dma.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/instruction_fetch.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/instruction_memory.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/interrupt_encoder.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/io.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/keyboard.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/register.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/seg.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/sign_extension.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/stabilizer.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/sys_clock.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/uart.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/vic.v
+  E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/new/cpu_top.v
 }
-read_ip -quiet C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/uart_bmpg_0/uart_bmpg_0.xci
+read_ip -quiet E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/ip/uart_bmpg_0/uart_bmpg_0.xci
 
-read_ip -quiet C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/RAM_d_64K/RAM_d_64K.xci
-set_property used_in_implementation false [get_files -all c:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/RAM_d_64K/RAM_d_64K_ooc.xdc]
+read_ip -quiet E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/ip/RAM_d_64K/RAM_d_64K.xci
+set_property used_in_implementation false [get_files -all e:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/ip/RAM_d_64K/RAM_d_64K_ooc.xdc]
 
-read_ip -quiet C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/RAM_i_64K/RAM_i_64K.xci
-set_property used_in_implementation false [get_files -all c:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/RAM_i_64K/RAM_i_64K_ooc.xdc]
+read_ip -quiet E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/ip/RAM_i_64K/RAM_i_64K.xci
+set_property used_in_implementation false [get_files -all e:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/ip/RAM_i_64K/RAM_i_64K_ooc.xdc]
 
-read_ip -quiet C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/cpu_wiz_clk/cpu_wiz_clk.xci
-set_property used_in_implementation false [get_files -all c:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/cpu_wiz_clk/cpu_wiz_clk_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/cpu_wiz_clk/cpu_wiz_clk.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/cpu_wiz_clk/cpu_wiz_clk_ooc.xdc]
+read_ip -quiet E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/ip/cpu_wiz_clk/cpu_wiz_clk.xci
+set_property used_in_implementation false [get_files -all e:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/ip/cpu_wiz_clk/cpu_wiz_clk_board.xdc]
+set_property used_in_implementation false [get_files -all e:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/ip/cpu_wiz_clk/cpu_wiz_clk.xdc]
+set_property used_in_implementation false [get_files -all e:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/ip/cpu_wiz_clk/cpu_wiz_clk_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -74,8 +74,8 @@ set_property used_in_implementation false [get_files -all c:/Users/lenovo/Deskto
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/constrs_1/new/constraints.xdc
-set_property used_in_implementation false [get_files C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/constrs_1/new/constraints.xdc]
+read_xdc E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/constrs_1/new/constraints.xdc
+set_property used_in_implementation false [get_files E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/constrs_1/new/constraints.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

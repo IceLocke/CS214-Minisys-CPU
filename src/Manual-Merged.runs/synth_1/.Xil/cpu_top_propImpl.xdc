@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/constrs_1/new/constraints.xdc rfile:../../../Manual-Merged.srcs/constrs_1/new/constraints.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/constrs_1/new/constraints.xdc rfile:../../../Manual-Merged.srcs/constrs_1/new/constraints.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:14 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN Y18 [get_ports clk_in]
 set_property src_info {type:XDC file:1 line:15 export:INPUT save:INPUT read:READ} [current_design]

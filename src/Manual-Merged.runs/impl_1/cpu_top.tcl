@@ -60,28 +60,28 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tfgg484-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.cache/wt [current_project]
-  set_property parent.project_path C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.xpr [current_project]
-  set_property ip_repo_paths C:/Users/lenovo/Desktop/Manual-Merged/SEU_CSE_507_user_uart_bmpg_1.3 [current_project]
-  set_property ip_output_repo C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.cache/ip [current_project]
+  set_property webtalk.parent_dir E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.cache/wt [current_project]
+  set_property parent.project_path E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.xpr [current_project]
+  set_property ip_repo_paths E:/GitHub/Artanisax/CS214-Minisys-CPU/src/SEU_CSE_507_user_uart_bmpg_1.3 [current_project]
+  set_property ip_output_repo E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/synth_1/cpu_top.dcp
-  read_ip -quiet C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/uart_bmpg_0/uart_bmpg_0.xci
-  read_ip -quiet C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/RAM_d_64K/RAM_d_64K.xci
-  read_ip -quiet C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/RAM_i_64K/RAM_i_64K.xci
-  read_ip -quiet C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/cpu_wiz_clk/cpu_wiz_clk.xci
-  read_edif c:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/sources_1/ip/uart_bmpg_0/uart_bmpg.edif
-  read_xdc C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.srcs/constrs_1/new/constraints.xdc
+  add_files -quiet E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.runs/synth_1/cpu_top.dcp
+  read_ip -quiet E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/ip/uart_bmpg_0/uart_bmpg_0.xci
+  read_ip -quiet E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/ip/RAM_d_64K/RAM_d_64K.xci
+  read_ip -quiet E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/ip/RAM_i_64K/RAM_i_64K.xci
+  read_ip -quiet E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/ip/cpu_wiz_clk/cpu_wiz_clk.xci
+  read_edif e:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/sources_1/ip/uart_bmpg_0/uart_bmpg.edif
+  read_xdc E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.srcs/constrs_1/new/constraints.xdc
   link_design -top cpu_top -part xc7a100tfgg484-1
   close_msg_db -file init_design.pb
 } RESULT]

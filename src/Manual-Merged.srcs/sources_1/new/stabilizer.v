@@ -30,7 +30,7 @@ module stabilizer(
     
     parameter IDLE = 1'b0;
     parameter WORK = 1'b1;
-    parameter TIME = 100000;
+    parameter TIME = 1000000;
 
     reg state;
     reg last;

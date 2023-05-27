@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/lenovo/Desktop/Manual-Merged/Manual-Merged.runs/impl_1'
+HD_PWD='E:/GitHub/Artanisax/CS214-Minisys-CPU/src/Manual-Merged.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
