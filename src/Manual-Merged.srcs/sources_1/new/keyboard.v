@@ -35,7 +35,7 @@ module keyboard(
             row <= 4'b1110;
         end
         else begin
-            case (row)
+            case (row)  // scan rows to get columns
                 4'b0111: begin
                     kb[15:12] <= ~col;
                     row <= 4'b1011;

@@ -38,7 +38,9 @@ module uart(
     wire [14:0] uart_addr_out;
     
     assign uart_addr = uart_addr_out[13:0];
+    // occupy instruction memory
     assign uart_i = uart_en & (uart_rst | (~uart_done & ~uart_addr_out[14]));
+    // occupy data memory
     assign uart_d = uart_en & (uart_rst | (~uart_done & uart_addr_out[14]));
     
     

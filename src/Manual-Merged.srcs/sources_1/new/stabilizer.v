@@ -46,13 +46,13 @@ module stabilizer(
         else
             case (state)
                 IDLE:
-                    if (button != last) begin
+                    if (button != last) begin  // once the button changes
                         stable <= button;
                         cnt <= 0;
                         state <= WORK;
                     end
                 WORK:
-                    if (cnt < TIME)
+                    if (cnt < TIME)  // force it to remain for a certain time
                         cnt <= cnt+1;
                     else begin
                         stable <= button;

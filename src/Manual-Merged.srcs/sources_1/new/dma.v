@@ -34,6 +34,7 @@ module dma(
     output [31:0] write_data
     );
     
+    // IO occupy memory regularly
     assign addr = io_en ? io_addr : cpu_addr;
     assign write_en = io_en ? io_write_en : cpu_write_en;
     assign write_data = io_en ? io_write_data : cpu_write_data;

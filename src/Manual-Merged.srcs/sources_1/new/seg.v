@@ -29,7 +29,6 @@ module seg(
     output reg [7:0] out
     );
     
-//    parameter TIME = 20000;
     parameter TIME = 10000;
     
     integer cnt;
@@ -70,6 +69,7 @@ module seg(
             digit <= 0;
             en <= 8'b1111_1110;
         end else begin
+            // show each digit sequentially
             case (en)
                 8'b1111_1110: begin
                     digit <= data/10%10;

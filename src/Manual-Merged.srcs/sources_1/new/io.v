@@ -79,7 +79,7 @@ module io(
             kb_down <= 1'b0;
             kb_state <= WAIT;
         end
-        else if (cnt == 0) begin
+        else if (cnt == 0) begin  // one IO cycle, one keyboard scanning
             case (kb_state)
                 WAIT: begin
                     if (kb_req) begin
@@ -88,11 +88,13 @@ module io(
                 end
                 INPT: begin
                     if (kb_done & ~kb[1] & ~kb[3]) begin
+                        // (release button) end keyboard input
                         kb_done <= 1'b1;
                         kb_down <= 1'b0;
                         kb_state <= DONE;
                     end
                     else if (kb[1] | kb[3]) begin
+                        // press submit button
                         kb_value <= (kb[1] ? -buffer : buffer);
                         kb_done <= 1'b1;
                     end
@@ -125,6 +127,7 @@ module io(
                     end
                 end
                 DONE: begin
+                    // hold kb_done signal for one IO cycle
                     kb_done <= 1'b0;
                     kb_state <= WAIT;
                 end
@@ -158,17 +161,20 @@ module io(
                 end
                 WORK: begin
                     if (ack_down & ~ack_s) begin
+                        // (release button) end switch input
                         sw_done <= 1'b1;
                         ack_down <= 1'b0;
                         sw_state <= DONE;
                     end
                     else if (ack_s) begin
+                        // press ack button
                         state_value <= state_switch;
                         sw_value <= data_switch;
                         ack_down <= 1'b1;
                     end
                 end
                 DONE: begin
+                    // hold sw_done signal for one IO cycle
                     sw_done <= 1'b0;
                     sw_state <= WAIT;
                 end
@@ -204,6 +210,7 @@ module io(
                     cnt <= cnt+1;
                 end
                 WORK: begin
+                    // start refresh
                     case (cnt)
                         TIME+1: begin
                             led_sign <= mem_out[0];
@@ -224,10 +231,12 @@ module io(
                         TIME+5: begin
                             sw_req <= mem_out[0];
                             write_en <= 1'b1;
+                            // reset keyboard request signal
                             write_data <= (kb_state == DONE ? 1'b0 : kb_req);
                             addr <= BASE+12;
                         end
                         TIME+6: begin
+                            // reset switch requiest signal
                             write_data <= (sw_state == DONE ? 1'b0 : sw_req);
                             addr <= BASE+16;
                         end
@@ -259,6 +268,7 @@ module io(
                         cnt <= cnt+1;
                     end
                     else begin
+                        // end MMIO refresh
                         cnt <= 0;
                         write_en <=1'b0;
                         io_en <= 1'b0;
